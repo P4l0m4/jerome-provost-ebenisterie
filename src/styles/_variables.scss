@@ -1,0 +1,39 @@
+$tablet-screen: 475px;
+$big-tablet-screen: 768px;
+$laptop-screen: 1024px;
+$desktop-screen: 1440px;
+$super-big-screen: 2400px;
+
+//COLORS
+$base-color: #f0f0e5;
+$primary-color: #f3f5f7;
+$secondary-color: #56453f;
+$tertiary-color: #a47764;
+$text-color: #161616;
+$text-color-alt: $primary-color;
+$error-color: #bb0025;
+
+$text-color-faded: rgba($text-color, 0.5);
+$secondary-color-faded: rgba($secondary-color, 0.5);
+
+//BORDERS
+$radius: 20px;
+$big-radius: 30px;
+
+//SHADOWS
+$shadow: 2px 2px 8px rgba(0, 0, 0, 0.02);
+$shadow-text: 0px 0px 2px $text-color;
+$shadow-text-alt: 0px 0px 2px $text-color-alt;
+
+// TYPO
+$regular: 400;
+$bold: 700;
+
+//FONT SIZES
+$main-text-size: 1rem;
+$big-text-size: 2rem;
+$huge-text-size: 3rem;
+$big-title-size: 8rem;
+$huge-title-size: 18.75rem;
+
+$blur: 2px;

@@ -180,5 +180,42 @@ const scroll = (direction: "left" | "right") => {
       }
     }
   }
+
+  &__button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 12rem;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    padding: 20px;
+    background-color: $primary-color;
+    z-index: 1;
+    border: none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    cursor: pointer;
+
+    & img {
+      transform: rotate(90deg);
+      width: 1rem;
+    }
+
+    @media (min-width: $big-tablet-screen) {
+      display: flex;
+    }
+
+    &:nth-of-type(2) {
+      left: auto;
+      right: 12rem;
+
+      & img {
+        transform: rotate(-90deg);
+      }
+    }
+  }
 }
 </style>

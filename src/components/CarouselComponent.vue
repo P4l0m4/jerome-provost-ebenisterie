@@ -141,8 +141,10 @@ const scroll = (direction: "left" | "right") => {
     width: fit-content;
     overflow-x: scroll;
 
-    &:hover &__slide__img:not(:hover) {
-      filter: brightness(0.8);
+    @media (min-width: $big-tablet-screen) {
+      &:hover &__slide__img:not(:hover) {
+        filter: brightness(0.8);
+      }
     }
 
     &::-webkit-scrollbar {
@@ -153,17 +155,15 @@ const scroll = (direction: "left" | "right") => {
       display: flex;
       flex-direction: column;
 
-      @media (min-width: $big-tablet-screen) {
-        &:nth-of-type(odd) .carousel__container__slide__img {
-          border-radius: 0 130px 0 0;
-          min-width: 300px;
-          width: 300px;
-        }
-        &:nth-of-type(even) .carousel__container__slide__img {
-          border-radius: 130px 0 130px 0;
-          width: 500px;
-          min-width: 500px;
-        }
+      &:nth-of-type(odd) .carousel__container__slide__img {
+        border-radius: 0 130px 0 0;
+        min-width: 300px;
+        width: 300px;
+      }
+      &:nth-of-type(even) .carousel__container__slide__img {
+        border-radius: 130px 0 130px 0;
+        width: 500px;
+        min-width: 500px;
       }
 
       &__img {

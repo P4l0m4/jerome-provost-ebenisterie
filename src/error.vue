@@ -5,14 +5,14 @@ defineProps(["error"]);
 <template>
   <div class="error">
     <div class="error__message">
-      <h1 class="titles">Ooooops... error {{ error.statusCode }}</h1>
+      <h1 class="titles">Oops... error {{ error.statusCode }}</h1>
 
       <h2 class="subtitles">We didn't find the page you where looking for.</h2>
       <NuxtLink
         to="/"
         class="button-primary--dark"
         aria-label="retour à la page d'accueil"
-        >Go back to home page</NuxtLink
+        ><PrimaryButton>Retour à la page d'accueil</PrimaryButton></NuxtLink
       >
     </div>
   </div>
@@ -30,7 +30,7 @@ defineProps(["error"]);
 
     & h2 {
       font-weight: $regular;
-      font-size: 1rem;
+      font-size: $main-text-size;
     }
 
     & button {

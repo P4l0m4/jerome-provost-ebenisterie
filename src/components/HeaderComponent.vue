@@ -47,6 +47,7 @@
     width: 100%;
     position: relative;
     box-shadow: $shadow;
+    height: 80px;
   }
 
   &__nav {

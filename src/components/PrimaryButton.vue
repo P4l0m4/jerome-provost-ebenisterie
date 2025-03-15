@@ -19,6 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
   variant: "chocolate-martini",
   direction: "row",
   fontSize: "1rem",
+  radius: "",
 });
 
 const iconColor = computed(() => {
@@ -57,35 +58,36 @@ const iconColor = computed(() => {
   width: 100%;
   max-width: 375px;
   padding: 0.5rem 0.75rem;
+  cursor: pointer;
 }
 
 .chocolate-martini {
-  background-color: $chocolate-martini;
-  color: $cannoli-cream;
-  border: 2px solid $chocolate-martini;
+  background-color: $secondary-color;
+  color: $base-color;
+  border: 2px solid $secondary-color;
 }
 
 .mocha-mousse {
-  background-color: $mocha-mousse;
-  color: $lucent-white;
-  border: 2px solid $mocha-mousse;
+  background-color: $tertiary-color;
+  color: $primary-color;
+  border: 2px solid $tertiary-color;
 }
 
 .cannoli-cream {
-  background-color: $cannoli-cream;
-  color: $chocolate-martini;
-  border: 2px solid $cannoli-cream;
+  background-color: $base-color;
+  color: $secondary-color;
+  border: 2px solid $base-color;
 }
 
 .nebulosity {
-  background-color: $nebulosity;
-  color: $lucent-white;
-  border: 2px solid $nebulosity;
+  background-color: $text-color;
+  color: $primary-color;
+  border: 2px solid $text-color;
 }
 
 .lucent-white {
-  background-color: $lucent-white;
-  color: $nebulosity;
-  border: 2px solid $lucent-white;
+  background-color: $primary-color;
+  color: $text-color;
+  border: 2px solid $primary-color;
 }
 </style>

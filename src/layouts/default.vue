@@ -21,7 +21,7 @@
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100svh;
+  min-height: 100dvh;
   margin: auto;
 }
 .v-enter-active,

@@ -43,13 +43,13 @@ a {
 
 button,
 input {
-  border-radius: $radius;
+  border-radius: $big-radius;
 }
 
 button {
   border: 1px solid transparent;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: $main-text-size;
 }
 
 input,

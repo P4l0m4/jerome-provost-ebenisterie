@@ -38,11 +38,17 @@ import { colors } from "@/utils/colors";
     </div>
   </section>
   <h1>Jérôme Provost Ebénisterie</h1>
+  <ProvostTitle />
+  <CarouselComponent />
 </template>
 <style lang="scss" scoped>
 .banner {
   display: flex;
   flex-wrap: wrap;
+
+  &:hover &__img:not(:hover) {
+    filter: brightness(0.8);
+  }
 
   &__img {
     height: 64dvh;
@@ -50,13 +56,16 @@ import { colors } from "@/utils/colors";
     display: flex;
     padding: 1.5rem;
     align-items: flex-end;
-    background-position: center;
     background-size: cover;
     cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
 
     @media (min-width: $big-tablet-screen) {
       max-width: 33.3333%;
+      transition: filter 0.3s linear;
     }
+
     @media (min-width: $laptop-screen) {
       padding: 2rem;
     }

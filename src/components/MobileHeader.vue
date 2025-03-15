@@ -25,7 +25,7 @@ const isMenuOpen = ref(false);
       <IconComponent
         :icon="isMenuOpen ? 'xx' : 'list'"
         size="2rem"
-        :color="colors['nebulosity']"
+        :color="colors['cannoli-cream']"
       />
     </button>
     <Transition>
@@ -75,7 +75,7 @@ const isMenuOpen = ref(false);
 
   &__nav {
     position: fixed;
-    top: 1rem;
+    top: 0.75rem;
     right: 1rem;
 
     &__links {
@@ -83,7 +83,7 @@ const isMenuOpen = ref(false);
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      background-color: $primary-color;
+      background-color: $secondary-color;
       padding: 1rem;
     }
   }
@@ -97,7 +97,7 @@ const isMenuOpen = ref(false);
     align-items: center;
     width: 50px;
     height: 50px;
-    background-color: $primary-color;
+    background-color: $secondary-color;
     z-index: 1;
     border-radius: 0;
   }
@@ -105,7 +105,7 @@ const isMenuOpen = ref(false);
 
 .nuxt-link {
   text-decoration: none;
-  color: $text-color;
+  color: $text-color-alt;
   white-space: nowrap;
   display: flex;
   flex-direction: column;

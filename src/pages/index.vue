@@ -46,8 +46,10 @@ import { colors } from "@/utils/colors";
   display: flex;
   flex-wrap: wrap;
 
-  &:hover &__img:not(:hover) {
-    filter: brightness(0.8);
+  @media (min-width: $big-tablet-screen) {
+    &:hover &__img:not(:hover) {
+      filter: brightness(0.8);
+    }
   }
 
   &__img {

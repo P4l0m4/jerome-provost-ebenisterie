@@ -70,6 +70,10 @@ const scroll = (direction: "left" | "right") => {
 </script>
 <template>
   <section class="carousel">
+    <SideText>
+      <template #default>Dernières réalisations</template>
+    </SideText>
+
     <Transition>
       <button
         class="carousel__button"
@@ -120,15 +124,12 @@ const scroll = (direction: "left" | "right") => {
 <style lang="scss" scoped>
 .carousel {
   display: flex;
-  align-items: center;
   padding: 2rem 0 2rem 1rem;
   overflow-x: hidden;
   width: 100%;
   position: relative;
-
-  @media (min-width: $big-tablet-screen) {
-    padding: 2rem 0 2rem 1rem;
-  }
+  align-items: center;
+  gap: 2rem;
 
   @media (min-width: $big-tablet-screen) {
     padding: 4rem 2rem;
@@ -167,18 +168,22 @@ const scroll = (direction: "left" | "right") => {
       }
 
       &__img {
-        height: 415px;
+        height: 300px;
         object-fit: cover;
         object-position: center;
 
         @media (min-width: $big-tablet-screen) {
-          height: 300px;
           transition: filter 0.3s linear;
         }
       }
 
       &__label {
-        padding: 1rem 0;
+        width: 300px;
+        padding: 1rem 0 0 0;
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
     }
   }

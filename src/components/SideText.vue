@@ -8,50 +8,68 @@ withDefaults(defineProps<Props>(), {
 });
 </script>
 <template>
-  <div class="side-text" :class="side">
-    <h3
-      class="side-text__title"
-      :style="{ fontSize: $slots.subtitle ? '4rem' : '2rem' }"
-    >
-      <slot></slot>
-    </h3>
-    <span class="line" v-if="$slots.subtitle"></span>
-    <p class="side-text__subtitle">
-      <slot name="subtitle"></slot>
-    </p>
-    <span class="line" v-if="!$slots.subtitle"></span>
+  <div class="wrapper" :class="{ small: !$slots.subtitle }">
+    <div class="side-text" :class="side">
+      <h3
+        class="side-text__title"
+        :style="{ fontSize: $slots.subtitle ? '4rem' : '2rem' }"
+      >
+        <slot></slot>
+      </h3>
+      <span class="line" v-if="$slots.subtitle"></span>
+      <p class="side-text__subtitle">
+        <slot name="subtitle"></slot>
+      </p>
+      <span class="line" v-if="!$slots.subtitle"></span>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
-.side-text {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-right: -132px;
-  margin-left: -100px;
+.wrapper {
+  width: 140px;
+  height: 580px;
+  position: relative;
 
-  &__title,
-  &__subtitle {
-    font-weight: $bold;
-    white-space: nowrap;
+  &.small {
+    width: 80px;
+    height: 340px;
   }
 
-  &__subtitle {
-    margin-top: -0.5rem;
-  }
+  .side-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: fit-content;
+    width: fit-content;
 
-  .line {
-    width: 100%;
-    height: 2px;
-    background-color: $tertiary-color;
+    &__title {
+      font-weight: $bold;
+      white-space: nowrap;
+
+      @media (min-width: $big-tablet-screen) {
+      }
+    }
+
+    &__subtitle {
+      font-weight: $bold;
+      white-space: nowrap;
+    }
+
+    .line {
+      width: 100%;
+      height: 2px;
+      background-color: $tertiary-color;
+    }
   }
 }
 
 .left {
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) translate(-100%, 0%);
+  transform-origin: top left;
 }
 
 .right {
-  transform: rotate(90deg);
+  transform: rotate(90deg) translate(100%, 310%);
+  transform-origin: top right;
 }
 </style>

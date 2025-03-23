@@ -7,12 +7,12 @@
   display: flex;
   justify-content: center;
   padding: 4rem;
-  min-height: calc(8vw + 8rem);
+  min-height: calc(12vw + 8rem);
   position: relative;
 
   &::before {
     content: "PROVOST";
-    font-size: 8vw;
+    font-size: 16vw;
     width: fit-content;
     height: fit-content;
     font-weight: $bold;

@@ -1,10 +1,14 @@
 <script setup lang="ts">
+import { colors } from "@/utils/colors";
+
 interface Props {
-  side?: "left" | "right";
+  side?: "left" | "right" | "top";
+  variant?: "dark" | "light";
 }
 
 withDefaults(defineProps<Props>(), {
   side: "left",
+  variant: "dark",
 });
 </script>
 <template>
@@ -12,12 +16,22 @@ withDefaults(defineProps<Props>(), {
     <div class="side-text" :class="side">
       <h3
         class="side-text__title"
-        :style="{ fontSize: $slots.subtitle ? '3.5rem' : '2rem' }"
+        :style="{
+          fontSize: $slots.subtitle ? '3.5rem' : '2rem',
+          color:
+            variant === 'dark' ? colors['nebulosity'] : colors['cannoli-cream'],
+        }"
       >
         <slot></slot>
       </h3>
       <span class="line" v-if="$slots.subtitle"></span>
-      <p class="side-text__subtitle">
+      <p
+        class="side-text__subtitle"
+        :style="{
+          color:
+            variant === 'dark' ? colors['nebulosity'] : colors['cannoli-cream'],
+        }"
+      >
         <slot name="subtitle"></slot>
       </p>
       <span class="line" v-if="!$slots.subtitle"></span>
@@ -32,6 +46,16 @@ withDefaults(defineProps<Props>(), {
   &.small {
     width: 80px;
     height: 340px;
+  }
+
+  &:has(.top) {
+    width: 500px;
+    height: 110px;
+
+    &.small {
+      width: 340px;
+      height: 80px;
+    }
   }
 
   .side-text {

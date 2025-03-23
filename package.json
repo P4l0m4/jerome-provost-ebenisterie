@@ -19,6 +19,12 @@
     "sass-loader": "^13.2.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
-    "yarn": "^1.22.22"
+    "yarn": "^1.22.22",
+    "nuxt-jsonld": "^2.0.8"
+  },
+  "devDependencies": {
+    "dayjs-nuxt": "^1.1.2",
+    "@nuxtjs/sitemap": "^5.1.0",
+    "@storyblok/nuxt": "^5.4.4"
   }
 }

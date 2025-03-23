@@ -4,4 +4,5 @@ export const colors = {
   "mocha-mousse": "#A47764",
   "chocolate-martini": "#56453F",
   nebulosity: "#161616",
+  error: "#bb0025",
 };

@@ -71,7 +71,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $primary-color inset !important;
+  -webkit-box-shadow: 0 0 0 30px $base-color inset !important;
   -webkit-text-fill-color: $text-color !important;
 }
 input[type="search"] {
@@ -86,9 +86,9 @@ input[type="search"] {
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px $primary-color inset !important;
-    border: 2px solid $primary-color !important;
-    outline: $primary-color !important;
+    -webkit-box-shadow: 0 0 0 30px $base-color inset !important;
+    border: 2px solid $base-color !important;
+    outline: $base-color !important;
   }
 }
 /* Chrome, Safari, Edge, Opera */

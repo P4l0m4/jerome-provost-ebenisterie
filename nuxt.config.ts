@@ -5,6 +5,19 @@ export default defineNuxtConfig({
   ssr: false,
   srcDir: "src",
   css: ["@/styles/global.scss"],
+  modules: [
+    "@nuxtjs/sitemap",
+    "nuxt-jsonld",
+    "dayjs-nuxt",
+    [
+      "@storyblok/nuxt",
+      {
+        accessToken: process.env.STORYBLOK_KEY,
+        cacheProvider: "memory",
+        apiOptions: { region: "us" },
+      },
+    ],
+  ],
   vite: {
     css: {
       preprocessorOptions: {
@@ -12,6 +25,11 @@ export default defineNuxtConfig({
           additionalData: '@import "@/styles/_variables.scss";',
         },
       },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      STORYBLOK_KEY: process.env.STORYBLOK_KEY,
     },
   },
 });

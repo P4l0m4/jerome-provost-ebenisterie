@@ -112,6 +112,9 @@ const furnitureList = [
               furniture.collaboration
             }}</NuxtLink
           >
+          <PrimaryButton style="margin-top: auto"
+            >Parlons de votre projet</PrimaryButton
+          >
         </ul>
         <SideText :side="i % 2 === 0 ? 'right' : 'left'"
           >{{ furniture.title }}

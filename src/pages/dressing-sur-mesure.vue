@@ -152,13 +152,13 @@ const furnitureList = [
       display: flex;
       gap: 2rem;
       width: 100%;
-      height: 640px;
+      height: 80dvh;
       padding: 2rem 0;
       justify-content: end;
 
       @media (min-width: $big-tablet-screen) {
         flex-direction: row;
-        padding: 4rem 0 2rem 0;
+        padding: 2rem 0;
         align-items: start;
       }
 

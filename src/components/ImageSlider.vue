@@ -66,11 +66,11 @@ function prev() {
   justify-content: space-between;
   width: 100%;
   max-width: 760px;
-  height: 70dvh;
+  height: 80dvh;
   padding: 1.5rem;
 
   @media (min-width: $laptop-screen) {
-    height: 630px;
+    // height: 630px;
     padding: 2rem;
   }
 

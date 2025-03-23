@@ -12,7 +12,7 @@ withDefaults(defineProps<Props>(), {
     <div class="side-text" :class="side">
       <h3
         class="side-text__title"
-        :style="{ fontSize: $slots.subtitle ? '4rem' : '2rem' }"
+        :style="{ fontSize: $slots.subtitle ? '3.5rem' : '2rem' }"
       >
         <slot></slot>
       </h3>

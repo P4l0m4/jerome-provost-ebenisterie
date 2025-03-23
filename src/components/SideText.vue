@@ -26,9 +26,8 @@ withDefaults(defineProps<Props>(), {
 </template>
 <style lang="scss" scoped>
 .wrapper {
-  width: 140px;
-  height: 580px;
-  position: relative;
+  width: 110px;
+  height: 500px;
 
   &.small {
     width: 80px;

@@ -1,6 +1,5 @@
-<script setup>
-import { ref, reactive, onMounted, watch } from "vue";
-import dayjs from "dayjs";
+<script setup lang="ts">
+import { ref, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import emailjs from "@emailjs/browser";
 import { colors } from "@/utils/colors";
@@ -19,8 +18,10 @@ const wasSent = ref(false);
 
 const contactState = reactive({
   info: "",
+  budget: "",
   name: "",
   email: "",
+  furnitureType: "",
   phoneNumber: "",
 });
 
@@ -29,6 +30,8 @@ const templateParams = computed(() => ({
   email: contactState.email,
   phoneNumber: contactState.phoneNumber,
   info: contactState.info,
+  furnitureType: contactState.furnitureType,
+  budget: contactState.budget,
 }));
 
 function confirmSubmission() {
@@ -37,22 +40,26 @@ function confirmSubmission() {
   vContact$.value.$reset();
   contactState.info = "";
   contactState.name = "";
-  contactState.lastName = "";
+  contactState.furnitureType = "";
   contactState.email = "";
   contactState.phoneNumber = "";
+  contactState.budget = "";
 
   setTimeout(() => {
     wasSent.value = false;
-    emits("formSubmitted");
   }, 1400);
 }
 
 const phoneRegex =
   /^(\d{10}|(\d{2}[-.\s]){4}\d{2}|\(\d{3}\)\s\d{3}-\d{4}|\d{3}[-.\s]\d{3}[-.\s]\d{4}|\d{3}\s\d{3}\s\d{3}\s\d)$/;
-const isPhoneNumber = (value) => phoneRegex.test(value);
+const isPhoneNumber = (value: string) => phoneRegex.test(value);
 
 const contactRules = {
+  furnitureType: {
+    required,
+  },
   info: {},
+  budget: { required, minValue: minValue(100) },
   name: {
     required,
     maxLength: maxLength(30),
@@ -68,11 +75,19 @@ const contactRules = {
   },
 };
 
+function setFurnitureType(type: string) {
+  contactState.furnitureType = type;
+}
+
+function setBudget(value: number) {
+  contactState.budget = value.toString();
+}
+
 const vContact$ = useVuelidate(contactRules, contactState);
 const form = ref(null);
 
 const nameErrors = computed(() => {
-  const errors = [];
+  const errors: string[] = [];
   if (!vContact$.value.name.$dirty) return errors;
   vContact$.value.name.required.$invalid &&
     errors.push("Please enter your first name");
@@ -85,7 +100,7 @@ const nameErrors = computed(() => {
 });
 
 const phoneNumberErrors = computed(() => {
-  const errors = [];
+  const errors: string[] = [];
   if (!vContact$.value.phoneNumber.$dirty) return errors;
   vContact$.value.phoneNumber.required.$invalid &&
     errors.push("Please enter your phone number");
@@ -96,12 +111,30 @@ const phoneNumberErrors = computed(() => {
 });
 
 const emailErrors = computed(() => {
-  const errors = [];
+  const errors: string[] = [];
   if (!vContact$.value.email.$dirty) return errors;
   vContact$.value.email.required.$invalid &&
     errors.push("Please enter an email address");
   vContact$.value.email.email.$invalid &&
     errors.push("Please enter a valid email address");
+  return errors;
+});
+
+const furnitureTypeErrors = computed(() => {
+  const errors: string[] = [];
+  if (!vContact$.value.furnitureType.$dirty) return errors;
+  vContact$.value.furnitureType.required.$invalid &&
+    errors.push("Please choose a furniture type");
+  return errors;
+});
+
+const budgetErrors = computed(() => {
+  const errors: string[] = [];
+  if (!vContact$.value.budget.$dirty) return errors;
+  vContact$.value.budget.required.$invalid &&
+    errors.push("Please choose a budget");
+  vContact$.value.budget.minValue.$invalid &&
+    errors.push("Budget minimum: 100€");
   return errors;
 });
 
@@ -145,21 +178,28 @@ async function validContactState() {
             icon="clipboard-text"
             name="détails sur le projet"
             autocomplete="off"
+            autofocus
           ></textarea>
         </div>
       </div>
-
-      <div class="form__fields__field">
-        <DropDown />
+      <div
+        class="form__fields__field"
+        :style="{
+          borderLeft: budgetErrors[0]
+            ? `2px solid ${colors['error']}`
+            : `0px solid transparent`,
+        }"
+      >
+        <RangeInput @range="setBudget" />
       </div>
     </div>
     <div class="form__fields">
       <div
         class="form__fields__field"
         :style="{
-          boxShadow: nameErrors[0]
-            ? `inset ${colors['error']} 0px 0px 0px 2px`
-            : `inset ${colors['cannoli-cream']} 0px 0px 0px 2px`,
+          borderLeft: nameErrors[0]
+            ? `2px solid ${colors['error']}`
+            : `0px solid transparent`,
         }"
       >
         <InputField
@@ -177,9 +217,9 @@ async function validContactState() {
       <div
         class="form__fields__field"
         :style="{
-          boxShadow: phoneNumberErrors[0]
-            ? `inset ${colors['error']} 0px 0px 0px 2px`
-            : `inset ${colors['cannoli-cream']} 0px 0px 0px 2px`,
+          borderLeft: phoneNumberErrors[0]
+            ? `2px solid ${colors['error']}`
+            : `0px solid transparent`,
         }"
       >
         <InputField
@@ -197,9 +237,9 @@ async function validContactState() {
       <div
         class="form__fields__field"
         :style="{
-          boxShadow: emailErrors[0]
-            ? `inset ${colors['error']} 0px 0px 0px 2px`
-            : `inset ${colors['cannoli-cream']} 0px 0px 0px 2px`,
+          borderLeft: emailErrors[0]
+            ? `2px solid ${colors['error']}`
+            : `0px solid transparent`,
         }"
       >
         <InputField
@@ -214,17 +254,33 @@ async function validContactState() {
           autocomplete="on"
         />
       </div>
+      <div class="form__fields__field">
+        <DropDown
+          @option-selected="setFurnitureType"
+          :errors="furnitureTypeErrors[0]"
+        />
+      </div>
       <PrimaryButton :variant="'mocha-mousse'" @click="validContactState"
         >Demander une estimation</PrimaryButton
       >
     </div>
+
     <div
       class="errors"
-      v-if="emailErrors[0] || phoneNumberErrors[0] || nameErrors[0]"
+      v-if="
+        emailErrors[0] ||
+        phoneNumberErrors[0] ||
+        nameErrors[0] ||
+        furnitureTypeErrors[0] ||
+        budgetErrors[0]
+      "
     >
+      {{ contactState }}
       <span v-if="nameErrors[0]">{{ nameErrors[0] }}</span>
       <span v-if="phoneNumberErrors[0]">{{ phoneNumberErrors[0] }}</span>
       <span v-if="emailErrors[0]">{{ emailErrors[0] }}</span>
+      <span v-if="furnitureTypeErrors[0]">{{ furnitureTypeErrors[0] }}</span>
+      <span v-if="budgetErrors[0]">{{ budgetErrors[0] }}</span>
     </div>
   </form>
 </template>
@@ -234,14 +290,27 @@ async function validContactState() {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+
+  @media (min-width: $big-tablet-screen) {
+    gap: 1.5rem;
+  }
 
   &__fields {
-    display: flex;
+    display: grid;
     gap: 1rem;
     padding: 1rem;
     border-radius: $radius;
     background-color: $base-color-darker;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    @media (min-width: $big-tablet-screen) {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    @media (min-width: $desktop-screen) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
     &__field {
       display: flex;
@@ -249,6 +318,7 @@ async function validContactState() {
       flex-wrap: wrap;
       gap: 1rem;
       width: 100%;
+      min-width: 215px;
       justify-content: space-between;
       border-radius: $radius;
     }
@@ -256,6 +326,10 @@ async function validContactState() {
     &:nth-of-type(2) {
       padding: 0;
       background-color: transparent;
+    }
+
+    & button {
+      max-width: none;
     }
   }
 }
@@ -271,6 +345,7 @@ async function validContactState() {
 
   @media (min-width: $big-tablet-screen) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 

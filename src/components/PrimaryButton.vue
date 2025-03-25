@@ -57,8 +57,9 @@ const iconColor = computed(() => {
 .button {
   width: 100%;
   max-width: 375px;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .chocolate-martini {

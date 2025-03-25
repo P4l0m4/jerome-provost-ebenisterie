@@ -26,10 +26,7 @@ const model = defineModel<string | number>();
 const inputRef = ref<HTMLInputElement | null>(null);
 </script>
 <template>
-  <div
-    class="input-field"
-    :class="{ 'input-field--passengers': type === 'number' }"
-  >
+  <div class="input-field">
     <label class="input-field__label sr-only" :for="id">
       {{ label }}
     </label>
@@ -71,12 +68,6 @@ const inputRef = ref<HTMLInputElement | null>(null);
   padding: 0.25rem 0.75rem;
   overflow: hidden;
 
-  &--passengers {
-    padding: 0;
-    gap: 0rem;
-    box-shadow: none;
-  }
-
   &__label {
     font-size: $main-text-size;
     font-weight: $regular;
@@ -105,12 +96,6 @@ const inputRef = ref<HTMLInputElement | null>(null);
       color: $text-color-faded;
       font-size: 1rem;
       font-weight: $regular;
-    }
-
-    &[type="number"] {
-      min-width: 50px;
-      max-width: 50px;
-      text-align: center;
     }
   }
 }

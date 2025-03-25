@@ -69,7 +69,9 @@ withDefaults(defineProps<Props>(), {
       font-weight: $bold;
       white-space: nowrap;
 
+      font-size: 2.5rem !important;
       @media (min-width: $big-tablet-screen) {
+        font-size: 3.5rem !important;
       }
     }
 
@@ -94,5 +96,16 @@ withDefaults(defineProps<Props>(), {
 .right {
   transform: rotate(90deg) translate(100%, 310%);
   transform-origin: top right;
+}
+
+.top {
+  //dynamic font size (percentage of the viewport width)
+  .side-text__title {
+    white-space: wrap !important;
+    font-size: 2.5rem !important;
+    @media (min-width: $big-tablet-screen) {
+      font-size: 3.5rem !important;
+    }
+  }
 }
 </style>

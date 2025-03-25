@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   srcDir: "src",
   css: ["@/styles/global.scss"],
   modules: [
+    "@vueuse/nuxt",
     "@nuxtjs/sitemap",
     "nuxt-jsonld",
     "dayjs-nuxt",

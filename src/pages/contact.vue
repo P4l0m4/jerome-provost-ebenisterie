@@ -40,7 +40,7 @@ import { colors } from "@/utils/colors";
 </template>
 <style lang="scss" scoped>
 .contact-banner {
-  height: calc(100dvh - 80px);
+  min-height: calc(100dvh - 80px);
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -48,13 +48,16 @@ import { colors } from "@/utils/colors";
     linear-gradient(0deg, rgba(#161616, 100%), transparent 100%),
     url("@/assets/images/jerome.jpg");
   display: flex;
-  //   align-items: end;
   justify-content: end;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   flex-direction: column;
 
   @media (min-width: $big-tablet-screen) {
+    padding: 4rem 2rem;
+  }
+
+  @media (min-width: $laptop-screen) {
     padding: 4rem;
   }
 
@@ -69,15 +72,27 @@ import { colors } from "@/utils/colors";
 
     &__info {
       display: flex;
-      gap: 2rem;
+      gap: 0.5rem;
+      flex-direction: column;
+      width: fit-content;
+
+      @media (min-width: $big-tablet-screen) {
+        flex-direction: row;
+        gap: 2rem;
+      }
 
       &__element {
         display: flex;
         gap: 0.5rem;
         align-items: center;
-        font-size: $medium-text-size;
+        font-size: $main-text-size;
         font-weight: $bold;
         color: $text-color-alt;
+        width: fit-content;
+
+        @media (min-width: $big-tablet-screen) {
+          font-size: $medium-text-size;
+        }
       }
     }
   }

@@ -5,4 +5,5 @@ export const colors = {
   "chocolate-martini": "#56453F",
   nebulosity: "#161616",
   error: "#bb0025",
+  "cannoli-cream-darker": "#EAEADD",
 };

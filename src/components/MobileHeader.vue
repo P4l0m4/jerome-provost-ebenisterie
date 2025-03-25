@@ -77,6 +77,7 @@ const isMenuOpen = ref(false);
     position: fixed;
     top: 0.75rem;
     right: 1rem;
+    z-index: 1;
 
     &__links {
       list-style: none;
@@ -115,7 +116,9 @@ const isMenuOpen = ref(false);
     width: 0px;
     height: 2px;
     background-color: transparent;
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition:
+      width 0.3s ease,
+      background-color 0.3s ease;
   }
 }
 

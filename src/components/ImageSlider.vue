@@ -70,7 +70,6 @@ function prev() {
   padding: 1.5rem;
 
   @media (min-width: $laptop-screen) {
-    // height: 630px;
     padding: 2rem;
   }
 
@@ -81,6 +80,7 @@ function prev() {
     object-position: center;
     position: absolute;
     inset: 0;
+    z-index: -1;
   }
 }
 

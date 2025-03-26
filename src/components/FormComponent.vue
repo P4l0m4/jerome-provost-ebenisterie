@@ -275,7 +275,6 @@ async function validContactState() {
         budgetErrors[0]
       "
     >
-      {{ contactState }}
       <span v-if="nameErrors[0]">{{ nameErrors[0] }}</span>
       <span v-if="phoneNumberErrors[0]">{{ phoneNumberErrors[0] }}</span>
       <span v-if="emailErrors[0]">{{ emailErrors[0] }}</span>

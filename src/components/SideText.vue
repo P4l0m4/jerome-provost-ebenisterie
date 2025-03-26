@@ -13,11 +13,16 @@ withDefaults(defineProps<Props>(), {
 </script>
 <template>
   <div class="wrapper" :class="{ small: !$slots.subtitle }">
-    <div class="side-text" :class="side">
+    <div
+      class="side-text"
+      :class="side"
+      :style="{ gap: $slots.subtitle ? '1rem' : '0.5rem' }"
+    >
       <h3
         class="side-text__title"
         :style="{
           fontSize: $slots.subtitle ? '3.5rem' : '2rem',
+
           color:
             variant === 'dark' ? colors['nebulosity'] : colors['cannoli-cream'],
         }"
@@ -44,7 +49,7 @@ withDefaults(defineProps<Props>(), {
   height: 500px;
 
   &.small {
-    width: 80px;
+    width: 60px;
     height: 340px;
   }
 
@@ -68,11 +73,6 @@ withDefaults(defineProps<Props>(), {
     &__title {
       font-weight: $bold;
       white-space: nowrap;
-
-      font-size: 2.5rem !important;
-      @media (min-width: $big-tablet-screen) {
-        font-size: 3.5rem !important;
-      }
     }
 
     &__subtitle {
@@ -89,7 +89,7 @@ withDefaults(defineProps<Props>(), {
 }
 
 .left {
-  transform: rotate(-90deg) translate(-100%, 0%);
+  transform: rotate(-90deg) translate(-100%, -10%);
   transform-origin: top left;
 }
 

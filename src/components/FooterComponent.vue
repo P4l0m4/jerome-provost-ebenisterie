@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import { colors } from "@/utils/colors";
+</script>
 <template>
   <footer class="footer">
     <div class="footer__text">
@@ -13,7 +16,7 @@
         </p>
         <div class="footer__text__column__row-links">
           <NuxtLink to="/stage-ebenisterie">Découvrir l’ébénisterie</NuxtLink
-          ><NuxtLink to="/outil-explorateur-de-materiaux"
+          ><NuxtLink to="/outil-materiaux-meubles-sur-mesure"
             >Explorateur de matériaux</NuxtLink
           >
         </div>
@@ -68,8 +71,24 @@
       </ul>
     </div>
     <div class="footer__bottom">
-      <span>©J.P. Ebenisterie 2025</span><span>Mentions légales</span
-      ><a href="tekilawebfactory.com">By Tekila Web Factory</a>
+      <span>©J.P. Ebenisterie 2025</span>
+      <div class="icons">
+        <a href="facebook.com" aria-label="Facebook" target="_blank">
+          <IconComponent
+            icon="facebook-logo-fill"
+            :color="colors['chocolate-martini']"
+            size="20px"
+          />
+        </a>
+        <a href="instagram.com" aria-label="Instagram" target="_blank">
+          <IconComponent
+            icon="instagram-logo-fill-1"
+            :color="colors['chocolate-martini']"
+            size="20px"
+        /></a>
+      </div>
+      <span>Mentions légales</span
+      ><a href="tekilawebfactory.com" target="_blank">By Tekila Web Factory</a>
     </div>
   </footer>
 </template>
@@ -77,9 +96,13 @@
 .footer {
   background-color: $text-color;
   display: flex;
-  padding: 4rem;
+  padding: 2rem;
   flex-direction: column;
   gap: 4rem;
+
+  @media (min-width: $big-tablet-screen) {
+    padding: 4rem;
+  }
 
   &__text {
     display: flex;
@@ -138,5 +161,11 @@
 
 .logo {
   margin-bottom: 1rem;
+}
+
+.icons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 </style>

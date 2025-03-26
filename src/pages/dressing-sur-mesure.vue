@@ -170,10 +170,11 @@ const furnitureList = [
         flex-direction: column;
         gap: 2rem;
         list-style: none;
-        min-width: 320px;
+
         height: 100%;
 
         @media (min-width: $big-tablet-screen) {
+          min-width: 320px;
           max-width: 320px;
           width: 100%;
         }

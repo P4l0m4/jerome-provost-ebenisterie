@@ -112,6 +112,7 @@ import { colors } from "@/utils/colors";
       </div>
     </div>
   </section>
+  <KnowHow />
 </template>
 <style lang="scss" scoped>
 .contact-banner {

@@ -27,6 +27,7 @@ withDefaults(defineProps<Props>(), {
   ],
 });
 </script>
+
 <template>
   <section class="banner">
     <div
@@ -49,6 +50,7 @@ withDefaults(defineProps<Props>(), {
     </div>
   </section>
 </template>
+
 <style lang="scss" scoped>
 .banner {
   display: flex;
@@ -82,27 +84,18 @@ withDefaults(defineProps<Props>(), {
     }
 
     &:nth-of-type(1) {
-      background-image: linear-gradient(
-          90deg,
-          rgba(#161616, 60%),
-          transparent 60%
-        ),
+      background-image:
+        linear-gradient(90deg, rgba(#161616, 60%), transparent 60%),
         url("@/assets/images/cuisine-sur-mesure.jpg");
     }
     &:nth-of-type(2) {
-      background-image: linear-gradient(
-          90deg,
-          rgba(#161616, 60%),
-          transparent 60%
-        ),
+      background-image:
+        linear-gradient(90deg, rgba(#161616, 60%), transparent 60%),
         url("@/assets/images/dressing-sur-mesure.jpg");
     }
     &:nth-of-type(3) {
-      background-image: linear-gradient(
-          90deg,
-          rgba(#161616, 60%),
-          transparent 60%
-        ),
+      background-image:
+        linear-gradient(90deg, rgba(#161616, 60%), transparent 60%),
         url("@/assets/images/salle-de-bain-sur-mesure.webp");
     }
 

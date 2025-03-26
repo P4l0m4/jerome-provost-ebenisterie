@@ -80,7 +80,11 @@ import { colors } from "@/utils/colors";
             size="20px"
           />
         </a>
-        <a href="instagram.com" aria-label="Instagram" target="_blank">
+        <a
+          href="https://www.instagram.com/jp.ebenisterie73?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          aria-label="Instagram"
+          target="_blank"
+        >
           <IconComponent
             icon="instagram-logo-fill-1"
             :color="colors['chocolate-martini']"

@@ -85,6 +85,17 @@ const furnitureList = [
     ],
   },
 ];
+
+useHead({
+  title: "Dressings sur mesure | Jérôme Provost Ebénisterie",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Création de dressings sur mesure à Chambéry en Savoie. Découvrez tous nos dressings sur mesure.",
+    },
+  ],
+});
 </script>
 
 <template>

@@ -68,6 +68,17 @@ const categories = [
     link: "/autres-meubles-sur-mesure",
   },
 ];
+
+useHead({
+  title: "Meuble sur mesures en Savoie | Jérôme Provost Ebénisterie",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Creation meubles sur mesures à Chambéry en Savoie. Découvrez tous nos meubles sur mesure, cuisines, bibliothèques, dressings sur mesure, maisons et bureaux sur mesure.",
+    },
+  ],
+});
 </script>
 <template>
   <BannerComponent :banner-elements />

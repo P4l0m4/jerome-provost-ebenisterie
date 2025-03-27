@@ -40,6 +40,17 @@ useJsonld(() => ({
   ],
   priceRange: "€€€",
 }));
+
+useHead({
+  title: "Jérôme Provost Ebénisterie | Ébéniste agenceur en Savoie",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Jérôme Provost Ebénisterie, Ebéniste agenceur à Chambéry en Savoie. Conception et réalisation de meubles sur mesure, cuisines, bibliothèques, dressings sur mesure, maisons et bureaux sur mesure.",
+    },
+  ],
+});
 </script>
 <template>
   <BannerComponent :banner-elements />

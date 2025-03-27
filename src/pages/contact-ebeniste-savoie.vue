@@ -1,5 +1,17 @@
 <script setup lang="ts">
 import { colors } from "@/utils/colors";
+
+useHead({
+  title:
+    "Obtenir un devis pour meuble sur mesures | Jérôme Provost Ebénisterie",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Obtenez un devis pour votre meuble sur mesure. Jérôme Provost Ebénisterie, ébéniste agenceur à Chambéry en Savoie, réalise tous vos projets de meubles sur mesure.",
+    },
+  ],
+});
 </script>
 <template>
   <section class="contact-banner">

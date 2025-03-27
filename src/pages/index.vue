@@ -17,12 +17,36 @@ const bannerElements = [
     label: "Salle de bain sur mesure",
   },
 ];
+
+useJsonld(() => ({
+  "@context": "https://schema.org",
+  "@type": "FurnitureStore",
+  name: "Jérôme Provost Ebénisterie",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "72 rue du clos",
+    addressLocality: "Saint-alban-leysse",
+    addressCountry: "France",
+    postalCode: "73230",
+  },
+  email: "jp.ebenisterie73]@gmail.com",
+  telephone: "06 23 04 16 37",
+  url: "https://www.jp-ebenisterie-chambery.fr",
+  openingHours: [
+    "Tu-Fr 09:00-12:00",
+    "Tu-Fr 14:00-19:00",
+    "Sa 10:00-12:00",
+    "Sa 14:00-18:00",
+  ],
+  priceRange: "€€€",
+}));
 </script>
 <template>
   <BannerComponent :banner-elements />
   <h1>Jérôme Provost Ebénisterie</h1>
   <ProvostTitle />
   <CarouselComponent />
+  <InfoBanner />
 </template>
 <style lang="scss" scoped>
 h1 {

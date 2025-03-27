@@ -18,8 +18,8 @@
           ></NuxtLink>
         </li>
         <li class="header__nav__links__link">
-          <NuxtLink to="/ammeublement-professionnel" class="nuxt-link" exact
-            >Ammeublement professionnel<span class="line"></span
+          <NuxtLink to="/ameublement-professionnel" class="nuxt-link" exact
+            >Ameublement professionnel<span class="line"></span
           ></NuxtLink>
         </li>
       </ul>
@@ -30,7 +30,7 @@
         alt="logo jerome provost ebenisterie"
     /></NuxtLink>
 
-    <NuxtLink to="/contact" class="nuxt-link" exact
+    <NuxtLink to="/contact-ebeniste-savoie" class="nuxt-link" exact
       >Contact<span class="line"></span
     ></NuxtLink>
   </header>
@@ -78,7 +78,9 @@
     width: 0px;
     height: 2px;
     background-color: transparent;
-    transition: width 0.3s ease, background-color 0.3s ease;
+    transition:
+      width 0.3s ease,
+      background-color 0.3s ease;
   }
 }
 

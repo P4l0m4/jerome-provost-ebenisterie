@@ -10,7 +10,6 @@ const options = ref([
   "Meuble de salle de bain",
   "Bibliothèque",
   "Table et table basse",
-  "Chaise",
   "Bureau",
   "Armoire",
   "Meuble TV",

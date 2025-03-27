@@ -11,11 +11,13 @@ import { colors } from "@/utils/colors";
             alt="logo jerome provost ebenisterie"
         /></NuxtLink>
         <p>
-          Ébéniste passionné depuis 1995, je conçois et réalise tous types de
-          meubles sur-mesure, en alliant tradition artisanale et modernité.
+          Ébéniste agenceur passionné situé en Savoie, je conçois et réalise
+          tous types de meubles sur-mesure, en alliant tradition artisanale et
+          modernité.
         </p>
         <div class="footer__text__column__row-links">
-          <NuxtLink to="/stage-ebenisterie">Découvrir l’ébénisterie</NuxtLink
+          <NuxtLink to="/stage-ebenisterie-formation-savoie"
+            >Découvrir l’ébénisterie</NuxtLink
           ><NuxtLink to="/outil-materiaux-meubles-sur-mesure"
             >Explorateur de matériaux</NuxtLink
           >
@@ -23,48 +25,57 @@ import { colors } from "@/utils/colors";
       </div>
       <ul class="footer__text__column">
         <li class="footer__text__column__link">
-          <NuxtLink to="/cuisine-sur-mesure" class="nuxt-link"
+          <NuxtLink to="/cuisine-sur-mesure-savoie" class="nuxt-link"
             >Cuisine sur-mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/dressing-sur-mesure" class="nuxt-link"
+          <NuxtLink to="/dressing-sur-mesure-savoie" class="nuxt-link"
             >Dressing sur-mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/salle-de-bain-sur-mesure" class="nuxt-link"
+          <NuxtLink to="/salle-de-bain-sur-mesure-savoie" class="nuxt-link"
             >Salle de bain sur-mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/ammeublement-professionnel" class="nuxt-link"
-            >Ammeublement professionnel</NuxtLink
+          <NuxtLink to="/ameublement-professionnel-savoie" class="nuxt-link"
+            >Ameublement professionnel</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/autes-creations-personnalisées" class="nuxt-link"
-            >Autres créations personnalisées</NuxtLink
+          <NuxtLink to="/autres-meubles-sur-mesure" class="nuxt-link"
+            >Autres meubles sur-mesure</NuxtLink
+          >
+        </li>
+        <li class="footer__text__column__link">
+          <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link"
+            >Toutes les réalisations sur-mesure</NuxtLink
           >
         </li>
       </ul>
       <ul class="footer__text__column">
         <li class="footer__text__column__link">
-          <NuxtLink to="/contact#faq" class="nuxt-link">F.A.Q.</NuxtLink>
+          <NuxtLink to="/contact-ebeniste-savoie#faq" class="nuxt-link"
+            >F.A.Q.</NuxtLink
+          >
         </li>
         <li class="footer__text__column__link">
           <NuxtLink to="/" class="nuxt-link">Accueil</NuxtLink>
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/contact" class="nuxt-link">Contact</NuxtLink>
+          <NuxtLink to="/contact-ebeniste-savoie" class="nuxt-link"
+            >Contact</NuxtLink
+          >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/contact#partenaires" class="nuxt-link"
+          <NuxtLink to="/contact-ebeniste-savoie#partenaires" class="nuxt-link"
             >Partenaires</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/contact" class="nuxt-link"
+          <NuxtLink to="/contact-ebeniste-savoie" class="nuxt-link"
             >Prendre rendez-vous</NuxtLink
           >
         </li>
@@ -86,7 +97,7 @@ import { colors } from "@/utils/colors";
           target="_blank"
         >
           <IconComponent
-            icon="instagram-logo-fill-1"
+            icon="instagram-logo-fill"
             :color="colors['chocolate-martini']"
             size="20px"
         /></a>

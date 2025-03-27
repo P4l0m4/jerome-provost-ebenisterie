@@ -102,6 +102,7 @@ const categories = [
   </section>
   <ProvostTitle />
   <CarouselComponent />
+  <InfoBanner />
 </template>
 <style lang="scss" scoped>
 .categories {

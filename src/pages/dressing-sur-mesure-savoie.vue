@@ -125,6 +125,7 @@ const furnitureList = [
   </section>
   <ProvostTitle />
   <CarouselComponent />
+  <InfoBanner />
 </template>
 
 <style lang="scss" scoped>

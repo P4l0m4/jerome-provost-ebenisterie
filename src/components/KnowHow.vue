@@ -1,6 +1,13 @@
+<script setup lang="ts">
+import { isMobile } from "@/utils/functions";
+</script>
 <template>
   <section class="know-how">
-    <SideText side="left">
+    <SideText side="left" v-if="!isMobile()">
+      Savoir-faire
+      <template #subtitle>Complémentaires</template></SideText
+    >
+    <SideText side="top" v-else style="height: fit-content">
       Savoir-faire
       <template #subtitle>Complémentaires</template></SideText
     >
@@ -20,7 +27,7 @@
   flex-direction: column;
   padding: 2rem 1rem;
 
-  @media (min-width: $big-tablet-screen) {
+  @media (min-width: $laptop-screen) {
     gap: 4rem;
     flex-direction: row;
     padding: 8rem 4rem;
@@ -83,10 +90,10 @@
         word-break: break-all;
         text-wrap: balance;
         color: $text-color-alt;
-        text-align: right;
 
         @media (min-width: $big-tablet-screen) {
           font-size: 3rem;
+          text-align: right;
         }
 
         @media (min-width: $desktop-screen) {

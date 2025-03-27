@@ -32,27 +32,38 @@ const isMenuOpen = ref(false);
       <nav class="header__nav" v-if="isMenuOpen">
         <ul class="header__nav__links">
           <li class="header__nav__links__link">
-            <NuxtLink to="/cuisine-sur-mesure" class="nuxt-link" exact
+            <NuxtLink to="/cuisine-sur-mesure-savoie" class="nuxt-link" exact
               >Cuisine<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
-            <NuxtLink to="/dressing-sur-mesure" class="nuxt-link" exact
+            <NuxtLink to="/dressing-sur-mesure-savoie" class="nuxt-link" exact
               >Dressing<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
-            <NuxtLink to="/salle-de-bain-sur-mesure" class="nuxt-link" exact
+            <NuxtLink
+              to="/salle-de-bain-sur-mesure-savoie"
+              class="nuxt-link"
+              exact
               >Salle de bain<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
-            <NuxtLink to="/ammeublement-professionnel" class="nuxt-link" exact
-              >Ammeublement professionnel<span class="line"></span
+            <NuxtLink
+              to="/ameublement-professionnel-savoie"
+              class="nuxt-link"
+              exact
+              >Ameublement professionnel<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
-            <NuxtLink to="/contact" class="nuxt-link" exact
+            <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link" exact
+              >Toutes les réalisations sur-mesure<span class="line"></span
+            ></NuxtLink>
+          </li>
+          <li class="header__nav__links__link">
+            <NuxtLink to="/contact-ebeniste-savoie" class="nuxt-link" exact
               >Contact<span class="line"></span
             ></NuxtLink>
           </li>

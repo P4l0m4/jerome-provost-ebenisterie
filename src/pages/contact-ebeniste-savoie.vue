@@ -6,7 +6,7 @@ import { colors } from "@/utils/colors";
     <div class="contact-banner__txt">
       <SideText variant="light" side="top">
         Jérôme Provost
-        <template #subtitle>Ebéniste agenceur depuis 1995</template>
+        <template #subtitle>Ebéniste agenceur en Savoie</template>
       </SideText>
 
       <div class="contact-banner__txt__info">
@@ -113,6 +113,10 @@ import { colors } from "@/utils/colors";
     </div>
   </section>
   <KnowHow />
+  <InfoBanner />
+  <FAQ />
+  <ProvostTitle />
+  <CarouselComponent />
 </template>
 <style lang="scss" scoped>
 .contact-banner {

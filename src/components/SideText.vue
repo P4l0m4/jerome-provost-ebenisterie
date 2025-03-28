@@ -16,12 +16,15 @@ withDefaults(defineProps<Props>(), {
     <div
       class="side-text"
       :class="side"
-      :style="{ gap: $slots.subtitle ? '1rem' : '0.5rem' }"
+      :style="{
+        gap: $slots.subtitle ? '1rem' : '0.5rem',
+        width: $slots.subtitle ? '464px' : '340px',
+      }"
     >
       <h3
         class="side-text__title"
         :style="{
-          fontSize: $slots.subtitle ? '3.5rem' : '2rem',
+          fontSize: $slots.subtitle ? '2.5rem' : '2rem',
 
           color:
             variant === 'dark' ? colors['nebulosity'] : colors['cannoli-cream'],
@@ -68,7 +71,6 @@ withDefaults(defineProps<Props>(), {
     flex-direction: column;
     gap: 1rem;
     height: fit-content;
-    width: fit-content;
 
     &__title {
       font-weight: $bold;
@@ -89,12 +91,13 @@ withDefaults(defineProps<Props>(), {
 }
 
 .left {
-  transform: rotate(-90deg) translate(-100%, -10%);
+  transform: rotate(-90deg) translate(-100%, -4px);
   transform-origin: top left;
+  max-height: 120px;
 }
 
 .right {
-  transform: rotate(90deg) translate(100%, 310%);
+  transform: rotate(90deg) translate(100%, 354px);
   transform-origin: top right;
 }
 

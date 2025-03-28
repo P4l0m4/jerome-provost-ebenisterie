@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       {
         accessToken: process.env.STORYBLOK_KEY,
         cacheProvider: "memory",
-        apiOptions: { region: "us" },
+        apiOptions: { region: "fr" },
       },
     ],
   ],

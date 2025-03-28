@@ -10,11 +10,33 @@ interface SliderImage {
   alt: string;
 }
 
+interface SliderImage {
+  id: number;
+  alt: string;
+  name: string;
+  focus: string;
+  title: string;
+  source: string;
+  filename: string;
+  copyright: string;
+  fieldtype: string;
+  meta_data: Object;
+}
+
 const props = withDefaults(defineProps<{ images?: SliderImage[] }>(), {
   images: () => [
-    { src: placeholder1, alt: "Meubles sur mesure" },
-    { src: placeholder2, alt: "Meubles sur mesure" },
-    { src: placeholder3, alt: "Meubles sur mesure" },
+    {
+      id: 21583098,
+      alt: "",
+      name: "",
+      focus: "",
+      title: "",
+      source: "",
+      filename: placeholder1,
+      copyright: "",
+      fieldtype: "asset",
+      meta_data: {},
+    },
   ],
 });
 
@@ -44,7 +66,7 @@ function prev() {
       class="slider__img"
       v-for="(img, index) in images"
       :key="index"
-      :src="img.src"
+      :src="img.filename"
       :alt="img.alt"
       v-show="index === currentIndex"
     />

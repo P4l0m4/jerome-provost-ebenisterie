@@ -33,7 +33,7 @@ const categories = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Dressing",
     images: [placeholder2, placeholder2, placeholder2],
-    link: "/dressing-sur-mesure",
+    link: "/dressings-sur-mesure",
   },
   {
     title: "Salles de bain sur-mesure",

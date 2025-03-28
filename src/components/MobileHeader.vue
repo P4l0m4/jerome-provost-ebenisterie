@@ -37,7 +37,7 @@ const isMenuOpen = ref(false);
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
-            <NuxtLink to="/dressing-sur-mesure-savoie" class="nuxt-link" exact
+            <NuxtLink to="/dressings-sur-mesure-savoie" class="nuxt-link" exact
               >Dressing<span class="line"></span
             ></NuxtLink>
           </li>

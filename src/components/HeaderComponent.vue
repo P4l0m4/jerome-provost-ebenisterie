@@ -3,22 +3,28 @@
     <nav class="header__nav">
       <ul class="header__nav__links">
         <li class="header__nav__links__link">
-          <NuxtLink to="/cuisine-sur-mesure" class="nuxt-link" exact
+          <NuxtLink to="/cuisine-sur-mesure-savoie" class="nuxt-link" exact
             >Cuisine<span class="line"></span
           ></NuxtLink>
         </li>
         <li class="header__nav__links__link">
-          <NuxtLink to="/dressing-sur-mesure" class="nuxt-link" exact
+          <NuxtLink to="/dressings-sur-mesure-savoie" class="nuxt-link" exact
             >Dressing<span class="line"></span
           ></NuxtLink>
         </li>
         <li class="header__nav__links__link">
-          <NuxtLink to="/salle-de-bain-sur-mesure" class="nuxt-link" exact
+          <NuxtLink
+            to="/salle-de-bain-sur-mesure-savoie"
+            class="nuxt-link"
+            exact
             >Salle de bain<span class="line"></span
           ></NuxtLink>
         </li>
         <li class="header__nav__links__link">
-          <NuxtLink to="/ameublement-professionnel" class="nuxt-link" exact
+          <NuxtLink
+            to="/ameublement-professionnel-savoie"
+            class="nuxt-link"
+            exact
             >Ameublement professionnel<span class="line"></span
           ></NuxtLink>
         </li>

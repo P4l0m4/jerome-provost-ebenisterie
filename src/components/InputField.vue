@@ -15,7 +15,7 @@ interface Props {
   autocomplete?: "on" | "off";
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   type: "text",
   required: true,
   autofocus: false,

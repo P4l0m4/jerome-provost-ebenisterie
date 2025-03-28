@@ -30,7 +30,7 @@ import { colors } from "@/utils/colors";
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/dressing-sur-mesure-savoie" class="nuxt-link"
+          <NuxtLink to="/dressings-sur-mesure-savoie" class="nuxt-link"
             >Dressing sur-mesure</NuxtLink
           >
         </li>

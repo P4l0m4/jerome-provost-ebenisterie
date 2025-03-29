@@ -25,7 +25,7 @@ const categories = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Cuisine",
     images: [placeholder1, placeholder1, placeholder1],
-    link: "/cuisine-sur-mesure",
+    link: "/cuisine-sur-mesure-savoie",
   },
   {
     title: "Dressings sur-mesure",
@@ -33,7 +33,7 @@ const categories = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Dressing",
     images: [placeholder2, placeholder2, placeholder2],
-    link: "/dressings-sur-mesure",
+    link: "/dressings-sur-mesure-savoie",
   },
   {
     title: "Salles de bain sur-mesure",
@@ -41,7 +41,7 @@ const categories = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Salle de bain",
     images: [placeholder3, placeholder3, placeholder3],
-    link: "/salle-de-bain-sur-mesure",
+    link: "/salle-de-bain-sur-mesure-savoie",
   },
   {
     title: "Fauteuils, canapés et chaises sur-mesure",
@@ -57,7 +57,7 @@ const categories = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Fauteuil/canapé/chaise",
     images: [placeholder4, placeholder4, placeholder4],
-    link: "/tables-sur-mesure",
+    link: "/tables-et-tables-basses-sur-mesure",
   },
   {
     title: "Autres meubles sur-mesure",

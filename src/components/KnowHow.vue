@@ -32,6 +32,8 @@ import { isMobile } from "@/utils/functions";
     flex-direction: row;
     padding: 8rem 4rem;
     align-items: end;
+    max-height: 608px;
+    overflow-y: hidden;
   }
 
   &__bubbles {
@@ -104,7 +106,14 @@ import { isMobile } from "@/utils/functions";
   }
 
   & .wrapper {
-    height: 304px;
+    &:deep(.line) {
+      max-width: 220px;
+    }
+    @media (min-width: $big-tablet-screen) {
+      &:deep(.side-text) {
+        transform: rotate(-90deg) translate(-500px, -4px) !important;
+      }
+    }
   }
 }
 </style>

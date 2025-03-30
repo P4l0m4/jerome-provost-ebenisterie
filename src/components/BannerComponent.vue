@@ -4,6 +4,7 @@ import { colors } from "@/utils/colors";
 interface BannerElement {
   image: string;
   label: string;
+  link: string;
 }
 
 interface Props {
@@ -15,14 +16,17 @@ withDefaults(defineProps<Props>(), {
     {
       image: "/assets/images/cuisine-sur-mesure.jpg",
       label: "Cuisine sur mesure",
+      link: "/",
     },
     {
       image: "/assets/images/dressing-sur-mesure.jpg",
       label: "Dressing sur mesure",
+      link: "/",
     },
     {
       image: "/assets/images/salle-de-bain-sur-mesure.webp",
       label: "Salle de bain sur mesure",
+      link: "/",
     },
   ],
 });
@@ -30,7 +34,9 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <section class="banner">
-    <div
+    <NuxtLink
+      :to="slide.link"
+      :aria-label="slide.label"
       class="banner__img"
       v-for="(slide, index) in bannerElements"
       :key="index"
@@ -47,7 +53,7 @@ withDefaults(defineProps<Props>(), {
             :color="colors['nebulosity']"
         /></span>
       </div>
-    </div>
+    </NuxtLink>
   </section>
 </template>
 

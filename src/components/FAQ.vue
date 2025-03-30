@@ -3,6 +3,11 @@ import { colors } from "@/utils/colors";
 
 const faq = [
   {
+    title: "Quels sont les avantages des meubles sur mesure ?",
+    answer:
+      "Nous acceptons les paiements par carte bancaire, virement et chèque.",
+  },
+  {
     title: "Pourquoi choisir un ébéniste agençeur à Chambéry ?",
     answer: "Les délais de livraison sont de 3 à 5 jours ouvrés.",
   },

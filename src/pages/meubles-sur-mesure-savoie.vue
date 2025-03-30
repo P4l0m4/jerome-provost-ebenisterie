@@ -11,10 +11,12 @@ const bannerElements = [
   {
     image: placeholder3,
     label: "Meubles pour professionnels",
+    link: "/ameublement-professionnel-savoie",
   },
   {
     image: placeholder5,
     label: "Meubles pour particuliers",
+    link: "/ameublement-particuliers-savoie",
   },
 ];
 

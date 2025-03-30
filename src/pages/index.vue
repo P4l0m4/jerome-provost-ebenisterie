@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Link } from "#components";
 import cuisine from "@/assets/images/cuisine-sur-mesure.jpg";
 import dressing from "@/assets/images/dressing-sur-mesure.jpg";
 import salleDeBain from "@/assets/images/salle-de-bain-sur-mesure.webp";
@@ -7,14 +8,17 @@ const bannerElements = [
   {
     image: cuisine,
     label: "Cuisine sur mesure",
+    link: "/cuisine-sur-mesure-savoie",
   },
   {
     image: dressing,
-    label: "Dressing sur mesure",
+    label: "Dressings sur mesure",
+    link: "/dressings-sur-mesure-savoie",
   },
   {
     image: salleDeBain,
     label: "Salle de bain sur mesure",
+    link: "/salle-de-bain-sur-mesure-savoie",
   },
 ];
 

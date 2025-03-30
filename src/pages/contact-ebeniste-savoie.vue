@@ -189,6 +189,12 @@ useHead({
       }
     }
   }
+
+  & .wrapper {
+    &:deep(.line) {
+      max-width: 300px;
+    }
+  }
 }
 
 .suppliers {

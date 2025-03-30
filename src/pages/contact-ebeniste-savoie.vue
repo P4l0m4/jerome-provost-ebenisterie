@@ -194,6 +194,11 @@ useHead({
     &:deep(.line) {
       max-width: 300px;
     }
+    @media (min-width: $big-tablet-screen) {
+      &:deep(.line) {
+        max-width: 420px;
+      }
+    }
   }
 }
 

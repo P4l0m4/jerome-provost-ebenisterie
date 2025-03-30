@@ -358,6 +358,10 @@ async function validContactState() {
   padding: 0.65rem 0.75rem;
   height: 100px;
 
+  @media (min-width: $big-tablet-screen) {
+    height: 100%;
+  }
+
   & textarea {
     resize: none;
     font-size: 1rem;

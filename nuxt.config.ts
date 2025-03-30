@@ -19,6 +19,18 @@ export default defineNuxtConfig({
       },
     ],
   ],
+  sitemap: {
+    // urls: async () => {
+    //   const newsPages = await getNews();
+    //   const statesPages = await getStates();
+    //   const citiesPages = await getCities();
+    //   return [...newsPages, ...statesPages, ...citiesPages];
+    // },
+  },
+
+  site: {
+    url: "https://jpebenisterie73.fr/",
+  },
   vite: {
     css: {
       preprocessorOptions: {

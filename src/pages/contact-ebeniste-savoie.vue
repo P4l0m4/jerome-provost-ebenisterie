@@ -284,6 +284,17 @@ useHead({
       }
     }
   }
+
+  & .wrapper {
+    &:deep(.line) {
+      max-width: 260px;
+    }
+    @media (min-width: $big-tablet-screen) {
+      &:deep(.line) {
+        max-width: 350px;
+      }
+    }
+  }
 }
 
 .bois {

@@ -54,7 +54,7 @@ export const furniture = [
 
 export const categories = [
   {
-    title: "Cuisines sur-mesure",
+    title: "Cuisines sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Cuisines",
@@ -62,7 +62,7 @@ export const categories = [
     link: "/cuisine-sur-mesure-savoie",
   },
   {
-    title: "Dressings sur-mesure",
+    title: "Dressings sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Dressings",
@@ -70,7 +70,7 @@ export const categories = [
     link: "/dressings-sur-mesure-savoie",
   },
   {
-    title: "Salles de bain sur-mesure",
+    title: "Salles de bain sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "Salles de bain",
@@ -78,7 +78,7 @@ export const categories = [
     link: "/salle-de-bain-sur-mesure-savoie",
   },
   {
-    title: "Bureaux et comptoirs sur-mesure",
+    title: "Bureaux et comptoirs sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "bureaux et comptoirs",
@@ -86,7 +86,7 @@ export const categories = [
     link: "/bureaux-et-comptoirs-sur-mesure",
   },
   {
-    title: "Tables et tables basses sur-mesure",
+    title: "Tables et tables basses sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "tables",
@@ -94,7 +94,7 @@ export const categories = [
     link: "/tables-et-tables-basses-sur-mesure",
   },
   {
-    title: "Caves à vin sur-mesure",
+    title: "Caves à vin sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "caves à vin",
@@ -102,7 +102,7 @@ export const categories = [
     link: "/cave-a-vin-sur-mesure",
   },
   {
-    title: "Autres meubles sur-mesure",
+    title: "Autres meubles sur mesure",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
     category: "autres",

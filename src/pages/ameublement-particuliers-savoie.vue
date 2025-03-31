@@ -4,6 +4,10 @@ import placeholder5 from "@/assets/images/placeholder5.jpg";
 
 import { categories } from "@/utils/mockData";
 
+const filteredCategories = categories.filter(
+  (category) => category.category !== "bureaux et comptoirs"
+);
+
 const bannerElements = [
   {
     image: placeholder3,
@@ -11,9 +15,9 @@ const bannerElements = [
     link: "/ameublement-professionnel-savoie",
   },
   {
-    image: placeholder5,
-    label: "Meubles pour particuliers",
-    link: "/ameublement-particuliers-savoie",
+    image: placeholder3,
+    label: "Tous nos meubles sur mesure",
+    link: "/meubles-sur-mesure-savoie",
   },
 ];
 
@@ -30,7 +34,7 @@ useHead({
 </script>
 <template>
   <BannerComponent :banner-elements />
-  <CategoriesList :categories />
+  <CategoriesList :categories="filteredCategories" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

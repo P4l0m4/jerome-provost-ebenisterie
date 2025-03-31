@@ -1,54 +1,72 @@
 <script setup lang="ts">
-import placeholder3 from "@/assets/images/placeholder3.jpg";
-import placeholder5 from "@/assets/images/placeholder5.jpg";
+import { colors } from "@/utils/colors";
 
-import { categories } from "@/utils/mockData";
-
-const bannerElements = [
-  {
-    image: placeholder3,
-    label: "Meubles pour professionnels",
-    link: "/ameublement-professionnel-savoie",
-  },
-  {
-    image: placeholder5,
-    label: "Meubles pour particuliers",
-    link: "/ameublement-particuliers-savoie",
-  },
-];
-
-useHead({
-  title: "Meuble sur mesures en Savoie | Jérôme Provost Ebénisterie",
-  meta: [
-    {
-      name: "description",
-      content:
-        "Creation meubles sur mesures à Chambéry en Savoie. Découvrez tous nos meubles sur mesure, cuisines, bibliothèques, dressings sur mesure, maisons et bureaux sur mesure.",
-    },
-  ],
-});
+const props = defineProps<{
+  categories: {
+    title: string;
+    description: string;
+    category: string;
+    images: string[];
+    link: string;
+  }[];
+}>();
 </script>
 <template>
-  <BannerComponent :banner-elements />
-  <CategoriesList :categories />
-  <ProvostTitle />
-  <CarouselComponent />
-  <InfoBanner />
+  <section class="categories-list">
+    <NuxtLink
+      class="categories-list__category"
+      v-for="category in categories"
+      :to="category.link"
+      :key="category.category"
+    >
+      <div class="categories-list__category__text">
+        <h2 class="categories-list__category__text__title">
+          {{ category.title }}
+        </h2>
+        <p class="categories-list__category__text__description">
+          {{ category.description }}
+        </p>
+        <span class="square-button">
+          <IconComponent
+            icon="caret-right-bold"
+            size="1rem"
+            :color="colors['cannoli-cream']"
+        /></span>
+      </div>
+      <div class="categories-list__category__images">
+        <div
+          class="categories-list__category__images__img"
+          v-for="(image, index) in category.images"
+          :key="index"
+          :style="{ backgroundImage: `url(${image})` }"
+        ></div>
+      </div>
+    </NuxtLink>
+  </section>
 </template>
+<
 <style lang="scss" scoped>
-.categories {
+.categories-list {
   display: flex;
   flex-direction: column;
   gap: 8rem;
-  padding: 8rem 4rem;
+  padding: 2rem 1rem;
   align-items: center;
+
+  @media (min-width: $big-tablet-screen) {
+    padding: 4rem 2rem;
+  }
+
+  @media (min-width: $desktop-screen) {
+    padding: 8rem 4rem;
+  }
 
   &__category {
     display: flex;
     gap: 2rem;
     flex-direction: column;
 
-    @media (min-width: $big-tablet-screen) {
+    @media (min-width: $laptop-screen) {
       flex-direction: row;
     }
 
@@ -59,7 +77,7 @@ useHead({
       width: 100%;
       align-items: end;
 
-      @media (min-width: $big-tablet-screen) {
+      @media (min-width: $laptop-screen) {
         width: 500px;
         height: 490px;
       }
@@ -114,7 +132,7 @@ useHead({
         flex-direction: row-reverse;
       }
 
-      .categories__category__images__img {
+      .categories-list__category__images__img {
         &:nth-of-type(1) {
           grid-column: 4 / 6;
           grid-row: 1;

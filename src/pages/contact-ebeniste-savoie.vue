@@ -3,7 +3,7 @@ import { colors } from "@/utils/colors";
 
 useHead({
   title:
-    "Obtenir un devis pour meuble sur mesures | Jérôme Provost Ebénisterie",
+    "Trouver un Ebeniste autour de moi | Obtenir un devis | JP Ebénisterie",
   meta: [
     {
       name: "description",

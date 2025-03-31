@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps<{ story: any }>();
+import { stringToSlug } from "~/utils/slugify";
+
+defineProps<{ story: any; parentSlug: string }>();
 </script>
 <template>
   <section class="showcase">
@@ -16,7 +18,11 @@ defineProps<{ story: any }>();
             class="slider-card__text__description__richtext"
             v-html="renderRichText(furniture.description)"
           ></div>
-
+          <NuxtLink
+            :to="`${parentSlug}/${stringToSlug(furniture.subtitle)}`"
+            class="slider-card__text__description__link"
+            >Voir plus...</NuxtLink
+          >
           <NuxtLink
             v-if="furniture.collaborationText && furniture.collaborationLink"
             class="slider-card__text__description__collaboration"
@@ -106,6 +112,10 @@ defineProps<{ story: any }>();
               width: 100%;
             }
           }
+        }
+
+        &__link {
+          color: $tertiary-color;
         }
 
         &__collaboration {

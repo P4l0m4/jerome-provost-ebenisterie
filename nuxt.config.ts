@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { getDressingPages } from "./src/utils/sitemap";
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -20,12 +21,10 @@ export default defineNuxtConfig({
     ],
   ],
   sitemap: {
-    // urls: async () => {
-    //   const newsPages = await getNews();
-    //   const statesPages = await getStates();
-    //   const citiesPages = await getCities();
-    //   return [...newsPages, ...statesPages, ...citiesPages];
-    // },
+    urls: async () => {
+      const dressingPages = await getDressingPages();
+      return [...dressingPages];
+    },
   },
 
   site: {

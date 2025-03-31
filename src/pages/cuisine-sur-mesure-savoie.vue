@@ -14,7 +14,7 @@ useHead({
 </script>
 
 <template>
-  <FurnitureShowcase :story />
+  <FurnitureShowcase :story parent-slug="/cuisine-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

@@ -14,7 +14,7 @@ useHead({
 </script>
 
 <template>
-  <FurnitureShowcase :story />
+  <FurnitureShowcase :story parent-slug="/dressings-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

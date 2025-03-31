@@ -3,11 +3,13 @@ defineProps(["error"]);
 </script>
 
 <template>
+  <HeaderComponent />
+  <MobileHeader />
   <div class="error">
     <div class="error__message">
-      <h1 class="titles">Oops... error {{ error.statusCode }}</h1>
+      <h1 class="titles">Oops... erreur {{ error.statusCode }}</h1>
 
-      <h2 class="subtitles">We didn't find the page you where looking for.</h2>
+      <h2 class="subtitles">Cette page n'existe pas.</h2>
       <NuxtLink
         to="/"
         class="button-primary--dark"
@@ -16,6 +18,7 @@ defineProps(["error"]);
       >
     </div>
   </div>
+  <FooterComponent />
 </template>
 <style lang="scss" scoped>
 .error {

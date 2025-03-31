@@ -59,7 +59,7 @@ useHead({
 <template>
   <BannerComponent :banner-elements />
   <h1>Jérôme Provost Ebénisterie</h1>
-  <ProvostTitle />
+  <!-- <ProvostTitle /> -->
   <CarouselComponent />
   <InfoBanner />
 </template>

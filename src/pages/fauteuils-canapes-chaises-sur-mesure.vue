@@ -16,7 +16,10 @@ useHead({
 </script>
 
 <template>
-  <FurnitureShowcase :story />
+  <FurnitureShowcase
+    :story
+    parent-slug="/fauteuils-canapes-et-chaises-sur-mesure"
+  />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

@@ -15,7 +15,7 @@ useHead({
 });
 </script>
 <template>
-  <FurnitureShowcase :story />
+  <FurnitureShowcase :story parent-slug="/salle-de-bain-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

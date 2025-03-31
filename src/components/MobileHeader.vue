@@ -59,7 +59,7 @@ const isMenuOpen = ref(false);
           </li>
           <li class="header__nav__links__link">
             <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link" exact
-              >Toutes les réalisations sur-mesure<span class="line"></span
+              >Toutes les réalisations sur mesure<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">

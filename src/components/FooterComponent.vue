@@ -26,17 +26,17 @@ import { colors } from "@/utils/colors";
       <ul class="footer__text__column">
         <li class="footer__text__column__link">
           <NuxtLink to="/cuisine-sur-mesure-savoie" class="nuxt-link"
-            >Cuisine sur-mesure</NuxtLink
+            >Cuisine sur mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
           <NuxtLink to="/dressings-sur-mesure-savoie" class="nuxt-link"
-            >Dressing sur-mesure</NuxtLink
+            >Dressings sur mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
           <NuxtLink to="/salle-de-bain-sur-mesure-savoie" class="nuxt-link"
-            >Salle de bain sur-mesure</NuxtLink
+            >Salle de bain sur mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
@@ -46,12 +46,12 @@ import { colors } from "@/utils/colors";
         </li>
         <li class="footer__text__column__link">
           <NuxtLink to="/autres-meubles-sur-mesure" class="nuxt-link"
-            >Autres meubles sur-mesure</NuxtLink
+            >Autres meubles sur mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
           <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link"
-            >Toutes les réalisations sur-mesure</NuxtLink
+            >Toutes les réalisations sur mesure</NuxtLink
           >
         </li>
       </ul>

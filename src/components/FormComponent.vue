@@ -183,7 +183,7 @@ async function validContactState() {
         class="form__fields__field"
         :style="{
           borderLeft: budgetErrors[0]
-            ? `2px solid ${colors['error']}`
+            ? `4px solid ${colors['error']}`
             : `0px solid transparent`,
         }"
       >
@@ -195,7 +195,7 @@ async function validContactState() {
         class="form__fields__field"
         :style="{
           borderLeft: nameErrors[0]
-            ? `2px solid ${colors['error']}`
+            ? `4px solid ${colors['error']}`
             : `0px solid transparent`,
         }"
       >
@@ -215,7 +215,7 @@ async function validContactState() {
         class="form__fields__field"
         :style="{
           borderLeft: phoneNumberErrors[0]
-            ? `2px solid ${colors['error']}`
+            ? `4px solid ${colors['error']}`
             : `0px solid transparent`,
         }"
       >
@@ -235,7 +235,7 @@ async function validContactState() {
         class="form__fields__field"
         :style="{
           borderLeft: emailErrors[0]
-            ? `2px solid ${colors['error']}`
+            ? `4px solid ${colors['error']}`
             : `0px solid transparent`,
         }"
       >

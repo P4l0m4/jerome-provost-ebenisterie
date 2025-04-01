@@ -50,7 +50,7 @@ function selectOption(option: string) {
       @click="toggleDropdown"
       :style="{
         borderLeft: errors
-          ? `2px solid ${colors['error']}`
+          ? `4px solid ${colors['error']}`
           : `0px solid transparent`,
       }"
     >

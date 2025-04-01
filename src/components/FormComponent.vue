@@ -139,16 +139,15 @@ const budgetErrors = computed(() => {
 });
 
 async function submitForm() {
-  alert("Form submitted");
-  //   isSubmitting.value = true;
-  //   await emailjs.send(
-  //     "service_n1t6qo6",
-  //     "template_764bqrq",
-  //     templateParams.value,
-  //     "8ifw_QPXgYXoWYmVW"
-  //   );
+  isSubmitting.value = true;
+  await emailjs.send(
+    "service_xeu1q0c",
+    "template_va1qkos",
+    templateParams.value,
+    "_605G7abZ70S1RQr3"
+  );
 
-  //   confirmSubmission();
+  confirmSubmission();
 }
 
 async function validContactState() {
@@ -263,6 +262,11 @@ async function validContactState() {
       <PrimaryButton :variant="'mocha-mousse'" @click="validContactState"
         >Demander une estimation</PrimaryButton
       >
+      <div
+        style="display: flex; flex-direction: column; gap: 1rem; color: white"
+      >
+        {{ isSubmitting }} {{ wasSent }}
+      </div>
     </div>
 
     <div

@@ -60,6 +60,10 @@ const iconColor = computed(() => {
   padding: 0.75rem 1rem;
   cursor: pointer;
   white-space: nowrap;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .chocolate-martini {

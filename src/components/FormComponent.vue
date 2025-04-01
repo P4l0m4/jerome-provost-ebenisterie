@@ -259,14 +259,19 @@ async function validContactState() {
           :errors="furnitureTypeErrors[0]"
         />
       </div>
-      <PrimaryButton :variant="'mocha-mousse'" @click="validContactState"
-        >Demander une estimation</PrimaryButton
-      >
+      <PrimaryButton :variant="'mocha-mousse'" @click="validContactState">
+        <span class="spin" v-if="isSubmitting">
+          <IconComponent
+            icon="
+           circle-notch
+          "
+            size="1.25rem" /></span
+        >Demander une estimation
+      </PrimaryButton>
+      <PopUp v-if="wasSent">Merci, votre demande a été envoyée !</PopUp>
       <div
         style="display: flex; flex-direction: column; gap: 1rem; color: white"
-      >
-        {{ isSubmitting }} {{ wasSent }}
-      </div>
+      ></div>
     </div>
 
     <div

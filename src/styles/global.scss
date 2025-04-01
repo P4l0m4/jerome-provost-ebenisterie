@@ -188,3 +188,19 @@ details > summary::-webkit-details-marker /* Safari */ {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(-180deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}

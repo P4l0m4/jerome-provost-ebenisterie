@@ -89,12 +89,11 @@ const form = ref(null);
 const nameErrors = computed(() => {
   const errors: string[] = [];
   if (!vContact$.value.name.$dirty) return errors;
-  vContact$.value.name.required.$invalid &&
-    errors.push("Please enter your first name");
+  vContact$.value.name.required.$invalid && errors.push("Ajoutez un prénom");
   vContact$.value.name.minLength.$invalid &&
-    errors.push("Your first name is too short (min 2 characters)");
+    errors.push("Votre prénom est trop court (min 2 caractères)");
   vContact$.value.name.maxLength.$invalid &&
-    errors.push("Your first name is too long (max 30 characters)");
+    errors.push("Votre prénom est trop long (max 30 caractères)");
 
   return errors;
 });
@@ -103,9 +102,9 @@ const phoneNumberErrors = computed(() => {
   const errors: string[] = [];
   if (!vContact$.value.phoneNumber.$dirty) return errors;
   vContact$.value.phoneNumber.required.$invalid &&
-    errors.push("Please enter your phone number");
+    errors.push("Ajoutez un numéro de téléphone");
   vContact$.value.phoneNumber.isPhoneNumber.$invalid &&
-    errors.push("Invalid phone number");
+    errors.push("Numéro de téléphone invalide");
 
   return errors;
 });
@@ -114,9 +113,8 @@ const emailErrors = computed(() => {
   const errors: string[] = [];
   if (!vContact$.value.email.$dirty) return errors;
   vContact$.value.email.required.$invalid &&
-    errors.push("Please enter an email address");
-  vContact$.value.email.email.$invalid &&
-    errors.push("Please enter a valid email address");
+    errors.push("Ajoutez une adresse email");
+  vContact$.value.email.email.$invalid && errors.push("Adresse email invalide");
   return errors;
 });
 
@@ -124,7 +122,7 @@ const furnitureTypeErrors = computed(() => {
   const errors: string[] = [];
   if (!vContact$.value.furnitureType.$dirty) return errors;
   vContact$.value.furnitureType.required.$invalid &&
-    errors.push("Please choose a furniture type");
+    errors.push("Choisissez un type de meuble");
   return errors;
 });
 
@@ -132,7 +130,7 @@ const budgetErrors = computed(() => {
   const errors: string[] = [];
   if (!vContact$.value.budget.$dirty) return errors;
   vContact$.value.budget.required.$invalid &&
-    errors.push("Please choose a budget");
+    errors.push("Choisissez un budget");
   vContact$.value.budget.minValue.$invalid &&
     errors.push("Budget minimum: 100€");
   return errors;

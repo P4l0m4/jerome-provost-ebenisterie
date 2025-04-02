@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import placeholder3 from "@/assets/images/placeholder3.jpg";
 import placeholder5 from "@/assets/images/placeholder5.jpg";
+import salleDeBain3 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-3.webp";
 
 import { categories } from "@/utils/mockData";
 
 const bannerElements = [
   {
-    image: placeholder5,
+    image: salleDeBain3,
     label: "Meubles pour particuliers",
     link: "/ameublement-particuliers-savoie",
   },

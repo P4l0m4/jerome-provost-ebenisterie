@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import placeholder3 from "@/assets/images/placeholder3.jpg";
 import placeholder5 from "@/assets/images/placeholder5.jpg";
+import salleDeBain from "@/assets/images/salle-de-bain.webp";
 
 import { categories } from "@/utils/mockData";
 
@@ -11,7 +12,7 @@ const bannerElements = [
     link: "/ameublement-professionnel-savoie",
   },
   {
-    image: placeholder5,
+    image: salleDeBain,
     label: "Meubles pour particuliers",
     link: "/ameublement-particuliers-savoie",
   },

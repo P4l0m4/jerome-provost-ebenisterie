@@ -3,6 +3,32 @@ import placeholder2 from "@/assets/images/placeholder2.jpg";
 import placeholder3 from "@/assets/images/placeholder3.jpg";
 import placeholder4 from "@/assets/images/placeholder4.jpg";
 
+import cuisine1 from "@/assets/images/cuisines/cuisine-sur-mesure-1.webp";
+import cuisine2 from "@/assets/images/cuisines/cuisine-sur-mesure-2.webp";
+import cuisine3 from "@/assets/images/cuisines/cuisine-sur-mesure-3.webp";
+
+import dressing1 from "@/assets/images/dressings/dressings-sur-mesure-1.webp";
+import dressing2 from "@/assets/images/dressings/dressings-sur-mesure-2.webp";
+import dressing3 from "@/assets/images/dressings/dressings-sur-mesure-3.webp";
+
+import salleDeBain1 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-1.webp";
+import salleDeBain2 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-2.webp";
+import salleDeBain3 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-3.webp";
+
+import bureau1 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure-1.webp";
+import bureau2 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure-2.webp";
+import comptoir1 from "@/assets/images/bureaux-et-comptoirs/comptoir-sur-mesure-1.webp";
+
+import cave1 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-1.webp";
+import cave2 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-2.webp";
+import cave3 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-3.webp";
+
+import table1 from "@/assets/images/tables-et-tables-basses/table-sur-mesure-3.webp";
+
+import meubleTele1 from "@/assets/images/autres-meubles/meuble-tele-sur-mesure-1.webp";
+import claustra1 from "@/assets/images/autres-meubles/claustra-sur-mesure-1.webp";
+import cheminee1 from "@/assets/images/autres-meubles/coin-cheminee-sur-mesure-1.webp";
+
 export const furniture = [
   {
     images: [
@@ -56,57 +82,57 @@ export const categories = [
   {
     title: "Cuisines sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de cuisines sur mesure, cuisines en bois, cuisines avec un plan de travail en marbre, cuisines modernes, etc.",
     category: "Cuisines",
-    images: [placeholder1, placeholder1, placeholder1],
+    images: [cuisine3, cuisine2, cuisine1],
     link: "/cuisine-sur-mesure-savoie",
   },
   {
     title: "Dressings sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de dressings sur mesure, dressings en bois, dressings modernes, rangements sur mesure, etc.",
     category: "Dressings",
-    images: [placeholder2, placeholder2, placeholder2],
+    images: [dressing3, dressing2, dressing1],
     link: "/dressings-sur-mesure-savoie",
   },
   {
     title: "Salles de bain sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de salles de bain sur mesure, salles de bain modernes, salles de bain avec vasque, salles de bain avec douche, salles de bain avec baignoire, etc.",
     category: "Salles de bain",
-    images: [placeholder3, placeholder3, placeholder3],
+    images: [salleDeBain1, salleDeBain2, salleDeBain3],
     link: "/salle-de-bain-sur-mesure-savoie",
   },
   {
     title: "Bureaux et comptoirs sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de bureaux et comptoirs sur mesure, bureaux en bois, comptoirs en marbre, comptoirs de magasin,comptoirs modernes, etc.",
     category: "bureaux et comptoirs",
-    images: [placeholder4, placeholder4, placeholder4],
+    images: [bureau1, bureau2, comptoir1],
     link: "/bureaux-et-comptoirs-sur-mesure",
   },
   {
     title: "Tables et tables basses sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de tables et tables basses sur mesure, tables en bois, tables en marbre, tables de magassalle à manger, tables industrielles, etc.",
     category: "tables",
-    images: [placeholder4, placeholder4, placeholder4],
+    images: [placeholder2, placeholder3, table1],
     link: "/tables-et-tables-basses-sur-mesure",
   },
   {
     title: "Caves à vin sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de caves à vin sur mesure, caves à vin en bois, caves à vin modernes, caves à vin avec rangements, caves à vin avec bar, etc.",
     category: "caves à vin",
-    images: [placeholder4, placeholder4, placeholder4],
+    images: [cave2, cave1, cave3],
     link: "/cave-a-vin-sur-mesure",
   },
   {
     title: "Autres meubles sur mesure",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
+      "Toutes nos créations de meubles sur mesure originaux, meubles et agencements uniques pour votre intérieur.",
     category: "autres",
-    images: [placeholder4, placeholder4, placeholder4],
+    images: [meubleTele1, cheminee1, claustra1],
     link: "/autres-meubles-sur-mesure",
   },
 ];

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { stringToSlug } from "~/utils/slugify";
-const story = await useAsyncStoryblok("bureaux-et-comptoirs", {
+const story = await useAsyncStoryblok("autres-meubles", {
   version: "published",
 });
 const route = useRoute();
@@ -25,8 +25,8 @@ const breadcrumbs = [
     url: window.location.origin,
   },
   {
-    name: "Bureaux et comptoirs",
-    url: window.location.origin + "/bureaux-et-comptoirs-sur-mesure",
+    name: "Autres meubles",
+    url: window.location.origin + "/autres-meubles-sur-mesure",
   },
   {
     name: furniture.subtitle,

@@ -23,11 +23,17 @@ import cave1 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-1.webp";
 import cave2 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-2.webp";
 import cave3 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-3.webp";
 
-import table1 from "@/assets/images/tables-et-tables-basses/table-sur-mesure-3.webp";
+import table1 from "@/assets/images/tables-et-tables-basses/table-sur-mesure-1.webp";
+import table2 from "@/assets/images/tables-et-tables-basses/table-sur-mesure-2.webp";
+import table3 from "@/assets/images/tables-et-tables-basses/table-sur-mesure-3.webp";
 
 import meubleTele1 from "@/assets/images/autres-meubles/meuble-tele-sur-mesure-1.webp";
 import claustra1 from "@/assets/images/autres-meubles/claustra-sur-mesure-1.webp";
 import cheminee1 from "@/assets/images/autres-meubles/coin-cheminee-sur-mesure-1.webp";
+
+import salon1 from "@/assets/images/salons/salon-sur-mesure-1.webp";
+import salon2 from "@/assets/images/salons/salon-sur-mesure-2.webp";
+import salon3 from "@/assets/images/salons/salle-a-manger-sur-mesure-1.webp";
 
 export const furniture = [
   {
@@ -116,7 +122,7 @@ export const categories = [
     description:
       "Toutes nos créations de tables et tables basses sur mesure, tables en bois, tables en marbre, tables de magassalle à manger, tables industrielles, etc.",
     category: "tables",
-    images: [placeholder2, placeholder3, table1],
+    images: [table1, table3, table2],
     link: "/tables-et-tables-basses-sur-mesure",
   },
   {
@@ -126,6 +132,14 @@ export const categories = [
     category: "caves à vin",
     images: [cave2, cave1, cave3],
     link: "/cave-a-vin-sur-mesure",
+  },
+  {
+    title: "Salons et salles à manger sur mesure",
+    description:
+      "Toutes nos créations de salons et salles à manger sur mesure, salons et salles à manger en bois, salons et salles à manger haut de gamme.",
+    category: "salons et salles à manger",
+    images: [salon1, salon2, salon3],
+    link: "/salons-et-salles-a-manger-sur-mesure",
   },
   {
     title: "Autres meubles sur mesure",

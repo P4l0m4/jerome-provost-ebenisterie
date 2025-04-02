@@ -38,7 +38,9 @@ const props = defineProps<{
           class="categories-list__category__images__img"
           v-for="(image, index) in category.images"
           :key="index"
-          :style="{ backgroundImage: `url(${image})` }"
+          :style="{
+            backgroundImage: `linear-gradient(45deg, rgba(22, 22, 22, 0.8), transparent 60%), url(${image})`,
+          }"
         ></div>
       </div>
     </NuxtLink>
@@ -110,6 +112,7 @@ const props = defineProps<{
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        filter: contrast(1.1) saturate(1.2);
 
         &:nth-of-type(1) {
           grid-column: 1 / 3;

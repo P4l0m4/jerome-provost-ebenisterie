@@ -112,7 +112,6 @@ const props = defineProps<{
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        filter: contrast(1.1) saturate(1.2);
 
         &:nth-of-type(1) {
           grid-column: 1 / 3;

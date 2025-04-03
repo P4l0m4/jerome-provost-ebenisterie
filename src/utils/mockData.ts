@@ -114,7 +114,7 @@ export const categories = [
     description:
       "Toutes nos créations de bureaux et comptoirs sur mesure, bureaux en bois, comptoirs en marbre, comptoirs de magasin,comptoirs modernes, etc.",
     category: "bureaux et comptoirs",
-    images: [bureau1, bureau2, comptoir1],
+    images: [bureau1, comptoir1, bureau2],
     link: "/bureaux-et-comptoirs-sur-mesure",
   },
   {

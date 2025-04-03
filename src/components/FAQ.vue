@@ -62,7 +62,7 @@ function toggleQuestion(index) {
 }
 </script>
 <template>
-  <section class="faq">
+  <section id="faq" class="faq">
     <span class="faq__title">Foire aux questions</span>
 
     <div class="faq__cards">

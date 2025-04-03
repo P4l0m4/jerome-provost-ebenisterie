@@ -59,7 +59,7 @@ const breadcrumbs = [
     </div>
     <FormComponent />
   </section>
-  <section class="suppliers">
+  <section id="fournisseurs" class="suppliers">
     <SideText variant="light" side="top">
       Fournisseurs
       <template #subtitle>Tous les fournisseurs partenaires</template>

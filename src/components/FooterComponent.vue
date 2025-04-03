@@ -18,7 +18,9 @@ import { colors } from "@/utils/colors";
         <div class="footer__text__column__row-links">
           <NuxtLink to="/meubles-sur-mesure-savoie"
             >Toutes les réalisations sur-mesure</NuxtLink
-          ><NuxtLink to="/contact-ebeniste-savoie"
+          ><NuxtLink
+            to="/contact-ebeniste-savoie"
+            style="text-decoration: underline"
             >Prendre rendez-vous</NuxtLink
           >
         </div>
@@ -30,9 +32,13 @@ import { colors } from "@/utils/colors";
           >
         </div>
         <div class="footer__text__column__row-links">
-          <NuxtLink to="/stage-ebenisterie-formation-savoie"
+          <NuxtLink
+            to="/stage-ebenisterie-formation-savoie"
+            style="opacity: 0.6; pointer-events: none"
             >Découvrir l’ébénisterie</NuxtLink
-          ><NuxtLink to="/outil-materiaux-meubles-sur-mesure"
+          ><NuxtLink
+            to="/outil-materiaux-meubles-sur-mesure"
+            style="opacity: 0.6; pointer-events: none"
             >Explorateur de matériaux</NuxtLink
           >
         </div>
@@ -99,12 +105,18 @@ import { colors } from "@/utils/colors";
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/prestations-ebenisterie-savoie" class="nuxt-link"
+          <NuxtLink
+            to="/prestations-ebenisterie-savoie"
+            class="nuxt-link"
+            style="opacity: 0.6; pointer-events: none"
             >Prestations</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/avant-apres-ebenisterie-savoie" class="nuxt-link"
+          <NuxtLink
+            to="/avant-apres-ebenisterie-savoie"
+            class="nuxt-link"
+            style="opacity: 0.6; pointer-events: none"
             >Avant-après</NuxtLink
           >
         </li>
@@ -131,7 +143,7 @@ import { colors } from "@/utils/colors";
             size="20px"
         /></a>
       </div>
-      <span>Mentions légales</span
+      <span style="opacity: 0.6; pointer-events: none">Mentions légales</span
       ><a href="tekilawebfactory.com" target="_blank">By Tekila Web Factory</a>
     </div>
   </footer>

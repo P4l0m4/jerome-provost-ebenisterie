@@ -16,6 +16,20 @@ import { colors } from "@/utils/colors";
           modernité.
         </p>
         <div class="footer__text__column__row-links">
+          <NuxtLink to="/meubles-sur-mesure-savoie"
+            >Toutes les réalisations sur-mesure</NuxtLink
+          ><NuxtLink to="/contact-ebeniste-savoie"
+            >Prendre rendez-vous</NuxtLink
+          >
+        </div>
+        <div class="footer__text__column__row-links">
+          <NuxtLink to="/ameublement-professionnel-savoie"
+            >Ameublement professionnel</NuxtLink
+          ><NuxtLink to="/ameublement-particuliers-savoie"
+            >Ameublement pour particuliers</NuxtLink
+          >
+        </div>
+        <div class="footer__text__column__row-links">
           <NuxtLink to="/stage-ebenisterie-formation-savoie"
             >Découvrir l’ébénisterie</NuxtLink
           ><NuxtLink to="/outil-materiaux-meubles-sur-mesure"
@@ -35,23 +49,28 @@ import { colors } from "@/utils/colors";
           >
         </li>
         <li class="footer__text__column__link">
+          <NuxtLink to="/cave-a-vin-sur-mesure" class="nuxt-link"
+            >Cave à vin sur mesure</NuxtLink
+          >
+        </li>
+        <li class="footer__text__column__link">
+          <NuxtLink to="/buanderie-sur-mesure-savoie" class="nuxt-link"
+            >Buanderie sur mesure</NuxtLink
+          >
+        </li>
+        <li class="footer__text__column__link">
           <NuxtLink to="/salle-de-bain-sur-mesure-savoie" class="nuxt-link"
             >Salle de bain sur mesure</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/ameublement-professionnel-savoie" class="nuxt-link"
-            >Ameublement professionnel</NuxtLink
+          <NuxtLink to="/salons-et-salles-a-manger-sur-mesure" class="nuxt-link"
+            >Salons et salles à manger</NuxtLink
           >
         </li>
         <li class="footer__text__column__link">
           <NuxtLink to="/autres-meubles-sur-mesure" class="nuxt-link"
             >Autres meubles sur mesure</NuxtLink
-          >
-        </li>
-        <li class="footer__text__column__link">
-          <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link"
-            >Toutes les réalisations sur mesure</NuxtLink
           >
         </li>
       </ul>
@@ -75,8 +94,18 @@ import { colors } from "@/utils/colors";
           >
         </li>
         <li class="footer__text__column__link">
-          <NuxtLink to="/contact-ebeniste-savoie" class="nuxt-link"
-            >Prendre rendez-vous</NuxtLink
+          <NuxtLink to="/contact-ebeniste-savoie#fournisseurs" class="nuxt-link"
+            >Fournisseurs</NuxtLink
+          >
+        </li>
+        <li class="footer__text__column__link">
+          <NuxtLink to="/prestations-ebenisterie-savoie" class="nuxt-link"
+            >Prestations</NuxtLink
+          >
+        </li>
+        <li class="footer__text__column__link">
+          <NuxtLink to="/avant-apres-ebenisterie-savoie" class="nuxt-link"
+            >Avant-après</NuxtLink
           >
         </li>
       </ul>

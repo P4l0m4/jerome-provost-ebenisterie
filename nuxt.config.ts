@@ -1,4 +1,7 @@
-import { getDressingPages } from "./src/utils/sitemap";
+import {
+  getDressingPages,
+  getTablesEtTablesBassesPages,
+} from "./src/utils/sitemap";
 
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
@@ -23,7 +26,23 @@ export default defineNuxtConfig({
   sitemap: {
     urls: async () => {
       const dressingPages = await getDressingPages();
-      return [...dressingPages];
+      const cuisinePages = await getCuisinePages();
+      const salleDeBainPages = await getSalleDeBainPages();
+      const bureauxEtComptoirsPages = await getBureauxEtComptoirsPages();
+      const autresMeublesPages = await getAutresMeublesPages();
+      const tablesEtTablesBassesPages = await getTablesEtTablesBassesPages();
+      const salonsEtSallesAMangerPages = await getSalonsEtSallesAMangerPages();
+      const cavesAVinPages = await getCavesAVinPages();
+      return [
+        ...dressingPages,
+        ...cuisinePages,
+        ...salleDeBainPages,
+        ...bureauxEtComptoirsPages,
+        ...autresMeublesPages,
+        ...tablesEtTablesBassesPages,
+        ...salonsEtSallesAMangerPages,
+        ...cavesAVinPages,
+      ];
     },
   },
 

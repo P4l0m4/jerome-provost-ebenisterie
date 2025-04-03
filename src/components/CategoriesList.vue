@@ -60,7 +60,7 @@ const props = defineProps<{
   }
 
   @media (min-width: $desktop-screen) {
-    padding: 8rem 4rem;
+    padding: 4rem 4rem 8rem 4rem;
   }
 
   &__category {

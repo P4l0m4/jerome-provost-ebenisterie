@@ -1,6 +1,12 @@
 import {
   getDressingPages,
   getTablesEtTablesBassesPages,
+  getSalonsEtSallesAMangerPages,
+  getCavesAVinPages,
+  getCuisinePages,
+  getSalleDeBainPages,
+  getBureauxEtComptoirsPages,
+  getAutresMeublesPages,
 } from "./src/utils/sitemap";
 
 export default defineNuxtConfig({

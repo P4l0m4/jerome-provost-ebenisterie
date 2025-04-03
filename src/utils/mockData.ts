@@ -130,7 +130,7 @@ export const categories = [
     description:
       "Toutes nos créations de caves à vin sur mesure, caves à vin en bois, caves à vin modernes, caves à vin avec rangements, caves à vin avec bar, etc.",
     category: "caves à vin",
-    images: [cave2, cave1, cave3],
+    images: [cave3, cave1, cave2],
     link: "/cave-a-vin-sur-mesure",
   },
   {

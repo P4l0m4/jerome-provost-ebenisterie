@@ -16,7 +16,7 @@ import salleDeBain2 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesur
 import salleDeBain3 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-3.webp";
 
 import bureau1 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure-1.webp";
-import bureau2 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure-2.webp";
+import bureau2 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure.webp";
 import comptoir1 from "@/assets/images/bureaux-et-comptoirs/comptoir-sur-mesure-1.webp";
 
 import cave1 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-1.webp";

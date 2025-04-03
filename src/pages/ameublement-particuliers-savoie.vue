@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import placeholder3 from "@/assets/images/placeholder3.jpg";
-import placeholder5 from "@/assets/images/placeholder5.jpg";
+import cuisine from "@/assets/images/cuisines/cuisine-sur-mesure-1.webp";
+import bureau from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure.webp";
+import table from "@/assets/images/tables-et-tables-basses/table-sur-mesure-1.webp";
 
 import { categories } from "@/utils/mockData";
 
@@ -10,14 +11,14 @@ const filteredCategories = categories.filter(
 
 const bannerElements = [
   {
-    image: placeholder3,
-    label: "Meubles pour professionnels",
-    link: "/ameublement-professionnel-savoie",
-  },
-  {
-    image: placeholder3,
+    image: cuisine,
     label: "Tous nos meubles sur mesure",
     link: "/meubles-sur-mesure-savoie",
+  },
+  {
+    image: bureau,
+    label: "Meubles pour professionnels",
+    link: "/ameublement-professionnel-savoie",
   },
 ];
 

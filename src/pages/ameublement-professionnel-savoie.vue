@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import placeholder3 from "@/assets/images/placeholder3.jpg";
-import placeholder5 from "@/assets/images/placeholder5.jpg";
-import salleDeBain from "@/assets/images/salle-de-bain.webp";
+import cuisine from "@/assets/images/cuisines/cuisine-sur-mesure-1.webp";
+import table from "@/assets/images/tables-et-tables-basses/table-sur-mesure-1.webp";
 
 import { categories } from "@/utils/mockData";
 
 const bannerElements = [
   {
-    image: salleDeBain,
-    label: "Meubles pour particuliers",
-    link: "/ameublement-particuliers-savoie",
-  },
-  {
-    image: placeholder3,
+    image: cuisine,
     label: "Tous nos meubles sur mesure",
     link: "/meubles-sur-mesure-savoie",
+  },
+  {
+    image: table,
+    label: "Meubles pour particuliers",
+    link: "/ameublement-particuliers-savoie",
   },
 ];
 

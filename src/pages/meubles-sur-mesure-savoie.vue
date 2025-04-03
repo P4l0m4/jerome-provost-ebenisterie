@@ -1,18 +1,17 @@
 <script setup lang="ts">
-import placeholder3 from "@/assets/images/placeholder3.jpg";
-import placeholder5 from "@/assets/images/placeholder5.jpg";
-import salleDeBain from "@/assets/images/salle-de-bain.webp";
+import bureau from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure.webp";
+import table from "@/assets/images/tables-et-tables-basses/table-sur-mesure-1.webp";
 
 import { categories } from "@/utils/mockData";
 
 const bannerElements = [
   {
-    image: placeholder3,
+    image: bureau,
     label: "Meubles pour professionnels",
     link: "/ameublement-professionnel-savoie",
   },
   {
-    image: salleDeBain,
+    image: table,
     label: "Meubles pour particuliers",
     link: "/ameublement-particuliers-savoie",
   },

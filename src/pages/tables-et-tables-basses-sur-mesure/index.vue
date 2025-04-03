@@ -13,9 +13,21 @@ useHead({
     },
   ],
 });
+
+const breadcrumbs = [
+  {
+    name: "Accueil",
+    url: window.location.origin,
+  },
+  {
+    name: "Tables et tables basses",
+    url: window.location.origin + "/tables-et-tables-basses-sur-mesure",
+  },
+];
 </script>
 
 <template>
+  <JsonldBreadcrumbs :links="breadcrumbs" />
   <FurnitureShowcase :story />
   <ProvostTitle />
   <CarouselComponent />

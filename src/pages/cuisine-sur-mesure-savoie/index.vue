@@ -11,9 +11,21 @@ useHead({
     },
   ],
 });
+
+const breadcrumbs = [
+  {
+    name: "Accueil",
+    url: window.location.origin,
+  },
+  {
+    name: "Cuisines",
+    url: window.location.origin + "/cuisine-sur-mesure-savoie",
+  },
+];
 </script>
 
 <template>
+  <JsonldBreadcrumbs :links="breadcrumbs" />
   <FurnitureShowcase :story parent-slug="/cuisine-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />

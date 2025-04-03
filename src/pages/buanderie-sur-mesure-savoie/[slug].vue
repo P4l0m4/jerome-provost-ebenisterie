@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { stringToSlug } from "~/utils/slugify";
-const story = await useAsyncStoryblok("salles-de-bain", {
-  version: "published",
-});
+const story = await useAsyncStoryblok("buanderies", { version: "published" });
 const route = useRoute();
 const furnitureSlug = route.params.slug;
 const furniture = story.value.content.sections.find(
@@ -25,8 +23,8 @@ const breadcrumbs = [
     url: window.location.origin,
   },
   {
-    name: "Dressings",
-    url: window.location.origin + "/salles-de-bain-sur-mesure-savoie",
+    name: "Buanderie sur mesure",
+    url: window.location.origin + "/buanderie-sur-mesure-savoie",
   },
   {
     name: furniture.subtitle,
@@ -35,7 +33,6 @@ const breadcrumbs = [
 ];
 </script>
 <template>
-  <JsonldBreadcrumbs :links="breadcrumbs" />
   <section class="furniture-page">
     <div class="furniture-page__wrapper">
       <div class="furniture-page__wrapper__txt">
@@ -98,6 +95,7 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
+  <JsonldBreadcrumbs :links="breadcrumbs" />
 </template>
 <style lang="scss" scoped>
 .furniture-page {

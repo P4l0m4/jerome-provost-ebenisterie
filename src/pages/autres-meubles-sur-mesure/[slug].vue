@@ -97,7 +97,7 @@ const breadcrumbs = [
       </div>
     </div>
   </section>
-  <JsonldBreadcrumb :links="breadcrumbs" />
+  <JsonldBreadcrumbs :links="breadcrumbs" />
 </template>
 <style lang="scss" scoped>
 .furniture-page {

@@ -12,9 +12,25 @@ useHead({
     },
   ],
 });
+
+const breadcrumbs = [
+  {
+    name: "Accueil",
+    url: window.location.origin,
+  },
+  {
+    name: "Contact",
+    url: window.location.origin + "/contact-ebeniste-savoie",
+  },
+];
 </script>
 <template>
   <section class="contact-banner">
+    <JsonldBreadcrumbs
+      :links="breadcrumbs"
+      :color="colors['cannoli-cream-darker']"
+      class="breadcrumbs"
+    />
     <div class="contact-banner__txt">
       <SideText variant="light" side="top">
         Jérôme Provost
@@ -200,6 +216,10 @@ useHead({
       }
     }
   }
+}
+
+.breadcrumbs {
+  padding: 0 !important;
 }
 
 .suppliers {

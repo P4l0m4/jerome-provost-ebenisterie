@@ -13,8 +13,20 @@ useHead({
     },
   ],
 });
+
+const breadcrumbs = [
+  {
+    name: "Accueil",
+    url: window.location.origin,
+  },
+  {
+    name: "Salles de bain",
+    url: window.location.origin + "/salle-de-bain-sur-mesure-savoie",
+  },
+];
 </script>
 <template>
+  <JsonldBreadcrumbs :links="breadcrumbs" />
   <FurnitureShowcase :story parent-slug="/salle-de-bain-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />

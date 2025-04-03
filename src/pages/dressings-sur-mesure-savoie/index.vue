@@ -1,20 +1,32 @@
 <script setup lang="ts">
-const story = await useAsyncStoryblok("dressings", { version: "published" });
+const story = await useAsyncStoryblok("buanderies", { version: "published" });
 
 useHead({
-  title: "Dressings sur mesure | Jérôme Provost Ebénisterie",
+  title: "Buanderie sur mesure | Jérôme Provost Ebénisterie",
   meta: [
     {
       name: "description",
       content:
-        "Création de dressings sur mesure à Chambéry en Savoie. Découvrez tous nos dressings sur mesure.",
+        "Votre buanderie sur mesure à Chambéry en Savoie. Découvrez toutes nos buanderies sur mesure.",
     },
   ],
 });
+
+const breadcrumbs = [
+  {
+    name: "Accueil",
+    url: window.location.origin,
+  },
+  {
+    name: "Dressings",
+    url: window.location.origin + "/dressings-sur-mesure-savoie",
+  },
+];
 </script>
 
 <template>
-  <FurnitureShowcase :story parent-slug="/dressings-sur-mesure-savoie" />
+  <JsonldBreadcrumbs :links="breadcrumbs" />
+  <FurnitureShowcase :story parent-slug="/buanderie-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

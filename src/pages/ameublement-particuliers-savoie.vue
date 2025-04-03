@@ -31,9 +31,21 @@ useHead({
     },
   ],
 });
+
+const breadcrumbs = [
+  {
+    name: "Accueil",
+    url: window.location.origin,
+  },
+  {
+    name: "Ameublement particuliers",
+    url: window.location.origin + "/ameublement-particuliers-savoie",
+  },
+];
 </script>
 <template>
   <BannerComponent :banner-elements />
+  <JsonldBreadcrumbs :links="breadcrumbs" />
   <CategoriesList :categories="filteredCategories" />
   <ProvostTitle />
   <CarouselComponent />

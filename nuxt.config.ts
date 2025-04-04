@@ -69,4 +69,9 @@ export default defineNuxtConfig({
       STORYBLOK_KEY: process.env.STORYBLOK_KEY,
     },
   },
+  app: {
+    head: {
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
 });

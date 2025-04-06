@@ -33,10 +33,6 @@ import { colors } from "@/utils/colors";
         </div>
         <div class="footer__text__column__row-links">
           <NuxtLink
-            to="/stage-ebenisterie-formation-savoie"
-            style="opacity: 0.6; pointer-events: none"
-            >Découvrir l’ébénisterie</NuxtLink
-          ><NuxtLink
             to="/outil-materiaux-meubles-sur-mesure"
             style="opacity: 0.6; pointer-events: none"
             >Explorateur de matériaux</NuxtLink

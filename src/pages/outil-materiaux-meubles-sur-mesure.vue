@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
-import { references } from "@/utils/references";
+import references from "@/utils/references.json";
 
 const file = ref<File | null>(null);
 const imageUrl = computed(() =>

@@ -132,9 +132,7 @@ const breadcrumbs = [
 
           <hr />
         </div>
-        <NuxtLink
-          to="/outil-materiaux-meubles-sur-mesure"
-          style="opacity: 0.6; pointer-events: none"
+        <NuxtLink to="/outil-materiaux-meubles-sur-mesure"
           ><PrimaryButton variant="mocha-mousse"
             >Trouver les matériaux pour votre projet</PrimaryButton
           ></NuxtLink

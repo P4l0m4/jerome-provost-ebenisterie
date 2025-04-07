@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, watch } from "vue";
 import references from "@/utils/references.json";
+import { jsPDF } from "jspdf";
+import logo from "@/assets/images/logojpg.jpg";
 
 const file = ref<File | null>(null);
 const imageUrl = computed(() =>
@@ -12,24 +14,39 @@ const colors = ref<string[]>([]);
 const selectedReferences = computed(() => {
   if (!colors.value.length) return [];
 
-  // Pour chaque couleur extraite, trouve la référence avec la couleur la plus proche
   const refsWithDistance = colors.value.map((extractedColor) => {
     return references
       .map((ref) => {
+        if (!ref.color) return { reference: ref, distance: Infinity };
         const distance = getColorDistance(extractedColor, ref.color);
         return { reference: ref, distance };
       })
       .sort((a, b) => a.distance - b.distance)[0];
   });
 
-  // Trie par distance et prend les 4 plus proches
   return refsWithDistance
     .sort((a, b) => a.distance - b.distance)
-    .slice(0, 4)
+    .slice(0, 5)
     .map((item) => item.reference);
 });
 
+const selectedReferencesWithoutDuplicates = computed(() => {
+  const seen = new Set();
+  return selectedReferences.value.filter((ref) => {
+    if (seen.has(ref.path)) {
+      return false;
+    }
+    seen.add(ref.path);
+    return true;
+  });
+});
+
 function getColorDistance(color1: string, color2: string) {
+  // Vérifie que les couleurs sont au format hex valide
+  if (!color1?.match(/^#[0-9A-F]{6}$/i) || !color2?.match(/^#[0-9A-F]{6}$/i)) {
+    return Infinity;
+  }
+
   // Convertit les couleurs hex en RGB
   const rgb1 = {
     r: parseInt(color1.slice(1, 3), 16),
@@ -78,8 +95,10 @@ async function extractColors() {
 
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
   const colorCounts: Record<string, number> = {};
+  const colorBins: Record<string, string[]> = {};
+  const binSize = 30; // Adjust this value to control color similarity threshold
 
-  // Sample every 4th pixel for performance
+  // Sample pixels and bin similar colors
   for (let i = 0; i < imageData.length; i += 16) {
     const r = imageData[i];
     const g = imageData[i + 1];
@@ -87,14 +106,141 @@ async function extractColors() {
 
     const hex =
       "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+
+    // Create color bin key by rounding RGB values
+    const binKey = [
+      Math.floor(r / binSize) * binSize,
+      Math.floor(g / binSize) * binSize,
+      Math.floor(b / binSize) * binSize,
+    ].join(",");
+
+    if (!colorBins[binKey]) {
+      colorBins[binKey] = [];
+    }
+    colorBins[binKey].push(hex);
     colorCounts[hex] = (colorCounts[hex] || 0) + 1;
   }
 
-  // Sort colors by frequency and get top 5
-  colors.value = Object.entries(colorCounts)
-    .sort(([, a], [, b]) => b - a)
-    .slice(0, 4)
-    .map(([color]) => color);
+  // Get most frequent color from each bin
+  const diverseColors = Object.values(colorBins).map((binColors) => {
+    return binColors.reduce((mostFrequent, color) => {
+      return colorCounts[color] > colorCounts[mostFrequent]
+        ? color
+        : mostFrequent;
+    }, binColors[0]);
+  });
+
+  // Sort by frequency and take top 6 diverse colors
+  colors.value = diverseColors
+    .sort((a, b) => colorCounts[b] - colorCounts[a])
+    .slice(0, 6);
+}
+
+function hexToRgb(hex: string): [number, number, number] {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return [r, g, b];
+}
+
+async function downloadResult() {
+  if (!file.value || colors.value.length === 0) return;
+
+  const doc = new jsPDF();
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const margin = 20;
+
+  const logoImg = new Image();
+  logoImg.src = logo;
+  await new Promise((resolve) => {
+    logoImg.onload = resolve;
+  });
+
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  canvas.width = logoImg.width;
+  canvas.height = logoImg.height;
+  ctx.drawImage(logoImg, 0, 0);
+  const logoBase64 = canvas.toDataURL("image/jpeg");
+
+  const logoWidth = 12;
+  const logoHeight = 12;
+  const logoX = margin;
+  const logoY = margin;
+
+  doc.addImage(logoBase64, "JPEG", logoX, logoY, logoWidth, logoHeight);
+
+  doc.setFontSize(16);
+  doc.text("JP Ebénisterie", logoX + logoWidth + 5, logoY + logoHeight / 1.6);
+
+  const imgData = imageUrl.value;
+  const img = new Image();
+  img.src = imgData;
+  await new Promise((resolve) => {
+    img.onload = resolve;
+  });
+
+  // Calculate dimensions for smaller image on left side
+  let imgWidth = (pageWidth - margin * 3) / 2;
+  let imgHeight = (imgWidth * img.height) / img.width;
+
+  if (imgHeight > 400) {
+    $;
+    imgHeight = 400;
+    imgWidth = (imgHeight * img.width) / img.height;
+  }
+
+  // Detect image format
+  const imageFormat = file.value?.type.split("/")[1].toUpperCase() || "JPEG";
+  doc.addImage(imgData, imageFormat, margin, margin + 20, imgWidth, imgHeight);
+
+  doc.setFontSize(12);
+  colors.value.forEach((color, index) => {
+    const x = margin * 2 + imgWidth; // Start after image
+    const y = margin + index * 20;
+    // Draw color rectangle
+    doc.setFillColor(...hexToRgb(color));
+    doc.rect(x, y, 20, 15, "F");
+    // Add hex value
+    doc.text(color, x + 25, y + 10); // Reduced x offset from 30 to 25
+  });
+
+  if (selectedReferencesWithoutDuplicates.value.length > 0) {
+    const refsY = margin + imgHeight + 30;
+
+    selectedReferencesWithoutDuplicates.value.forEach(async (ref, index) => {
+      doc.setFontSize(12);
+      const textY = refsY + 10 + index * 25;
+
+      // Add colored square
+      doc.setFillColor(...hexToRgb(ref.color));
+      doc.rect(margin, textY - 4, 10, 15, "F");
+
+      doc.text(`${ref.title}`, margin + 15, textY);
+      doc.text(`Marque: EGGER`, margin + 15, textY + 5);
+      doc.text(`Code: ${ref.overline}`, margin + 15, textY + 10);
+    });
+  }
+
+  doc.setFillColor(240, 240, 229);
+  doc.rect(
+    0,
+    doc.internal.pageSize.getHeight() - 20,
+    doc.internal.pageSize.getWidth(),
+    20,
+    "F"
+  );
+  doc.setFontSize(20);
+  doc.text(
+    "Contacter Jérôme Provost au 06 23 04 16 37",
+    margin,
+    doc.internal.pageSize.getHeight() - 7
+  );
+
+  // Save the PDF
+  doc.save("palette-jp-ebenisterie.pdf");
 }
 
 watch(file, () => {
@@ -143,28 +289,36 @@ watch(file, () => {
         <span class="tool__file-viewer__palette__color__hex">{{ color }}</span>
       </div>
     </div>
-    <div class="tool__references" v-if="selectedReferences.length > 0">
+    <div
+      class="tool__references"
+      v-if="selectedReferencesWithoutDuplicates.length > 0"
+    >
       <div
         class="tool__references__reference"
-        v-for="reference in selectedReferences"
-        :key="reference.name"
+        v-for="reference in selectedReferencesWithoutDuplicates"
+        :key="reference.title"
       >
-        <div class="tool__references__reference__preview">
-          <img
-            :src="reference.image"
-            :alt="`reference bois ${reference.name}`"
-          />
-          <span class="tool__references__reference__preview__name"
-            ><IconComponent icon="swatches" />{{ reference.name }}</span
-          >
-        </div>
+        <img
+          :src="reference.srcset"
+          :alt="`reference bois ${reference.title}`"
+        />
+        <span class="tool__references__reference__name"
+          ><IconComponent icon="swatches" />{{ reference.title }}</span
+        >
+
         <span class="tool__references__reference__brand"
-          ><IconComponent icon="tag" />{{ reference.brand }}</span
+          ><IconComponent icon="tag" />EGGER</span
         >
         <span class="tool__references__reference__material"
-          ><IconComponent icon="nut" />{{ reference.material }}</span
+          ><IconComponent icon="nut" />{{ reference.overline }}</span
         >
       </div>
+      <PrimaryButton
+        v-if="selectedReferencesWithoutDuplicates.length > 0"
+        @click="downloadResult"
+        style="height: 100%; max-height: inherit"
+        >Télécharger le résultat</PrimaryButton
+      >
     </div>
   </section>
 </template>
@@ -175,10 +329,14 @@ watch(file, () => {
   gap: 1rem;
   padding: 1rem;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   @media (min-width: $big-tablet-screen) {
     padding: 2rem;
     height: fit-content;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   @media (min-width: $laptop-screen) {
@@ -189,9 +347,20 @@ watch(file, () => {
     display: flex;
     align-items: center;
     background-color: $base-color-darker;
-    width: 50vw;
-    height: 80dvh;
+    width: 100%;
+    height: 50dvh;
     position: relative;
+
+    @media (min-width: $big-tablet-screen) {
+      width: 70vw;
+      height: 80dvh;
+    }
+
+    @media (min-width: $laptop-screen) {
+      width: 50vw;
+      height: 80dvh;
+      max-height: inherit;
+    }
 
     &__file-uploader {
       height: 100%;
@@ -229,18 +398,31 @@ watch(file, () => {
     }
 
     &__palette {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       gap: 1rem;
-      height: 80dvh;
+      width: 100%;
+      height: 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+      @media (min-width: $big-tablet-screen) {
+        width: 100px;
+        height: 80dvh;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+      }
 
       &__color {
-        width: 100px;
-        height: 100%;
+        width: 100%;
+        height: 100px;
         display: flex;
         align-items: end;
         border: 1px solid $base-color;
+
+        @media (min-width: $big-tablet-screen) {
+          width: 100px;
+          height: 100%;
+        }
 
         &__hex {
           font-size: $main-text-size;
@@ -259,40 +441,49 @@ watch(file, () => {
     grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
     gap: 1rem;
     width: 100%;
-    height: 80dvh;
-    max-height: 80dvh;
+
+    @media (min-width: $tablet-screen) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    @media (min-width: $desktop-screen) {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      height: 80dvh;
+    }
 
     &__reference {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.5rem;
       width: 100%;
-      height: 100%;
-      max-height: calc(40dvh);
-      padding: 1rem;
+      height: fit-content;
       background-color: $primary-color;
 
-      &__preview {
-        display: flex;
+      @media (min-width: $big-tablet-screen) {
+        height: 100%;
+      }
+
+      img {
         width: 100%;
-        flex-direction: column;
-        gap: 1rem;
+        height: 50%;
+        object-fit: cover;
+        object-position: center;
+      }
 
-        img {
-          width: 100%;
-          height: 50%;
-          object-fit: cover;
-          object-position: center;
-        }
-
-        &__name {
-          font-size: $main-text-size;
-          font-weight: $regular;
-          color: $text-color;
-          white-space: nowrap;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
+      &__name {
+        font-size: $main-text-size;
+        font-weight: $regular;
+        color: $text-color;
+        white-space: nowrap;
+        display: inlineflex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        & span {
+          margin-right: 0.5rem;
         }
       }
 
@@ -300,12 +491,14 @@ watch(file, () => {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        padding: 0 1rem;
       }
 
       &__material {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+        padding: 0 1rem 1rem 1rem;
       }
     }
   }

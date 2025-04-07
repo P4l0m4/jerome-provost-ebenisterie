@@ -32,9 +32,7 @@ import { colors } from "@/utils/colors";
           >
         </div>
         <div class="footer__text__column__row-links">
-          <NuxtLink
-            to="/outil-materiaux-meubles-sur-mesure"
-            style="opacity: 0.6; pointer-events: none"
+          <NuxtLink to="/outil-materiaux-meubles-sur-mesure"
             >Explorateur de matériaux</NuxtLink
           >
         </div>

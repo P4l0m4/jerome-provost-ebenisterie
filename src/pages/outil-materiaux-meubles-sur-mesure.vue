@@ -417,7 +417,7 @@ watch(file, () => {
         height: 100px;
         display: flex;
         align-items: end;
-        border: 1px solid $base-color;
+        border: 1px solid $primary-color;
 
         @media (min-width: $big-tablet-screen) {
           width: 100px;

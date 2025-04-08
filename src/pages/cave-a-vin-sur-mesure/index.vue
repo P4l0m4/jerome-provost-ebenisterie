@@ -28,7 +28,7 @@ const breadcrumbs = [
 
 <template>
   <JsonldBreadcrumbs :links="breadcrumbs" />
-  <FurnitureShowcase :story />
+  <FurnitureShowcase :story parent-slug="/cave-a-vin-sur-mesure" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

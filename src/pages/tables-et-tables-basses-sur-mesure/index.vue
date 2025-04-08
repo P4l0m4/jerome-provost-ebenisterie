@@ -28,7 +28,10 @@ const breadcrumbs = [
 
 <template>
   <JsonldBreadcrumbs :links="breadcrumbs" />
-  <FurnitureShowcase :story />
+  <FurnitureShowcase
+    :story
+    parent-slug="/tables-et-tables-basses-sur-mesure-savoie"
+  />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

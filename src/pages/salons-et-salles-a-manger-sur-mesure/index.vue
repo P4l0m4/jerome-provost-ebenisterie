@@ -28,7 +28,10 @@ const breadcrumbs = [
 
 <template>
   <JsonldBreadcrumbs :links="breadcrumbs" />
-  <FurnitureShowcase :story />
+  <FurnitureShowcase
+    :story
+    parent-slug="/salons-et-salles-a-manger-sur-mesure"
+  />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

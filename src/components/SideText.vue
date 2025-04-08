@@ -50,7 +50,7 @@ withDefaults(defineProps<Props>(), {
 .wrapper {
   width: 110px;
   height: 500px;
-
+  overflow: hidden;
   &.small {
     width: 60px;
     height: 340px;
@@ -94,6 +94,7 @@ withDefaults(defineProps<Props>(), {
   transform: rotate(-90deg) translate(-100%, -4px);
   transform-origin: top left;
   max-height: 120px;
+  overflow: hidden;
 }
 
 .right {

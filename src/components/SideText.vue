@@ -82,7 +82,11 @@ withDefaults(defineProps<Props>(), {
 
   &:has(.top) {
     width: 500px;
-    height: 110px;
+    height: 86px;
+
+    @media (min-width: $big-tablet-screen) {
+      height: 124px;
+    }
 
     &.small {
       width: 340px;

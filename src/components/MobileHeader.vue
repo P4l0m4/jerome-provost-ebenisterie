@@ -4,10 +4,10 @@ import { colors } from "@/utils/colors";
 import { onClickOutside } from "@vueuse/core";
 import { useTemplateRef } from "vue";
 
+const isMenuOpen = ref(false);
+
 const target = useTemplateRef<HTMLElement>("target");
 onClickOutside(target, () => (isMenuOpen.value = false));
-
-const isMenuOpen = ref(false);
 </script>
 <template>
   <header class="header" ref="target">

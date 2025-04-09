@@ -224,7 +224,7 @@ const breadcrumbs = [
 
 .suppliers {
   width: 100%;
-  min-height: 100dvh;
+  min-height: 100vh;
   background-color: $text-color;
   display: flex;
   gap: 2rem;
@@ -257,7 +257,7 @@ const breadcrumbs = [
         gap: 2rem;
         justify-content: end;
         height: fit-content;
-        min-height: 100dvh;
+        min-height: 100vh;
         width: 100%;
 
         max-width: 560px;

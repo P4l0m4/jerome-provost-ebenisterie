@@ -73,9 +73,9 @@ defineProps<{ story: any; parentSlug: string }>();
 
     &__text {
       display: flex;
-      gap: 2rem;
+      gap: 0.5rem;
       width: 100%;
-      height: 80dvh;
+      height: 80vh;
       padding: 2rem 0;
       justify-content: end;
 
@@ -83,6 +83,7 @@ defineProps<{ story: any; parentSlug: string }>();
         flex-direction: row;
         padding: 2rem 0;
         align-items: start;
+        gap: 2rem;
       }
 
       &__description {

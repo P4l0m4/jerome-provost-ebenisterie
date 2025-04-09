@@ -129,7 +129,7 @@ const scroll = (direction: "left" | "right") => {
   width: 100%;
   position: relative;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 
   @media (min-width: $big-tablet-screen) {
     padding: 4rem 2rem;

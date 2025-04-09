@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import placeholder1 from "@/assets/images/placeholder1.jpg";
-import placeholder2 from "@/assets/images/placeholder2.jpg";
-import placeholder3 from "@/assets/images/placeholder3.jpg";
 import { colors } from "@/utils/colors";
 
 interface SliderImage {
@@ -88,7 +86,7 @@ function prev() {
   justify-content: space-between;
   width: 100%;
   max-width: 760px;
-  height: 80dvh;
+  height: 80vh;
   padding: 1.5rem;
 
   @media (min-width: $laptop-screen) {

@@ -348,17 +348,16 @@ watch(file, () => {
     align-items: center;
     background-color: $base-color-darker;
     width: 100%;
-    height: 50dvh;
+    height: 50svh;
     position: relative;
 
     @media (min-width: $big-tablet-screen) {
       width: 70vw;
-      height: 80dvh;
+      height: 80svh;
     }
 
     @media (min-width: $laptop-screen) {
       width: 50vw;
-      height: 80dvh;
       max-height: inherit;
     }
 

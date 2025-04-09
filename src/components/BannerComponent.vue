@@ -71,7 +71,7 @@ withDefaults(defineProps<Props>(), {
   }
 
   &__img {
-    height: 64dvh;
+    height: 64vh;
     width: 100%;
     display: flex;
     padding: 1.5rem;

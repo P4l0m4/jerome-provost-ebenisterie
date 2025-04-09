@@ -17,15 +17,15 @@ withDefaults(defineProps<Props>(), {
       class="side-text"
       :class="side"
       :style="{
-        gap: $slots.subtitle ? '1rem' : '0.5rem',
         width: $slots.subtitle ? '464px' : '340px',
       }"
     >
       <h3
         class="side-text__title"
+        :class="{
+          'side-text__title--small': !$slots.subtitle,
+        }"
         :style="{
-          fontSize: $slots.subtitle ? '2.5rem' : '2rem',
-
           color:
             variant === 'dark' ? colors['nebulosity'] : colors['cannoli-cream'],
         }"
@@ -48,12 +48,36 @@ withDefaults(defineProps<Props>(), {
 </template>
 <style lang="scss" scoped>
 .wrapper {
-  width: 110px;
+  min-width: 86px;
+  width: 86px;
   height: 500px;
   overflow: hidden;
+
+  @media (min-width: $big-tablet-screen) {
+    min-width: 100px;
+    width: 100px;
+  }
+
   &.small {
+    min-width: 60px;
     width: 60px;
     height: 340px;
+  }
+
+  &:has(.right) {
+    min-width: 80px;
+    width: 80px;
+
+    @media (min-width: $big-tablet-screen) {
+      min-width: 94px;
+      width: 94px;
+    }
+
+    &.small {
+      min-width: 60px;
+      width: 60px;
+      height: 340px;
+    }
   }
 
   &:has(.top) {
@@ -69,12 +93,21 @@ withDefaults(defineProps<Props>(), {
   .side-text {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
     height: fit-content;
+
+    @media (min-width: $big-tablet-screen) {
+      gap: 1rem;
+    }
 
     &__title {
       font-weight: $bold;
       white-space: nowrap;
+      font-size: 2.5rem;
+
+      &--small {
+        font-size: 2rem;
+      }
     }
 
     &__subtitle {
@@ -98,12 +131,15 @@ withDefaults(defineProps<Props>(), {
 }
 
 .right {
-  transform: rotate(90deg) translate(100%, 354px);
+  transform: rotate(90deg) translate(100%, 375px);
   transform-origin: top right;
+
+  @media (min-width: $big-tablet-screen) {
+    transform: rotate(90deg) translate(100%, 362px);
+  }
 }
 
 .top {
-  //dynamic font size (percentage of the viewport width)
   .side-text__title {
     white-space: wrap !important;
     font-size: 2.5rem !important;

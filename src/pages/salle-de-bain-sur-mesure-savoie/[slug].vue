@@ -25,8 +25,8 @@ const breadcrumbs = [
     url: window.location.origin,
   },
   {
-    name: "Dressings",
-    url: window.location.origin + "/salles-de-bain-sur-mesure-savoie",
+    name: "Salles de bain",
+    url: window.location.origin + "/salle-de-bain-sur-mesure-savoie",
   },
   {
     name: furniture.subtitle,

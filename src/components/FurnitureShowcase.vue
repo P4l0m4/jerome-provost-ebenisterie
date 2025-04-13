@@ -56,7 +56,7 @@ defineProps<{ story: any; parentSlug: string }>();
   align-items: center;
 
   @media (min-width: $big-tablet-screen) {
-    padding: 2rem;
+    padding: 2rem 4rem;
     gap: 8rem;
   }
 

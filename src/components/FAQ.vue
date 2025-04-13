@@ -10,12 +10,12 @@ const faq = [
   {
     title: "Pourquoi choisir un ébéniste agençeur ?",
     answer:
-      "En tant qu'Ebéniste, je possède une minutie et une créativité accrues ainsi que des compétences complémentaires (sculpture, marqueterie, etc). Je maitrise également les outils de productions très spécifiques et variés et saurait même imaginer les méthodologies de production utiles pour des projets hors norme.",
+      "En tant qu'Ebéniste, je possède une minutie et une créativité accrues ainsi que des compétences complémentaires (sculpture, marqueterie, etc). Je maitrise également des outils de productions très spécifiques et variés et saurait même imaginer les méthodologies de production utiles pour des projets hors norme.",
   },
   {
     title: "Comment se déroule la réalisation d’un meuble sur mesure ?",
     answer:
-      "Tout commence par un échange de vive voix. Pendant cet échange, je réalise des croquis à main levée, prends des dimentions et tente de cerner au mieux la vision du client. Je m’atèle ensuite a dessiner et à chiffrer le projet. Si le client valide le devis, je repasse pour une prise de cote précise avant la réalisation en atelier. Vient ensuite la livraison, toujours dans les délais indiqué sur le devis. Une fois la pose terminée, si le client est satisfait, je lui transmet une facture.",
+      "Tout commence par un échange de vive voix. Pendant cet échange, je réalise des croquis à main levée, prends des dimensions et tente de cerner au mieux la vision du client. Je m’atèle ensuite a dessiner et à chiffrer le projet. Si le client valide le devis, je repasse pour une prise de cote précise avant la réalisation en atelier. Vient ensuite la livraison, toujours dans les délais indiqué sur le devis. Une fois la pose terminée, si le client est satisfait, je lui transmet une facture.",
   },
   {
     title: "Quels sont vos délais de réalisation ?",
@@ -35,7 +35,7 @@ const faq = [
   {
     title: "Quels sont vos tarifs pour un projet sur mesure ?",
     answer:
-      "Il est certain que les meubles sur mesure ont un coût. Tout comme mes outils de production, les matériaux de qualité, mes compétences et mon temps. Je m’engage, pour autant, à toujours essayer de vous proposer le meilleur tarif relatif à votre projet. Chaque projet étant unique, je vous invte à contacter pour un devis personnalisé.",
+      "Il est certain que les meubles sur mesure ont un coût. Tout comme mes outils de production, les matériaux de qualité, mes compétences et mon temps. Je m’engage, pour autant, à toujours essayer de vous proposer le meilleur tarif relatif à votre projet. Chaque projet étant unique, je vous invite à me contacter pour un devis personnalisé.",
   },
 ];
 

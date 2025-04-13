@@ -33,6 +33,7 @@ const breadcrumbs = [
 ];
 </script>
 <template>
+  <JsonldBreadcrumbs :links="breadcrumbs" />
   <section class="furniture-page">
     <div class="furniture-page__wrapper">
       <div class="furniture-page__wrapper__txt">
@@ -68,7 +69,6 @@ const breadcrumbs = [
 
     <ReferencesComponent :references="furniture.references" />
   </section>
-  <JsonldBreadcrumbs :links="breadcrumbs" />
 </template>
 <style lang="scss" scoped>
 .furniture-page {

@@ -33,12 +33,12 @@ onClickOutside(target, () => (isMenuOpen.value = false));
         <ul class="header__nav__links">
           <li class="header__nav__links__link">
             <NuxtLink to="/cuisine-sur-mesure-savoie" class="nuxt-link" exact
-              >Cuisine<span class="line"></span
+              >Cuisines<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
             <NuxtLink to="/dressings-sur-mesure-savoie" class="nuxt-link" exact
-              >Dressing<span class="line"></span
+              >Dressings<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
@@ -46,7 +46,20 @@ onClickOutside(target, () => (isMenuOpen.value = false));
               to="/salle-de-bain-sur-mesure-savoie"
               class="nuxt-link"
               exact
-              >Salle de bain<span class="line"></span
+              >Salles de bain<span class="line"></span
+            ></NuxtLink>
+          </li>
+          <li class="header__nav__links__link">
+            <NuxtLink
+              to="/bureaux-et-comptoirs-sur-mesure"
+              class="nuxt-link"
+              exact
+              >Bureaux et comptoirs<span class="line"></span
+            ></NuxtLink>
+          </li>
+          <li class="header__nav__links__link">
+            <NuxtLink to="/cave-a-vin-sur-mesure" class="nuxt-link" exact
+              >Caves à vin<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
@@ -57,14 +70,28 @@ onClickOutside(target, () => (isMenuOpen.value = false));
               >Ameublement professionnel<span class="line"></span
             ></NuxtLink>
           </li>
+
+          <li class="header__nav__links__link">
+            <NuxtLink
+              to="/salons-et-salles-a-manger-sur-mesure"
+              class="nuxt-link"
+              exact
+              >Salons et salles à manger<span class="line"></span
+            ></NuxtLink>
+          </li>
+
           <li class="header__nav__links__link">
             <NuxtLink to="/meubles-sur-mesure-savoie" class="nuxt-link" exact
               >Toutes les réalisations sur mesure<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">
-            <NuxtLink to="/contact-ebeniste-savoie" class="nuxt-link" exact
-              >Contact<span class="line"></span
+            <NuxtLink
+              to="/contact-ebeniste-savoie"
+              class="nuxt-link"
+              style="text-decoration: underline"
+              exact
+              >Devis et contact<span class="line"></span
             ></NuxtLink>
           </li>
         </ul>
@@ -88,7 +115,7 @@ onClickOutside(target, () => (isMenuOpen.value = false));
     position: fixed;
     top: 0.75rem;
     right: 1rem;
-    z-index: 1;
+    z-index: 2;
 
     &__links {
       list-style: none;

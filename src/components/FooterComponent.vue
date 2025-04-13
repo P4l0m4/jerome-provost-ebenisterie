@@ -100,11 +100,7 @@ import { colors } from "@/utils/colors";
             >Partenaires</NuxtLink
           >
         </li>
-        <li class="footer__text__column__link">
-          <NuxtLink to="/contact-ebeniste-savoie#fournisseurs" class="nuxt-link"
-            >Fournisseurs</NuxtLink
-          >
-        </li>
+
         <li class="footer__text__column__link">
           <NuxtLink
             to="/prestations-ebenisterie-savoie"

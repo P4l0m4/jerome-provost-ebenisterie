@@ -1,51 +1,8 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-import placeholder1 from "@/assets/images/placeholder1.jpg";
-import placeholder2 from "@/assets/images/placeholder2.jpg";
-import placeholder3 from "@/assets/images/placeholder3.jpg";
-import placeholder4 from "@/assets/images/placeholder4.jpg";
-import placeholder5 from "@/assets/images/dressing-sur-mesure.jpg";
-
-type CarouselElement = {
-  link: string;
-  image: string;
-  label: string;
-};
-
-interface Props {
-  carouselElements?: CarouselElement[];
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  carouselElements: () => [
-    {
-      link: "/",
-      image: placeholder1,
-      label: "Nom du meuble",
-    },
-    {
-      link: "/",
-      image: placeholder2,
-      label: "Nom du meuble",
-    },
-    {
-      link: "/",
-      image: placeholder3,
-      label: "Nom du meuble",
-    },
-    {
-      link: "/",
-      image: placeholder4,
-      label: "Nom du meuble",
-    },
-    {
-      link: "/",
-      image: placeholder5,
-      label: "Nom du meuble",
-    },
-  ],
+const story = await useAsyncStoryblok("dernieres-realisations", {
+  version: "published",
 });
+
 const leftArrowRef = ref<HTMLButtonElement | null>(null);
 const rightArrowRef = ref<HTMLButtonElement | null>(null);
 const showArrows = ref(false);
@@ -80,7 +37,7 @@ const scroll = (direction: "left" | "right") => {
         ref="leftArrowRef"
         v-show="
           showArrows &&
-          props.carouselElements.length > 4 &&
+          story.content.slides.length > 4 &&
           scrollableContainerRef.scrollLeft > 0
         "
         @click="scroll('left')"
@@ -97,23 +54,23 @@ const scroll = (direction: "left" | "right") => {
     >
       <NuxtLink
         class="carousel__container__slide"
-        :to="slide.link"
-        v-for="slide in props.carouselElements"
-        :key="slide.image"
+        :to="`/${slide.path}`"
+        v-for="slide in story.content.slides"
+        :key="slide.image.filename"
       >
         <img
           class="carousel__container__slide__img fading"
-          :src="slide.image"
+          :src="slide.image.filename"
         />
 
-        <span class="carousel__container__slide__label">{{ slide.label }}</span>
+        <span class="carousel__container__slide__name">{{ slide.name }}</span>
       </NuxtLink>
     </div>
     <Transition>
       <button
         class="carousel__button"
         ref="rightArrowRef"
-        v-show="showArrows && props.carouselElements.length > 4"
+        v-show="showArrows && story.content.slides.length > 4"
         @click="scroll('right')"
         @mouseenter="showArrows = true"
       >

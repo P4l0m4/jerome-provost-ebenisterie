@@ -107,6 +107,11 @@ watch(
               ></NuxtLink>
             </li>
             <li class="right-links__nav__links__link">
+              <NuxtLink to="/meubles-entree-sur-mesure" class="nuxt-link" exact
+                >Meubles d'entrée<span class="line"></span
+              ></NuxtLink>
+            </li>
+            <li class="right-links__nav__links__link">
               <NuxtLink to="/autres-meubles-sur-mesure" class="nuxt-link" exact
                 >Autres meubles sur mesure<span class="line"></span
               ></NuxtLink>

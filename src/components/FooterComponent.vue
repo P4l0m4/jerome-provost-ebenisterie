@@ -32,8 +32,14 @@ import { colors } from "@/utils/colors";
           >
         </div>
         <div class="footer__text__column__row-links">
-          <NuxtLink to="/outil-materiaux-meubles-sur-mesure"
-            >Explorateur de matériaux</NuxtLink
+          <NuxtLink
+            to="/outil-materiaux-meubles-sur-mesure"
+            style="text-decoration: underline"
+            >Matériaux à partir d'une image</NuxtLink
+          >
+
+          <NuxtLink to="/autres-meubles-sur-mesure"
+            >Autres meubles sur mesure</NuxtLink
           >
         </div>
       </div>
@@ -68,9 +74,10 @@ import { colors } from "@/utils/colors";
             >Salons et salles à manger</NuxtLink
           >
         </li>
+
         <li class="footer__text__column__link">
-          <NuxtLink to="/autres-meubles-sur-mesure" class="nuxt-link"
-            >Autres meubles sur mesure</NuxtLink
+          <NuxtLink to="/meubles-entree-sur-mesure" class="nuxt-link"
+            >Meubles d'entrée sur mesure</NuxtLink
           >
         </li>
       </ul>

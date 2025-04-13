@@ -4,7 +4,7 @@ const story = await useAsyncStoryblok("cuisines", { version: "published" });
 const route = useRoute();
 const furnitureSlug = route.params.slug;
 const furniture = story.value.content.sections.find(
-  (f) => stringToSlug(f.subtitle) === furnitureSlug
+  (f: any) => stringToSlug(f.subtitle) === furnitureSlug
 );
 
 useHead({
@@ -67,34 +67,7 @@ const breadcrumbs = [
       <ImageSlider :images="furniture.images" />
     </div>
 
-    <div class="furniture-page__illustrations">
-      <div
-        class="furniture-page__illustrations__references"
-        v-if="furniture.references?.length > 0"
-      >
-        <div
-          class="furniture-page__illustrations__references__reference"
-          v-for="reference in furniture.references"
-        >
-          <img
-            class="furniture-page__illustrations__references__reference__img"
-            :src="reference.image.filename"
-            :alt="reference.name"
-          />
-          <div
-            class="furniture-page__illustrations__references__reference__txt"
-          >
-            <span>{{ reference.name }}</span
-            ><span>{{ reference.reference }}</span>
-          </div>
-        </div>
-        <SecondaryButton
-          ><NuxtLink to="/materiaux"
-            >Voir d'autres références</NuxtLink
-          ></SecondaryButton
-        >
-      </div>
-    </div>
+    <ReferencesComponent :references="furniture.references" />
   </section>
 </template>
 <style lang="scss" scoped>
@@ -156,49 +129,6 @@ const breadcrumbs = [
         display: flex;
         align-items: center;
         gap: 0.5rem;
-      }
-    }
-  }
-
-  &__illustrations {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-
-    &__references {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
-      width: 100%;
-      gap: 1rem;
-
-      &__reference {
-        display: flex;
-        align-items: center;
-        font-size: $main-text-size;
-        font-weight: $regular;
-        background-color: $base-color-darker;
-        padding: 1rem;
-        gap: 1rem;
-        border-radius: $radius;
-
-        &__img {
-          width: 60px;
-          height: 60px;
-          object-fit: cover;
-          object-position: center;
-          border-radius: calc($radius / 2);
-        }
-
-        &__txt {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-
-          & span {
-            white-space: nowrap;
-          }
-        }
       }
     }
   }

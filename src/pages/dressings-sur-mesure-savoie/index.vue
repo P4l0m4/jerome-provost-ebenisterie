@@ -26,7 +26,7 @@ const breadcrumbs = [
 
 <template>
   <JsonldBreadcrumbs :links="breadcrumbs" />
-  <FurnitureShowcase :story parent-slug="/buanderie-sur-mesure-savoie" />
+  <FurnitureShowcase :story parent-slug="/dressings-sur-mesure-savoie" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

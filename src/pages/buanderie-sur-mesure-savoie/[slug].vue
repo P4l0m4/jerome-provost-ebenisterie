@@ -23,7 +23,7 @@ const breadcrumbs = [
     url: window.location.origin,
   },
   {
-    name: "Buanderie sur mesure",
+    name: "Buanderies",
     url: window.location.origin + "/buanderie-sur-mesure-savoie",
   },
   {

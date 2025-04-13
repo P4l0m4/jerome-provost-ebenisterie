@@ -343,6 +343,14 @@
     "color": "#83684F"
   },
   {
+    "srcset": "https://cdn.egger.com/img/pim/8854392504350/8854535307294/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Coco bolo",
+    "path": "https://www.egger.com/fr/mobilier-agencement-interieur/decors/H3012_22",
+    "overline": "H3012 ST22",
+    "color": "#CCAA7D"
+  },
+
+  {
     "srcset": "https://cdn.egger.com/img/pim/8854478389278/8855434395678/AR_16_9.webp?width=384&srcext=png",
     "title": "Blanc premium",
     "path": "/fr/mobilier-agencement-interieur/decors/W1000_9",
@@ -787,6 +795,13 @@
     "path": "/fr/mobilier-agencement-interieur/decors/U767_9",
     "overline": "U767 ST9",
     "color": "#82796E"
+  },
+  {
+    "srcset": "https://cdn.egger.com/img/pim/8854336471070/8854515023902/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Acier brossé cubanite",
+    "path": "https://www.egger.com/fr/mobilier-agencement-interieur/decors/F434_20",
+    "overline": "F434 ST20",
+    "color": "#5C514C"
   },
   {
     "srcset": "https://cdn.egger.com/img/pim/8854462595102/8855433084958/AR_16_9.webp?width=384&srcext=png",

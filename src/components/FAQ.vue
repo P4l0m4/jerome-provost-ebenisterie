@@ -5,34 +5,37 @@ const faq = [
   {
     title: "Quels sont les avantages des meubles sur mesure ?",
     answer:
-      "Nous acceptons les paiements par carte bancaire, virement et chèque.",
+      "Les meubles sur mesure s’intègrent parfaitement a votre espace et répondent au mieux à vos attentes en termes de design et de qualité.",
   },
   {
-    title: "Pourquoi choisir un ébéniste agençeur à Chambéry ?",
-    answer: "Les délais de livraison sont de 3 à 5 jours ouvrés.",
+    title: "Pourquoi choisir un ébéniste agençeur ?",
+    answer:
+      "En tant qu'Ebéniste, je possède une minutie et une créativité accrues ainsi que des compétences complémentaires (sculpture, marqueterie, etc). Je maitrise également les outils de productions très spécifiques et variés et saurait même imaginer les méthodologies de production utiles pour des projets hors norme.",
   },
   {
     title: "Comment se déroule la réalisation d’un meuble sur mesure ?",
     answer:
-      "Nous acceptons les paiements par carte bancaire, virement et chèque.",
+      "Tout commence par un échange de vive voix. Pendant cet échange, je réalise des croquis à main levée, prends des dimentions et tente de cerner au mieux la vision du client. Je m’atèle ensuite a dessiner et à chiffrer le projet. Si le client valide le devis, je repasse pour une prise de cote précise avant la réalisation en atelier. Vient ensuite la livraison, toujours dans les délais indiqué sur le devis. Une fois la pose terminée, si le client est satisfait, je lui transmet une facture.",
   },
   {
     title: "Quels sont vos délais de réalisation ?",
-    answer: "Vous pouvez suivre votre commande sur le site du transporteur.",
+    answer:
+      "Je mets un point d’honneur à vous délivrer un devis le plus rapidement possible, soit une semaine environ, quinze jours si nécessaires ( dans le cas d’un accroissement de travail, ou d’un devis nécessitant plus de temps). Pour ce qui est des réalisations, j’essaie de vous livrer vos aménagements sous 4 à 6 mois.",
   },
   {
     title: "Comment obtenir un devis pour un meuble sur mesure ?",
-    answer: "Pour retourner un article, veuillez nous contacter par mail.",
+    answer:
+      "Rien de plus simple, me contacter par téléphone au 06 23 04 16 37, ou par mail à l’adresse jp.ebenisterie73@gmail.com. Vous pouvez également faire une demande devis directement sur le site depuis le formulaire de contact.",
   },
   {
     title: "Quelles sont vos garanties et conditions après-vente ?",
     answer:
-      "Nous acceptons les paiements par carte bancaire, virement et chèque.",
+      "Ma meilleure publicité étant le bouche à oreille, je m’efforce de vous satisfaire. Je fais donc toujours en sorte que le produit que je vous vends corresponde à vos attentes. Si besoin, j’interviens sans soucis à la suite des travaux pour affiner votre demande.",
   },
   {
     title: "Quels sont vos tarifs pour un projet sur mesure ?",
     answer:
-      "Nous acceptons les paiements par carte bancaire, virement et chèque.",
+      "Il est certain que les meubles sur mesure ont un coût. Tout comme mes outils de production, les matériaux de qualité, mes compétences et mon temps. Je m’engage, pour autant, à toujours essayer de vous proposer le meilleur tarif relatif à votre projet. Chaque projet étant unique, je vous invte à contacter pour un devis personnalisé.",
   },
 ];
 

@@ -128,10 +128,12 @@ withDefaults(defineProps<Props>(), {
 }
 
 .left {
-  transform: rotate(-90deg) translate(-100%, -4px);
+  transform: rotate(-90deg) translate(-500px, -4px);
   transform-origin: top left;
   max-height: 120px;
-  overflow: hidden;
+  &:has(.side-text__title--small) {
+    transform: rotate(-90deg) translate(-100%, -4px);
+  }
 }
 
 .right {

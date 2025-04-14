@@ -258,74 +258,6 @@ const partners = [
     }
   }
 
-  &__materials {
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-
-    @media (min-width: $big-tablet-screen) {
-      flex-direction: row;
-    }
-
-    &__column {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-
-      &__img {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        justify-content: end;
-        height: fit-content;
-        min-height: 100vh;
-        width: 100%;
-
-        max-width: 560px;
-        padding: 1rem;
-
-        @media (min-width: $big-tablet-screen) {
-          height: 100dvh;
-          padding: 2rem;
-          gap: 4rem;
-        }
-
-        &__title {
-          color: $text-color-alt;
-          font-size: 7rem;
-          text-transform: uppercase;
-          width: 100%;
-          word-break: break-all;
-          text-wrap: balance;
-          font-weight: $bold;
-
-          @media (min-width: $big-tablet-screen) {
-            font-size: $big-title-size;
-          }
-        }
-
-        &__links {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          width: 100%;
-
-          &__link {
-            & a {
-              color: $text-color-alt;
-              font-size: $main-text-size;
-            }
-          }
-        }
-
-        & hr {
-          color: $primary-color;
-        }
-      }
-    }
-  }
-
   & .wrapper {
     &:deep(.line) {
       max-width: 260px;
@@ -336,36 +268,5 @@ const partners = [
       }
     }
   }
-}
-
-.bois {
-  background-image:
-    linear-gradient(90deg, rgba($text-color, 80%), transparent 100%),
-    url("@/assets/images/bois.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.verrerie {
-  background-image:
-    linear-gradient(90deg, rgba($text-color, 80%), transparent 100%),
-    url("@/assets/images/verrerie.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.marbre {
-  background-image:
-    linear-gradient(90deg, rgba($text-color, 80%), transparent 100%),
-    url("@/assets/images/marbre.jpg");
-  background-size: cover;
-  background-position: center;
-}
-.visserie {
-  background-image:
-    linear-gradient(90deg, rgba($text-color, 80%), transparent 100%),
-    url("@/assets/images/visserie.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 0 0 130px 0;
-  overflow: hidden;
 }
 </style>

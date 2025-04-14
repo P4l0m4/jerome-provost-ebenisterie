@@ -51,10 +51,10 @@ onClickOutside(target, () => (isMenuOpen.value = false));
           </li>
           <li class="header__nav__links__link">
             <NuxtLink
-              to="/bureaux-et-comptoirs-sur-mesure"
+              to="/bureaux-et-magasins-sur-mesure"
               class="nuxt-link"
               exact
-              >Bureaux et comptoirs<span class="line"></span
+              >Bureaux et magasins<span class="line"></span
             ></NuxtLink>
           </li>
           <li class="header__nav__links__link">

@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import cuisine from "@/assets/images/cuisines/cuisine-sur-mesure-1.webp";
-import bureau from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure.webp";
+import bureau from "@/assets/images/bureaux-et-magasins/bureau-sur-mesure.webp";
 import table from "@/assets/images/tables-et-tables-basses/table-sur-mesure-1.webp";
 
 import { categories } from "@/utils/mockData";
 
 const filteredCategories = categories.filter(
-  (category) => category.category !== "bureaux et comptoirs"
+  (category) => category.category !== "bureaux et magasins"
 );
 
 const bannerElements = [

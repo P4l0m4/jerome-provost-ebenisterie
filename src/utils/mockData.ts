@@ -15,9 +15,9 @@ import salleDeBain1 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesur
 import salleDeBain2 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-2.webp";
 import salleDeBain3 from "@/assets/images/salles-de-bain/salle-de-bain-sur-mesure-3.webp";
 
-import bureau1 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure-1.webp";
-import bureau2 from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure.webp";
-import comptoir1 from "@/assets/images/bureaux-et-comptoirs/comptoir-sur-mesure-1.webp";
+import bureau1 from "@/assets/images/bureaux-et-magasins/bureau-sur-mesure-1.webp";
+import bureau2 from "@/assets/images/bureaux-et-magasins/bureau-sur-mesure.webp";
+import comptoir1 from "@/assets/images/bureaux-et-magasins/comptoir-sur-mesure-1.webp";
 
 import cave1 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-1.webp";
 import cave2 from "@/assets/images/caves-a-vin/cave-a-vin-sur-mesure-2.webp";
@@ -110,12 +110,12 @@ export const categories = [
     link: "/salle-de-bain-sur-mesure-savoie",
   },
   {
-    title: "Bureaux et comptoirs sur mesure",
+    title: "Bureaux et magasins sur mesure",
     description:
-      "Toutes nos créations de bureaux et comptoirs sur mesure, bureaux en bois, comptoirs en marbre, comptoirs de magasin,comptoirs modernes, etc.",
-    category: "bureaux et comptoirs",
+      "Toutes nos créations de bureaux et magasins sur mesure, bureaux en bois, magasins en marbre, comptoirs de magasin, comptoirs modernes, etc.",
+    category: "bureaux et magasins",
     images: [bureau1, comptoir1, bureau2],
-    link: "/bureaux-et-comptoirs-sur-mesure",
+    link: "/bureaux-et-magasins-sur-mesure",
   },
   {
     title: "Tables et tables basses sur mesure",

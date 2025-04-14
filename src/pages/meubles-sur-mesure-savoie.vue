@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import bureau from "@/assets/images/bureaux-et-comptoirs/bureau-sur-mesure.webp";
+import bureau from "@/assets/images/bureaux-et-magasins/bureau-sur-mesure.webp";
 import table from "@/assets/images/tables-et-tables-basses/table-sur-mesure-1.webp";
 
 import { categories } from "@/utils/mockData";

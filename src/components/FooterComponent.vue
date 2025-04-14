@@ -141,7 +141,9 @@ import { colors } from "@/utils/colors";
         /></a>
       </div>
       <span style="opacity: 0.6; pointer-events: none">Mentions légales</span
-      ><a href="tekilawebfactory.com" target="_blank">By Tekila Web Factory</a>
+      ><a href="https://tekilawebfactory.com" target="_blank"
+        >By Tekila Web Factory</a
+      >
     </div>
   </footer>
 </template>

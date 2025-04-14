@@ -238,6 +238,13 @@
     "color": "#877A73"
   },
   {
+    "srcset": "https://cdn.egger.com/img/pim/8854374023198/8854527475742/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Chêne Whiteriver cérusé sable",
+    "path": "/fr/mobilier-agencement-interieur/decors/H1312_10",
+    "overline": "H1312 ST10",
+    "color": "#D0C0A9"
+  },
+  {
     "srcset": "https://cdn.egger.com/img/pim/8854528655390/8854528688158/AR_16_9.webp?width=384&srcext=png",
     "title": "Chêne Baronia clair",
     "path": "/fr/mobilier-agencement-interieur/decors/H1362_12",
@@ -278,6 +285,13 @@
     "path": "/fr/mobilier-agencement-interieur/decors/H3156_12",
     "overline": "H3156 ST12",
     "color": "#A89780"
+  },
+  {
+    "srcset": "https://cdn.egger.com/img/pim/8854413836318/8854542843934/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Chêne Corbridge naturel",
+    "path": "/fr/mobilier-agencement-interieur/decors/H3395_12",
+    "overline": "H3395 ST12",
+    "color": "#C49A65"
   },
   {
     "srcset": "https://cdn.egger.com/img/pim/8854400466974/8854538420254/AR_16_9.webp?width=384&srcext=png",
@@ -322,6 +336,13 @@
     "color": "#956C43"
   },
   {
+    "srcset": "https://cdn.egger.com/img/pim/8854392111134/8854534422558/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Chêne de Hunton foncé",
+    "path": "/fr/mobilier-agencement-interieur/decors/H2033_10",
+    "overline": "H2033 ST10",
+    "color": "#956C43"
+  },
+  {
     "srcset": "https://cdn.egger.com/img/pim/8854419341342/8854544908318/AR_16_9.webp?width=384&srcext=png",
     "title": "Noyer du Pacifique naturel",
     "path": "/fr/mobilier-agencement-interieur/decors/H3700_10",
@@ -345,11 +366,17 @@
   {
     "srcset": "https://cdn.egger.com/img/pim/8854392504350/8854535307294/AR_16_9.webp?width=1440&srcext=png",
     "title": "Coco bolo",
-    "path": "https://www.egger.com/fr/mobilier-agencement-interieur/decors/H3012_22",
+    "path": "/fr/mobilier-agencement-interieur/decors/H3012_22",
     "overline": "H3012 ST22",
     "color": "#CCAA7D"
   },
-
+  {
+    "srcset": "https://cdn.egger.com/img/pim/8854420914206/8854545301534/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Hickory naturel",
+    "path": "/fr/mobilier-agencement-interieur/decors/H3730_10",
+    "overline": "H3730 ST10",
+    "color": "#CAA36F"
+  },
   {
     "srcset": "https://cdn.egger.com/img/pim/8854478389278/8855434395678/AR_16_9.webp?width=384&srcext=png",
     "title": "Blanc premium",
@@ -376,6 +403,13 @@
     "title": "Blanc classique",
     "path": "/fr/mobilier-agencement-interieur/decors/W960_SM",
     "overline": "W960 SM",
+    "color": "#F6F7EF"
+  },
+  {
+    "srcset": "https://cdn.egger.com/img/pim/8854335291422/8854514728990/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Lin blanc",
+    "path": "/fr/mobilier-agencement-interieur/decors/F422_10",
+    "overline": "F422 ST10",
     "color": "#F6F7EF"
   },
   {

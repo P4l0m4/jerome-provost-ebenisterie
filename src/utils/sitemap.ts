@@ -41,11 +41,11 @@ export async function getSalleDeBainPages() {
   }));
 }
 
-export async function getBureauxEtComptoirsPages() {
-  const response = await Storyblok.get("cdn/stories/bureaux-et-comptoirs", {});
-  const bureauxEtComptoirsSections = response.data.story.content.sections;
-  return bureauxEtComptoirsSections.map((furniture: any) => ({
-    loc: `/bureaux-et-comptoirs-sur-mesure/${stringToSlug(furniture.subtitle)}`,
+export async function getBureauxEtMagasinsPages() {
+  const response = await Storyblok.get("cdn/stories/bureaux-et-magasins", {});
+  const bureauxEtMagasinsSections = response.data.story.content.sections;
+  return bureauxEtMagasinsSections.map((furniture: any) => ({
+    loc: `/bureaux-et-magasins-sur-mesure/${stringToSlug(furniture.subtitle)}`,
     changefreq: "daily",
     priority: 0.9,
   }));

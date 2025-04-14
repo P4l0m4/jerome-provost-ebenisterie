@@ -19,7 +19,7 @@ const bannerElements = [
 
 const filteredCategories = categories.filter(
   (category) =>
-    category.category === "bureaux et comptoirs" ||
+    category.category === "bureaux et magasins" ||
     category.category === "autres"
 );
 

@@ -479,7 +479,8 @@
     "srcset": "https://cdn.egger.com/img/pim/8854429171742/8855430299678/AR_16_9.webp?width=384&srcext=png",
     "title": "Gris galet",
     "path": "/fr/mobilier-agencement-interieur/decors/U201_9",
-    "overline": "U201 ST9"
+    "overline": "U201 ST9",
+    "color": "#B3AC9E"
   },
   {
     "srcset": "https://cdn.egger.com/img/pim/8854547824670/8855313874974/AR_16_9.webp?width=384&srcext=png",
@@ -878,6 +879,13 @@
     "path": "/fr/mobilier-agencement-interieur/decors/F004_75",
     "overline": "F004 ST75",
     "color": "#FAF5EE"
+  },
+  {
+    "srcset": "https://cdn.egger.com/img/pim/8854349381662/8854520070174/AR_16_9.webp?width=1440&srcext=png",
+    "title": "Marbre Levanto blanc",
+    "path": "/fr/mobilier-agencement-interieur/decors/F812_9",
+    "overline": "F812 ST9",
+    "color": "#EAE9E3"
   },
   {
     "srcset": "https://cdn.egger.com/img/pim/8854466199582/8855433379870/AR_16_9.webp?width=384&srcext=png",

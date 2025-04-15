@@ -15,11 +15,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Cuisines",
-    url: window.location.origin + "/cuisine-sur-mesure-savoie",
+    url: "/cuisine-sur-mesure-savoie",
   },
 ];
 </script>

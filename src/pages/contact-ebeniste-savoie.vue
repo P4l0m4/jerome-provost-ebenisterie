@@ -17,11 +17,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Contact",
-    url: window.location.origin + "/contact-ebeniste-savoie",
+    url: "/contact-ebeniste-savoie",
   },
 ];
 

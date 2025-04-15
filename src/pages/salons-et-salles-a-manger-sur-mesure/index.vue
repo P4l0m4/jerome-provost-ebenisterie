@@ -17,11 +17,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Salons et salles à manger",
-    url: window.location.origin + "/salons-et-salles-a-manger-sur-mesure",
+    url: "/salons-et-salles-a-manger-sur-mesure",
   },
 ];
 </script>

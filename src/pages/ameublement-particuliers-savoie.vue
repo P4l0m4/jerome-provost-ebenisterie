@@ -36,11 +36,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Ameublement particuliers",
-    url: window.location.origin + "/ameublement-particuliers-savoie",
+    url: "/ameublement-particuliers-savoie",
   },
 ];
 </script>

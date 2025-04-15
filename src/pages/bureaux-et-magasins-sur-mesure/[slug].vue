@@ -6,7 +6,7 @@ const story = await useAsyncStoryblok("bureaux-et-magasins", {
 const route = useRoute();
 const furnitureSlug = route.params.slug;
 const furniture = story.value.content.sections.find(
-  (f) => stringToSlug(f.subtitle) === furnitureSlug
+  (f: any) => stringToSlug(f.subtitle) === furnitureSlug
 );
 
 useHead({
@@ -22,11 +22,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Bureaux et magasins",
-    url: window.location.origin + "/bureaux-et-magasins-sur-mesure",
+    url: "/bureaux-et-magasins-sur-mesure",
   },
   {
     name: furniture.subtitle,
@@ -37,39 +37,28 @@ const breadcrumbs = [
 <template>
   <JsonldBreadcrumbs :links="breadcrumbs" />
   <section class="furniture-page">
-    <div class="furniture-page__wrapper">
-      <div class="furniture-page__wrapper__txt">
-        <h1 class="furniture-page__wrapper__txt__title">
-          {{ furniture.title }}
-        </h1>
-        <h2 class="furniture-page__wrapper__txt__subtitle">
-          {{ furniture.subtitle }}
-        </h2>
-        <div
-          class="furniture-page__wrapper__txt__richtext"
-          v-html="renderRichText(furniture.description)"
-        ></div>
-        <NuxtLink
-          v-if="furniture.collaborationText && furniture.collaborationLink"
-          class="furniture-page__wrapper__txt__collaboration"
-          :to="furniture.collaborationLink"
-          ><IconComponent icon="handshake" size="2rem" />{{
-            furniture.collaborationText
-          }}</NuxtLink
-        >
-
-        <NuxtLink
-          to="/contact-ebeniste-savoie"
-          style="margin-top: auto"
-          aria-label="Parlons de votre projet"
-        >
-          <PrimaryButton>Parlons de votre projet</PrimaryButton></NuxtLink
-        >
-      </div>
-      <ImageSlider :images="furniture.images" />
+    <div class="furniture-page__txt">
+      <h1 class="furniture-page__txt__title">
+        {{ furniture.title }}
+      </h1>
+      <h2 class="furniture-page__txt__subtitle">
+        {{ furniture.subtitle }}
+      </h2>
+      <div
+        class="furniture-page__txt__richtext"
+        v-html="renderRichText(furniture.description)"
+      ></div>
+      <NuxtLink
+        v-if="furniture.collaborationText && furniture.collaborationLink"
+        class="furniture-page__txt__collaboration"
+        :to="furniture.collaborationLink"
+        ><IconComponent icon="handshake" size="2rem" />{{
+          furniture.collaborationText
+        }}</NuxtLink
+      >
+      <ReferencesComponent :references="furniture.references" />
     </div>
-
-    <ReferencesComponent :references="furniture.references" />
+    <ImageSlider :images="furniture.images" />
   </section>
 </template>
 <style lang="scss" scoped>
@@ -78,60 +67,50 @@ const breadcrumbs = [
   gap: 2rem;
   padding: 2rem 1rem;
   flex-direction: column;
+  height: fit-content;
 
   @media (min-width: $big-tablet-screen) {
     padding: 2rem 4rem;
     gap: 4rem;
+    flex-direction: row;
   }
 
-  &__wrapper {
+  &__txt {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 2rem;
+    width: 100%;
 
-    @media (min-width: $big-tablet-screen) {
-      flex-direction: row;
+    &__title {
+      font-size: $medium-title-size;
+      font-weight: $bold;
     }
 
-    &__txt {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      width: 100%;
-      max-height: 555px;
+    &__subtitle {
+      font-size: $medium-text-size;
+      font-weight: $bold;
+    }
 
-      &__title {
-        font-size: $medium-title-size;
-        font-weight: $bold;
-      }
+    &__richtext {
+      &:deep(ul) {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        list-style: none;
+        height: 100%;
 
-      &__subtitle {
-        font-size: $medium-text-size;
-        font-weight: $bold;
-      }
-
-      &__richtext {
-        &:deep(ul) {
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          list-style: none;
-          height: 100%;
-
-          @media (min-width: $big-tablet-screen) {
-            min-width: 320px;
-            max-width: 320px;
-            width: 100%;
-          }
+        @media (min-width: $big-tablet-screen) {
+          min-width: 320px;
+          max-width: 320px;
+          width: 100%;
         }
       }
+    }
 
-      &__collaboration {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
+    &__collaboration {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
   }
 }

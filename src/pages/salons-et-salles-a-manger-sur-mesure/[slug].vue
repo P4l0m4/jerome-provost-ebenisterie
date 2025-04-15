@@ -22,11 +22,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Tables et tables basses",
-    url: window.location.origin + "/salons-et-salles-a-manger-sur-mesure",
+    url: "/salons-et-salles-a-manger-sur-mesure",
   },
   {
     name: furniture.subtitle,

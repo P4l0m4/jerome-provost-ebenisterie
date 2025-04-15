@@ -38,8 +38,22 @@ defineProps<{
         </div>
       </div>
       <NuxtLink to="/outil-materiaux-meubles-sur-mesure"
-        ><SecondaryButton style="height: 100% !important"
+        ><SecondaryButton
+          style="height: 100% !important; width: 100%; max-width: initial"
           >Voir d'autres références</SecondaryButton
+        ></NuxtLink
+      >
+      <NuxtLink
+        to="/contact-ebeniste-savoie"
+        aria-label="Parlons de votre projet"
+      >
+        <PrimaryButton
+          style="
+            height: 100% !important;
+            width: 100%;
+            max-width: initial !important;
+          "
+          >Parlons de votre projet</PrimaryButton
         ></NuxtLink
       >
     </div>
@@ -51,10 +65,12 @@ defineProps<{
   flex-direction: column;
   gap: 2rem;
   width: 100%;
+  height: fit-content;
+  margin-top: auto;
 
   &__references {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     width: 100%;
     gap: 1rem;
 
@@ -63,10 +79,10 @@ defineProps<{
       align-items: center;
       font-size: $main-text-size;
       font-weight: $regular;
-      background-color: $base-color-darker;
-      gap: 1rem;
       height: 75px;
+      width: 100%;
       overflow: hidden;
+      background-color: $base-color-darker;
 
       &__img {
         width: 80px;

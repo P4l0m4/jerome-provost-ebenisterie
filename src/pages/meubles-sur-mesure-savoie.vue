@@ -31,11 +31,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Meubles sur mesure",
-    url: window.location.origin + "/meubles-sur-mesure-savoie",
+    url: "/meubles-sur-mesure-savoie",
   },
 ];
 </script>

@@ -22,11 +22,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Autres meubles",
-    url: window.location.origin + "/autres-meubles-sur-mesure",
+    url: "/autres-meubles-sur-mesure",
   },
   {
     name: furniture.subtitle,

@@ -18,11 +18,11 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
     name: "Bureaux et magasins",
-    url: window.location.origin + "/bureaux-et-magasins-sur-mesure",
+    url: "/bureaux-et-magasins-sur-mesure",
   },
 ];
 </script>

@@ -5,7 +5,7 @@ import {
   getCavesAVinPages,
   getCuisinePages,
   getSalleDeBainPages,
-  getBureauxEtComptoirsPages,
+  getBureauxEtMagasinsPages,
   getAutresMeublesPages,
 } from "./src/utils/sitemap";
 
@@ -34,7 +34,7 @@ export default defineNuxtConfig({
       const dressingPages = await getDressingPages();
       const cuisinePages = await getCuisinePages();
       const salleDeBainPages = await getSalleDeBainPages();
-      const bureauxEtComptoirsPages = await getBureauxEtComptoirsPages();
+      const bureauxEtMagasinsPages = await getBureauxEtMagasinsPages();
       const autresMeublesPages = await getAutresMeublesPages();
       const tablesEtTablesBassesPages = await getTablesEtTablesBassesPages();
       const salonsEtSallesAMangerPages = await getSalonsEtSallesAMangerPages();
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         ...dressingPages,
         ...cuisinePages,
         ...salleDeBainPages,
-        ...bureauxEtComptoirsPages,
+        ...bureauxEtMagasinsPages,
         ...autresMeublesPages,
         ...tablesEtTablesBassesPages,
         ...salonsEtSallesAMangerPages,

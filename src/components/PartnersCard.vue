@@ -32,6 +32,7 @@ defineProps<{
         tag
       }}</span>
     </div>
+    <span class="partners-card__name">{{ partner.name }}</span>
   </NuxtLink>
 </template>
 <style lang="scss" scoped>
@@ -45,9 +46,7 @@ defineProps<{
   align-items: end;
   padding-top: 116px;
   height: 240px;
-
-  @media (min-width: $big-tablet-screen) {
-  }
+  border-radius: 0 75px 0 0;
 
   &__logo {
     border: 8px $primary-color solid;
@@ -60,9 +59,8 @@ defineProps<{
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    top: -20px;
-    left: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
     margin: auto;
   }
 
@@ -82,6 +80,17 @@ defineProps<{
       height: fit-content;
       color: $text-color-alt;
     }
+  }
+
+  &__name {
+    white-space: nowrap;
+    position: absolute;
+    bottom: -38px;
+    padding: 0.5rem 0;
+    border-radius: 0 0 24px 0;
+    color: $primary-color;
+    font-weight: $regular;
+    font-size: $main-text-size;
   }
 }
 </style>

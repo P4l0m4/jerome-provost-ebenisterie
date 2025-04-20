@@ -28,7 +28,7 @@ const props = defineProps<{
         </p>
         <span class="square-button">
           <IconComponent
-            icon="caret-right-bold"
+            icon="caret_right_bold"
             size="1rem"
             :color="colors['cannoli-cream']"
         /></span>

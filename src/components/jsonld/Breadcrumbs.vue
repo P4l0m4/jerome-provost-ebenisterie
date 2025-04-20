@@ -39,7 +39,7 @@ useJsonld(() => ({
       >{{ link.name }}
       <IconComponent
         v-if="i !== links.length - 1"
-        icon="caret-right-bold"
+        icon="caret_right_bold"
         :color
         size="0.75rem"
     /></NuxtLink>

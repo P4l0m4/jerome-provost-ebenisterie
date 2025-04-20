@@ -48,7 +48,7 @@ withDefaults(defineProps<Props>(), {
         <h2>0.{{ index + 1 }} {{ slide.label }}</h2>
         <span class="icon-circle">
           <IconComponent
-            icon="caret-right-bold"
+            icon="caret_right_bold"
             size="1rem"
             :color="colors['nebulosity']"
         /></span>

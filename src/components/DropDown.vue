@@ -62,7 +62,7 @@ function selectOption(option: string) {
       {{ optionSelected.length > 0 ? optionSelected : "Type de meuble" }}
       <span style="opacity: 0.6; margin-left: auto">
         <IconComponent
-          :icon="isDropdownOpen ? 'caret-up-bold' : 'caret-down-bold'"
+          :icon="isDropdownOpen ? 'caret_up_bold' : 'caret_down_bold'"
           size="1.5rem"
           color="currentColor" /></span
     ></span>

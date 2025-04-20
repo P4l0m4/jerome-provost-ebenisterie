@@ -43,7 +43,7 @@ const scroll = (direction: "left" | "right") => {
         @click="scroll('left')"
         @mouseenter="showArrows = true"
       >
-        <IconComponent icon="caret-left-bold" /></button
+        <IconComponent icon="caret_left_bold" /></button
     ></Transition>
 
     <div
@@ -74,7 +74,7 @@ const scroll = (direction: "left" | "right") => {
         @click="scroll('right')"
         @mouseenter="showArrows = true"
       >
-        <IconComponent icon="caret-right-bold" /></button
+        <IconComponent icon="caret_right_bold" /></button
     ></Transition>
   </section>
 </template>

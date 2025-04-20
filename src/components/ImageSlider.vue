@@ -54,7 +54,7 @@ function prev() {
   <section class="slider">
     <span class="icon-circle noselect" @click="prev">
       <IconComponent
-        icon="caret-left-bold"
+        icon="caret_left_bold"
         size="1rem"
         :color="colors['nebulosity']"
       />
@@ -70,7 +70,7 @@ function prev() {
     />
     <span class="icon-circle noselect" @click="next">
       <IconComponent
-        icon="caret-right-bold"
+        icon="caret_right_bold"
         size="1rem"
         :color="colors['nebulosity']"
       />

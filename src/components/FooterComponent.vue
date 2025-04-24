@@ -117,6 +117,14 @@ import { colors } from "@/utils/colors";
             >Avant-après</NuxtLink
           >
         </li>
+        <li class="footer__text__column__link">
+          <NuxtLink
+            to="https://g.page/r/CZxa015iSh44EAE/review"
+            target="_blank"
+            class="nuxt-link"
+            >Donner votre avis</NuxtLink
+          >
+        </li>
       </ul>
     </div>
     <div class="footer__bottom">

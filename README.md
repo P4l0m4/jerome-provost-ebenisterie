@@ -1,4 +1,6 @@
-# Nuxt Minimal Starter
+# This website is live on ✨ https://jpebenisterie73.fr ✨
+
+⚠️ Work in progress
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 

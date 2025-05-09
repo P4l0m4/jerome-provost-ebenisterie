@@ -96,9 +96,9 @@ async function extractColors() {
   const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
   const colorCounts: Record<string, number> = {};
   const colorBins: Record<string, string[]> = {};
-  const binSize = 30; // Adjust this value to control color similarity threshold
+  const binSize = 30; // similarity threshold
 
-  // Sample pixels and bin similar colors
+  // Sample pixels and similar colors
   for (let i = 0; i < imageData.length; i += 16) {
     const r = imageData[i];
     const g = imageData[i + 1];
@@ -107,7 +107,7 @@ async function extractColors() {
     const hex =
       "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 
-    // Create color bin key by rounding RGB values
+    // color bin key
     const binKey = [
       Math.floor(r / binSize) * binSize,
       Math.floor(g / binSize) * binSize,
@@ -121,7 +121,7 @@ async function extractColors() {
     colorCounts[hex] = (colorCounts[hex] || 0) + 1;
   }
 
-  // Get most frequent color from each bin
+  // most frequent color from each bin
   const diverseColors = Object.values(colorBins).map((binColors) => {
     return binColors.reduce((mostFrequent, color) => {
       return colorCounts[color] > colorCounts[mostFrequent]
@@ -130,7 +130,7 @@ async function extractColors() {
     }, binColors[0]);
   });
 
-  // Sort by frequency and take top 6 diverse colors
+  // Sort by frequency then top 6 diverse colors
   colors.value = diverseColors
     .sort((a, b) => colorCounts[b] - colorCounts[a])
     .slice(0, 6);
@@ -182,29 +182,28 @@ async function downloadResult() {
     img.onload = resolve;
   });
 
-  // Calculate dimensions for smaller image on left side
+  // dimensions for smaller image on left side
   let imgWidth = (pageWidth - margin * 3) / 2;
   let imgHeight = (imgWidth * img.height) / img.width;
 
   if (imgHeight > 400) {
-    $;
     imgHeight = 400;
     imgWidth = (imgHeight * img.width) / img.height;
   }
 
-  // Detect image format
+  // image format
   const imageFormat = file.value?.type.split("/")[1].toUpperCase() || "JPEG";
   doc.addImage(imgData, imageFormat, margin, margin + 20, imgWidth, imgHeight);
 
   doc.setFontSize(12);
   colors.value.forEach((color, index) => {
-    const x = margin * 2 + imgWidth; // Start after image
+    const x = margin * 2 + imgWidth;
     const y = margin + index * 20;
-    // Draw color rectangle
+    // color rectangle
     doc.setFillColor(...hexToRgb(color));
     doc.rect(x, y, 20, 15, "F");
-    // Add hex value
-    doc.text(color, x + 25, y + 10); // Reduced x offset from 30 to 25
+
+    doc.text(color, x + 25, y + 10);
   });
 
   if (selectedReferencesWithoutDuplicates.value.length > 0) {
@@ -214,7 +213,7 @@ async function downloadResult() {
       doc.setFontSize(12);
       const textY = refsY + 10 + index * 25;
 
-      // Add colored square
+      // colored square
       doc.setFillColor(...hexToRgb(ref.color));
       doc.rect(margin, textY - 4, 10, 15, "F");
 
@@ -239,7 +238,6 @@ async function downloadResult() {
     doc.internal.pageSize.getHeight() - 7
   );
 
-  // Save the PDF
   doc.save("palette-jp-ebenisterie.pdf");
 }
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { colors } from "@/utils/colors";
 
-const props = defineProps<{
+defineProps<{
   categories: {
     title: string;
     description: string;

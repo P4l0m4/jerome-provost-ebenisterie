@@ -3,7 +3,7 @@ import { colors } from "@/utils/colors";
 
 const props = defineProps({
   links: {
-    type: Array,
+    type: Array as PropType<{ name: string; url: string }[]>,
     required: true,
   },
   color: {

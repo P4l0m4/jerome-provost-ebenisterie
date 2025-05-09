@@ -141,18 +141,30 @@ const partners = [
 ];
 </script>
 <template>
-  <section class="contact-banner">
+  <picture class="contact-banner">
+    <source
+      media="(min-width: 1100px)"
+      srcset="@/assets/images/jp-banner.webp"
+      type="image/webp"
+    />
+
+    <source
+      media="(min-width: 780px)"
+      srcset="@/assets/images/jp-banner-tablet.webp"
+      type="image/webp"
+    />
+
     <JsonldBreadcrumbs
       :links="breadcrumbs"
       :color="colors['cannoli-cream-darker']"
       class="breadcrumbs"
     />
+
     <div class="contact-banner__txt">
       <SideText variant="light" side="top">
         Jérôme Provost
         <template #subtitle>Ebéniste agenceur en Savoie</template>
       </SideText>
-
       <div class="contact-banner__txt__info">
         <a class="contact-banner__txt__info__element" href="tel:0623041637">
           <IconComponent
@@ -174,7 +186,12 @@ const partners = [
       </div>
     </div>
     <FormComponent />
-  </section>
+
+    <img
+      src="@/assets/images/jp-banner-mobile.webp"
+      alt="contact ebenisterie chambery"
+    />
+  </picture>
   <section id="partenaires" class="partners">
     <SideText variant="light" side="top">
       Partenaires
@@ -190,18 +207,14 @@ const partners = [
 </template>
 <style lang="scss" scoped>
 .contact-banner {
-  min-height: calc(100dvh - 80px);
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-image:
-    linear-gradient(0deg, rgba($text-color, 100%), transparent 100%),
-    url("@/assets/images/jerome.jpg");
   display: flex;
   justify-content: end;
+  flex-direction: column;
+  min-height: calc(100vh - 80px);
+  width: 100%;
   gap: 2rem;
   padding: 2rem 1rem;
-  flex-direction: column;
+  position: relative;
 
   @media (min-width: $big-tablet-screen) {
     padding: 4rem 2rem;
@@ -209,6 +222,32 @@ const partners = [
 
   @media (min-width: $laptop-screen) {
     padding: 4rem;
+  }
+
+  & source {
+    display: none;
+  }
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 70%;
+    z-index: -1;
+    filter: brightness(0.8);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, $text-color, transparent 60%);
+    z-index: -1;
   }
 
   &__txt {
@@ -287,6 +326,7 @@ const partners = [
     @media (min-width: $tablet-screen) {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
+
     @media (min-width: $big-tablet-screen) {
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }

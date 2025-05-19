@@ -38,8 +38,9 @@ const iconColor = computed(() => {
 });
 </script>
 <template>
-  <button
-    type="button"
+  <span
+    role="button"
+    tabindex="0"
     class="button noselect"
     :class="variant"
     :style="{ flexDirection: direction, fontSize }"
@@ -51,7 +52,7 @@ const iconColor = computed(() => {
       :color="iconColor"
     />
     <slot />
-  </button>
+  </span>
 </template>
 <style scoped lang="scss">
 .button {

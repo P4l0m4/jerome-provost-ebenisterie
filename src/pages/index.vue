@@ -7,9 +7,13 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 import furnitureUrl from "@/assets/furniture/furniture.glb?url";
 
-import cuisine from "@/assets/furniture/qualite.webp";
-import dressing from "@/assets/furniture/decoupe.webp";
-import salleDeBain from "@/assets/furniture/rangements.webp";
+import cuisine from "@/assets/images/cuisine-sur-mesure.jpg";
+import dressing from "@/assets/images/dressing-sur-mesure.jpg";
+import salleDeBain from "@/assets/images/salle-de-bain-sur-mesure.webp";
+
+import qualite from "@/assets/furniture/qualite.webp";
+import decoupe from "@/assets/furniture/decoupe.webp";
+import rangements from "@/assets/furniture/rangements.webp";
 
 import brownMarble from "@/assets/furniture/brown-marble.jpg";
 import wood from "@/assets/furniture/wood.jpg";
@@ -33,167 +37,13 @@ const bannerElements = [
   },
 ];
 
-const loadedModel = ref<THREE.Object3D | null>(null);
+const points = ref();
 
-const points = [
-  {
-    label: "Matériaux de qualité",
-    image: cuisine,
-    element: document.querySelector("#point-0") as HTMLDivElement | undefined,
-  },
-  {
-    label: "Découpe sur mesure",
-    image: dressing,
-    element: document.querySelector("#point-1") as HTMLDivElement | undefined,
-  },
-  {
-    label: "Rangements intelligents",
-    image: salleDeBain,
-    element: document.querySelector("#point-2") as HTMLDivElement | undefined,
-  },
-];
-
-const textureLoader = new THREE.TextureLoader();
-
-const brownMarbleTexture = textureLoader.load(brownMarble, (texture) => {
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(3, 3);
-  texture.rotation = Math.PI / 2;
-});
-const woodTexture = textureLoader.load(wood, (texture) => {
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(2, 2);
-  texture.rotation = Math.PI / 2;
-});
-const darkWoodTexture = textureLoader.load(darkWood, (texture) => {
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-  texture.repeat.set(2, 2);
-  texture.rotation = Math.PI / 2;
-});
-
-const options = [
-  {
-    label: "wood",
-    preview: wood,
-    texture: woodTexture,
-  },
-  {
-    label: "brownMarble",
-    preview: brownMarble,
-    texture: brownMarbleTexture,
-  },
-  {
-    label: "darkWood",
-    preview: darkWood,
-    texture: darkWoodTexture,
-  },
-];
+const options = ref();
 
 const appliedTexture = ref("");
 
-const width = window.innerWidth,
-  height = window.innerHeight;
-const camera = shallowRef<THREE.PerspectiveCamera | null>(null);
-const scene = shallowRef<THREE.Scene | null>(null);
-const renderer = shallowRef<THREE.WebGLRenderer | null>(null);
-
-const canvasRef = ref<HTMLCanvasElement | OffscreenCanvas | undefined>(
-  undefined
-);
-
 const modelIsLoaded = ref(false);
-
-function initThree() {
-  camera.value = new THREE.PerspectiveCamera(70, width / height, 0.01, 10);
-  camera.value.position.z = 1;
-  camera.value.position.set(0, 3, 3);
-  camera.value.lookAt(0, 0, 0);
-
-  scene.value = new THREE.Scene();
-
-  const occluders: THREE.Object3D[] = [];
-  const loader = new GLTFLoader();
-
-  loader.load(
-    furnitureUrl,
-    (gltf) => {
-      const model = gltf.scene;
-      model.scale.set(1, 1, 1);
-
-      loadedModel.value = model;
-      scene.value?.add(model);
-      occluders.push(model);
-      applyTexture(woodTexture, "wood");
-    },
-    (xhr) => {
-      if (xhr.loaded === xhr.total) {
-        modelIsLoaded.value = true;
-      }
-    },
-    (err) => {
-      console.error("Erreur de chargement GLTF:", err);
-    }
-  );
-
-  const pointLight = new THREE.PointLight(0xf5edbe, 100);
-  const pointLight2 = new THREE.PointLight(0xf5edbe, 40);
-  const ambientLight = new THREE.AmbientLight(0xf5edbe, 10);
-
-  pointLight.position.set(0, 4, 0);
-  pointLight2.position.set(0, 1, 2);
-  ambientLight.position.set(0, 1, 0);
-
-  scene.value?.add(pointLight, pointLight2, ambientLight);
-
-  renderer.value = new THREE.WebGLRenderer({
-    antialias: true,
-    canvas: canvasRef.value,
-    alpha: true,
-  });
-
-  renderer.value.setSize(width, height);
-  renderer.value.setAnimationLoop(animate);
-  renderer.value.setPixelRatio(window.devicePixelRatio);
-  renderer.value.setClearColor(0x000000, 0);
-  renderer.value.outputColorSpace = THREE.SRGBColorSpace;
-}
-
-function applyTexture(texture: THREE.Texture, label: string) {
-  appliedTexture.value = label;
-  if (loadedModel.value) {
-    loadedModel.value.traverse((child) => {
-      if (child instanceof THREE.Mesh && child.name === "Counter") {
-        child.material.map = texture;
-        child.material.roughness = 0.5;
-        child.material.needsUpdate = true;
-      } else if (child instanceof THREE.Mesh && child.name === "Counter001") {
-        child.material.map = texture;
-        child.material.roughness = 0.5;
-        child.material.needsUpdate = true;
-      } else if (child instanceof THREE.Mesh) {
-        child.material.color.set(0x000000);
-        console.log(child.name, "a été mis à jour avec la couleur noire");
-      }
-    });
-  }
-
-  console.log(`Texture appliquée: ${label}`);
-}
-
-function animate() {
-  requestAnimationFrame(animate);
-
-  renderer.value!.render(scene.value!, camera.value!);
-
-  scene.value!.updateMatrixWorld(true);
-}
-
-window.addEventListener("resize", () => {
-  const newWidth = window.innerWidth;
-  const newHeight = window.innerHeight;
-  camera.value?.updateProjectionMatrix();
-  renderer.value?.setSize(newWidth, newHeight);
-});
 
 useJsonld(() => ({
   "@context": "https://schema.org",
@@ -229,10 +79,163 @@ useHead({
   ],
 });
 
-onMounted(() => {
+onMounted(async () => {
   if (isMobile()) {
+    console.log("Mobile device detected, skipping 3D model initialization.");
     return;
   }
+
+  const width = window.innerWidth,
+    height = window.innerHeight;
+  const camera = shallowRef<THREE.PerspectiveCamera | null>(null);
+  const scene = shallowRef<THREE.Scene | null>(null);
+  const renderer = shallowRef<THREE.WebGLRenderer | null>(null);
+
+  const loadedModel = ref<THREE.Object3D | null>(null);
+
+  const canvasRef = ref<HTMLCanvasElement | OffscreenCanvas | undefined>(
+    undefined
+  );
+
+  const textureLoader = new THREE.TextureLoader();
+
+  const brownMarbleTexture = textureLoader.load(brownMarble, (texture) => {
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(3, 3);
+    texture.rotation = Math.PI / 2;
+  });
+  const woodTexture = textureLoader.load(wood, (texture) => {
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(2, 2);
+    texture.rotation = Math.PI / 2;
+  });
+  const darkWoodTexture = textureLoader.load(darkWood, (texture) => {
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+    texture.repeat.set(2, 2);
+    texture.rotation = Math.PI / 2;
+  });
+
+  options.value = [
+    {
+      label: "wood",
+      preview: wood,
+      texture: woodTexture,
+    },
+    {
+      label: "brownMarble",
+      preview: brownMarble,
+      texture: brownMarbleTexture,
+    },
+    {
+      label: "darkWood",
+      preview: darkWood,
+      texture: darkWoodTexture,
+    },
+  ];
+
+  points.value = [
+    {
+      label: "Matériaux de qualité",
+      image: qualite,
+      element: document.querySelector("#point-0") as HTMLDivElement | undefined,
+    },
+    {
+      label: "Découpe sur mesure",
+      image: decoupe,
+      element: document.querySelector("#point-1") as HTMLDivElement | undefined,
+    },
+    {
+      label: "Rangements intelligents",
+      image: rangements,
+      element: document.querySelector("#point-2") as HTMLDivElement | undefined,
+    },
+  ];
+
+  function initThree() {
+    camera.value = new THREE.PerspectiveCamera(70, width / height, 0.01, 10);
+    camera.value.position.z = 1;
+    camera.value.position.set(0, 3, 3);
+    camera.value.lookAt(0, 0, 0);
+
+    scene.value = new THREE.Scene();
+
+    const occluders: THREE.Object3D[] = [];
+    const loader = new GLTFLoader();
+
+    loader.load(
+      furnitureUrl,
+      (gltf) => {
+        const model = gltf.scene;
+        model.scale.set(1, 1, 1);
+
+        loadedModel.value = model;
+        scene.value?.add(model);
+        occluders.push(model);
+        applyTexture(woodTexture, "wood");
+      },
+      (xhr) => {
+        if (xhr.loaded === xhr.total) {
+          modelIsLoaded.value = true;
+        }
+      },
+      (err) => {
+        console.error("Erreur de chargement GLTF:", err);
+      }
+    );
+
+    const pointLight = new THREE.PointLight(0xf5edbe, 100);
+    const pointLight2 = new THREE.PointLight(0xf5edbe, 40);
+    const ambientLight = new THREE.AmbientLight(0xf5edbe, 10);
+
+    pointLight.position.set(0, 4, 0);
+    pointLight2.position.set(0, 1, 2);
+    ambientLight.position.set(0, 1, 0);
+
+    scene.value?.add(pointLight, pointLight2, ambientLight);
+
+    renderer.value = new THREE.WebGLRenderer({
+      antialias: true,
+      canvas: canvasRef.value,
+      alpha: true,
+    });
+
+    renderer.value.setSize(width, height);
+    renderer.value.setAnimationLoop(animate);
+    renderer.value.setPixelRatio(window.devicePixelRatio);
+    renderer.value.setClearColor(0x000000, 0);
+    renderer.value.outputColorSpace = THREE.SRGBColorSpace;
+  }
+
+  function applyTexture(texture: THREE.Texture, label: string) {
+    appliedTexture.value = label;
+    if (loadedModel.value) {
+      loadedModel.value.traverse((child) => {
+        if (child instanceof THREE.Mesh && child.name === "Counter") {
+          child.material.map = texture;
+          child.material.roughness = 0.5;
+          child.material.needsUpdate = true;
+        } else if (child instanceof THREE.Mesh && child.name === "Counter001") {
+          child.material.map = texture;
+          child.material.roughness = 0.5;
+          child.material.needsUpdate = true;
+        } else if (child instanceof THREE.Mesh) {
+          child.material.color.set(0x000000);
+          console.log(child.name, "a été mis à jour avec la couleur noire");
+        }
+      });
+    }
+
+    console.log(`Texture appliquée: ${label}`);
+  }
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    renderer.value!.render(scene.value!, camera.value!);
+
+    scene.value!.updateMatrixWorld(true);
+  }
+
   initThree();
   points.forEach((pt, i) => {
     const el = document.querySelector(`#point-${i}`);
@@ -251,6 +254,13 @@ onMounted(() => {
     },
     false
   );
+
+  window.addEventListener("resize", () => {
+    const newWidth = window.innerWidth;
+    const newHeight = window.innerHeight;
+    camera.value?.updateProjectionMatrix();
+    renderer.value?.setSize(newWidth, newHeight);
+  });
 });
 </script>
 <template>

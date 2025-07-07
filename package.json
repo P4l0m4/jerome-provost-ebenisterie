@@ -11,14 +11,17 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
+    "@types/three": "^0.177.0",
     "@vuelidate/core": "^2.0.3",
     "@vuelidate/validators": "^2.0.4",
     "@vueuse/nuxt": "^12.8.0",
+    "gsap": "^3.13.0",
     "jspdf": "^3.0.1",
-    "nuxt": "^3.16.0",
+    "nuxt": "^3.17.6",
     "nuxt-jsonld": "^2.0.8",
     "sass": "^1.58.0",
     "sass-loader": "^13.2.0",
+    "three": "^0.177.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
     "yarn": "^1.22.22"
@@ -27,5 +30,6 @@
     "@nuxtjs/sitemap": "^5.1.0",
     "@storyblok/nuxt": "^5.4.4",
     "dayjs-nuxt": "^1.1.2"
-  }
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }

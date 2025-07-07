@@ -1,0 +1,4 @@
+const ImageSlider_vue_vue_type_style_index_0_scoped_5c29ba4d_lang = ".slider[data-v-5c29ba4d]{align-items:center;display:flex;height:80vh;justify-content:space-between;max-width:760px;padding:1.5rem;position:relative;width:100%}@media (min-width:1024px){.slider[data-v-5c29ba4d]{padding:2rem}}.slider__img[data-v-5c29ba4d]{height:100%;top:0;right:0;bottom:0;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center;position:absolute;width:100%;z-index:-1}.icon-circle[data-v-5c29ba4d]{align-items:center;background-color:#f3f5f7;border-radius:50%;cursor:pointer;display:flex;height:2rem;justify-content:center;min-height:2rem;min-width:2rem;width:2rem;z-index:1}";
+
+export { ImageSlider_vue_vue_type_style_index_0_scoped_5c29ba4d_lang as I };
+//# sourceMappingURL=ImageSlider-styles-1.mjs-DwS-y5Ok.mjs.map

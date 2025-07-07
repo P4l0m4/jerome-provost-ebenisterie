@@ -1,0 +1,4 @@
+const PrimaryButton_vue_vue_type_style_index_0_scoped_9d4d2793_lang = ".button[data-v-9d4d2793]{align-items:center;cursor:pointer;display:flex;gap:.5rem;justify-content:center;max-width:375px;padding:.75rem 1rem;white-space:nowrap;width:100%}.chocolate-martini[data-v-9d4d2793]{background-color:#56453f;border:2px solid #56453f;color:#f0f0e5}.mocha-mousse[data-v-9d4d2793]{background-color:#a47764;border:2px solid #a47764;color:#f3f5f7}.cannoli-cream[data-v-9d4d2793]{background-color:#f0f0e5;border:2px solid #f0f0e5;color:#56453f}.nebulosity[data-v-9d4d2793]{background-color:#161616;border:2px solid #161616;color:#f3f5f7}.lucent-white[data-v-9d4d2793]{background-color:#f3f5f7;border:2px solid #f3f5f7;color:#161616}";
+
+export { PrimaryButton_vue_vue_type_style_index_0_scoped_9d4d2793_lang as P };
+//# sourceMappingURL=entry-styles-5.mjs-BPI0LPPQ.mjs.map

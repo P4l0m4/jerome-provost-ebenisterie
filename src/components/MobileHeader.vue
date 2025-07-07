@@ -137,7 +137,7 @@ onClickOutside(target, () => (isMenuOpen.value = false));
     width: 50px;
     height: 50px;
     background-color: $secondary-color;
-    z-index: 1;
+    z-index: 3;
     border-radius: 0;
   }
 }

@@ -1,0 +1,4 @@
+const InputField_vue_vue_type_style_index_0_scoped_afbb4d95_lang = ".input-field[data-v-afbb4d95]{align-items:center;background-color:#f0f0e5;border-radius:20px;display:flex;gap:.5rem;overflow:hidden;padding:.25rem .75rem;width:100%}.input-field__label[data-v-afbb4d95]{font-size:1rem;font-weight:400;margin-left:.75rem;white-space:nowrap;width:-moz-fit-content;width:fit-content}.input-field__icon[data-v-afbb4d95]{height:1rem;width:1rem}.input-field input[data-v-afbb4d95]{border:none;color:#161616;font-size:1rem;overflow:hidden;padding:.75rem 0 .65rem;text-overflow:ellipsis;white-space:nowrap;width:100%!important}.input-field input[data-v-afbb4d95]::-moz-placeholder{color:#17171780;font-size:1rem;font-weight:400}.input-field input[data-v-afbb4d95]::placeholder{color:#17171780;font-size:1rem;font-weight:400}";
+
+export { InputField_vue_vue_type_style_index_0_scoped_afbb4d95_lang as I };
+//# sourceMappingURL=InputField-styles-1.mjs-BHjc3vCZ.mjs.map

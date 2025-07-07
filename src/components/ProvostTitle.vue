@@ -8,6 +8,7 @@
   justify-content: center;
   padding: 4rem;
   min-height: calc(12vw + 8rem);
+  max-height: 650px;
   position: relative;
 
   &::before {

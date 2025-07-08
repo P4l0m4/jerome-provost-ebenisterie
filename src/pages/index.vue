@@ -7,9 +7,9 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 import furnitureUrl from "@/assets/furniture/furniture.glb?url";
 
-import cuisine from "@/assets/images/cuisine-sur-mesure.jpg";
-import dressing from "@/assets/images/dressing-sur-mesure.jpg";
-import salleDeBain from "@/assets/images/salle-de-bain-sur-mesure.webp";
+import cuisine from "@/assets/images/cuisine-3.webp";
+import dressing from "@/assets/images/dressing-4.webp";
+import salleDeBain from "@/assets/images/salle-de-bain-4.webp";
 
 import qualite from "@/assets/furniture/qualite.webp";
 import decoupe from "@/assets/furniture/decoupe.webp";

@@ -102,10 +102,7 @@ import { colors } from "@/utils/colors";
         </li>
 
         <li class="footer__text__column__link">
-          <NuxtLink
-            to="/avant-apres-ebenisterie-savoie"
-            class="nuxt-link"
-            style="opacity: 0.6; pointer-events: none"
+          <NuxtLink to="/avant-apres-ebenisterie-savoie" class="nuxt-link"
             >Avant-après</NuxtLink
           >
         </li>

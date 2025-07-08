@@ -46,7 +46,6 @@ defineProps<{
     </NuxtLink>
   </section>
 </template>
-<
 <style lang="scss" scoped>
 .categories-list {
   display: flex;

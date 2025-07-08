@@ -55,8 +55,12 @@ useJsonld(() => ({
   flex-wrap: wrap;
 
   @media (min-width: $big-tablet-screen) {
-    padding: 1rem 2rem 0 4rem;
+    padding: 1rem 2rem 0 2rem;
     flex-wrap: nowrap;
+  }
+
+  @media (min-width: $desktop-screen) {
+    padding: 1rem 2rem 0 4rem;
   }
 
   &__breadcrumb {

@@ -309,7 +309,7 @@ const partners = [
   background-color: $text-color;
   display: flex;
   gap: 2rem;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem 1rem;
   flex-direction: column;
 
   @media (min-width: $big-tablet-screen) {

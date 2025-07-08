@@ -106,12 +106,22 @@ import { isMobile } from "@/utils/functions";
   }
 
   & .wrapper {
-    &:deep(.line) {
-      max-width: 220px;
+    width: 240px !important;
+    height: 130px;
+
+    &:deep(.side-text) {
+      transform: rotate(0deg) translate(0px, -4px) !important;
     }
-    @media (min-width: $big-tablet-screen) {
+
+    @media (min-width: $tablet-screen) {
+      width: 340px !important;
+    }
+
+    @media (min-width: $laptop-screen) {
+      height: 340px !important;
+      width: 130px !important;
       &:deep(.side-text) {
-        transform: rotate(-90deg) translate(-500px, -4px) !important;
+        transform: rotate(-90deg) translate(-45px, -184px) !important;
       }
     }
   }

@@ -190,17 +190,6 @@ onMounted(() => {
     pt.element = el ? (el as HTMLDivElement) : undefined;
   });
 
-  canvasRef.value?.addEventListener(
-    "webglcontextlost",
-    (e) => {
-      e.preventDefault();
-
-      canvasRef.value!.reboot();
-      initThree();
-    },
-    false
-  );
-
   window.addEventListener("resize", () => {
     const newWidth = window.innerWidth;
     const newHeight = window.innerHeight;

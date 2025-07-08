@@ -137,7 +137,8 @@ import { colors } from "@/utils/colors";
             size="20px"
         /></a>
       </div>
-      <span style="opacity: 0.6; pointer-events: none">Mentions légales</span
+      <NuxtLink to="documents/mentions-legales.pdf" target="_blank"
+        >Mentions légales</NuxtLink
       ><a href="https://tekilawebfactory.com" target="_blank"
         >By Tekila Web Factory</a
       >

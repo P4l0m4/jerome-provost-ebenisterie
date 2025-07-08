@@ -61,6 +61,7 @@ const scroll = (direction: "left" | "right") => {
         <img
           class="carousel__container__slide__img fading"
           :src="slide.image.filename"
+          :alt="`${slide.name} ébénisterie savoie`"
         />
 
         <span class="carousel__container__slide__name">{{ slide.name }}</span>

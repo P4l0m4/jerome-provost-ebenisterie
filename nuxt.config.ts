@@ -81,6 +81,9 @@ export default defineNuxtConfig({
         { rel: "shortcut icon", type: "image/x-icon", href: "/favicon.ico" },
         { rel: "apple-touch-icon", href: "/favicon.ico" },
       ],
+      htmlAttrs: {
+        lang: "fr",
+      },
     },
   },
 });

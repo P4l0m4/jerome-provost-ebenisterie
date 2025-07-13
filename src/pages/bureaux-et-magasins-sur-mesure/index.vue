@@ -21,6 +21,10 @@ const breadcrumbs = [
     url: "/",
   },
   {
+    name: "Tous les meubles sur mesure",
+    url: "/meubles-sur-mesure-savoie",
+  },
+  {
     name: "Bureaux et magasins",
     url: "/bureaux-et-magasins-sur-mesure",
   },

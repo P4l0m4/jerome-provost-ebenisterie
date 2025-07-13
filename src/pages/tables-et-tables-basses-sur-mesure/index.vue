@@ -20,6 +20,10 @@ const breadcrumbs = [
     url: "/",
   },
   {
+    name: "Tous les meubles sur mesure",
+    url: "/meubles-sur-mesure-savoie",
+  },
+  {
     name: "Tables et tables basses",
     url: "/tables-et-tables-basses-sur-mesure",
   },
@@ -28,10 +32,7 @@ const breadcrumbs = [
 
 <template>
   <JsonldBreadcrumbs :links="breadcrumbs" />
-  <FurnitureShowcase
-    :story
-    parent-slug="/tables-et-tables-basses-sur-mesure-savoie"
-  />
+  <FurnitureShowcase :story parent-slug="/tables-et-tables-basses-sur-mesure" />
   <ProvostTitle />
   <CarouselComponent />
   <InfoBanner />

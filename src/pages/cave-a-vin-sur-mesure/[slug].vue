@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import { stringToSlug } from "~/utils/slugify";
+import { onMounted, ref } from "vue";
+import { stringToSlug } from "@/utils/slugify";
 const story = await useAsyncStoryblok("caves-a-vin", {
   version: "published",
 });
+
 const route = useRoute();
 const furnitureSlug = route.params.slug;
 const furniture = story.value.content.sections.find(
@@ -11,31 +13,40 @@ const furniture = story.value.content.sections.find(
 
 useHead({
   title: `${furniture.subtitle} | JP Ebénisterie`,
+
   meta: [
     {
       name: "description",
-      content: furniture.description,
+      content: furniture?.description,
     },
   ],
 });
 
-const breadcrumbs = [
-  {
-    name: "Accueil",
-    url: "/",
-  },
-  {
-    name: "Caves à vin",
-    url: "/cave-a-vin-sur-mesure",
-  },
-  {
-    name: furniture.subtitle,
-    url: window.location.href,
-  },
-];
+const breadcrumbs = ref();
+
+onMounted(() => {
+  breadcrumbs.value = [
+    {
+      name: "Accueil",
+      url: "/",
+    },
+    {
+      name: "Tous les meubles sur mesure",
+      url: "/meubles-sur-mesure-savoie",
+    },
+    {
+      name: "Caves à vin",
+      url: "/cave-a-vin-sur-mesure",
+    },
+    {
+      name: furniture.subtitle,
+      url: window.location.href,
+    },
+  ];
+});
 </script>
 <template>
-  <JsonldBreadcrumbs :links="breadcrumbs" />
+  <JsonldBreadcrumbs v-if="breadcrumbs" :links="breadcrumbs" />
   <section class="furniture-page">
     <div class="furniture-page__wrapper">
       <div class="furniture-page__wrapper__txt">

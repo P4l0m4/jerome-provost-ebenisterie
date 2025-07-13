@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { stringToSlug } from "~/utils/slugify";
+import { onMounted, ref } from "vue";
+import { stringToSlug } from "@/utils/slugify";
 const story = await useAsyncStoryblok("tables-et-tables-basses", {
   version: "published",
 });
@@ -19,23 +20,31 @@ useHead({
   ],
 });
 
-const breadcrumbs = [
-  {
-    name: "Accueil",
-    url: "/",
-  },
-  {
-    name: "Tables et tables basses",
-    url: "/tables-et-tables-basses-sur-mesure",
-  },
-  {
-    name: furniture.subtitle,
-    url: window.location.href,
-  },
-];
+const breadcrumbs = ref();
+
+onMounted(() => {
+  breadcrumbs.value = [
+    {
+      name: "Accueil",
+      url: "/",
+    },
+    {
+      name: "Tous les meubles sur mesure",
+      url: "/meubles-sur-mesure-savoie",
+    },
+    {
+      name: "Tables et tables basses",
+      url: "/tables-et-tables-basses-sur-mesure",
+    },
+    {
+      name: furniture.subtitle,
+      url: window.location.href,
+    },
+  ];
+});
 </script>
 <template>
-  <JsonldBreadcrumbs :links="breadcrumbs" />
+  <JsonldBreadcrumbs v-if="breadcrumbs" :links="breadcrumbs" />
   <section class="furniture-page">
     <div class="furniture-page__wrapper">
       <div class="furniture-page__wrapper__txt">
@@ -57,7 +66,6 @@ const breadcrumbs = [
             furniture.collaborationText
           }}</NuxtLink
         >
-
         <NuxtLink
           to="/contact-ebeniste-savoie"
           style="margin-top: auto"

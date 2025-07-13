@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { stringToSlug } from "~/utils/slugify";
+import { onMounted, ref } from "vue";
+import { stringToSlug } from "@/utils/slugify";
 const story = await useAsyncStoryblok("buanderies", { version: "published" });
 const route = useRoute();
 const furnitureSlug = route.params.slug;
@@ -17,23 +18,31 @@ useHead({
   ],
 });
 
-const breadcrumbs = [
-  {
-    name: "Accueil",
-    url: window.location.origin,
-  },
-  {
-    name: "Buanderies",
-    url: window.location.origin + "/buanderie-sur-mesure-savoie",
-  },
-  {
-    name: furniture.subtitle,
-    url: window.location.href,
-  },
-];
+const breadcrumbs = ref();
+
+onMounted(() => {
+  breadcrumbs.value = [
+    {
+      name: "Accueil",
+      url: window.location.origin,
+    },
+    {
+      name: "Tous les meubles sur mesure",
+      url: "/meubles-sur-mesure-savoie",
+    },
+    {
+      name: "Buanderies",
+      url: "/buanderie-sur-mesure-savoie",
+    },
+    {
+      name: furniture.subtitle,
+      url: window.location.href,
+    },
+  ];
+});
 </script>
 <template>
-  <JsonldBreadcrumbs :links="breadcrumbs" />
+  <JsonldBreadcrumbs v-if="breadcrumbs" :links="breadcrumbs" />
   <section class="furniture-page">
     <div class="furniture-page__wrapper">
       <div class="furniture-page__wrapper__txt">

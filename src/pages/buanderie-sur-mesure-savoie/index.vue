@@ -15,11 +15,15 @@ useHead({
 const breadcrumbs = [
   {
     name: "Accueil",
-    url: window.location.origin,
+    url: "/",
   },
   {
-    name: "Buanderies",
-    url: window.location.origin + "/buanderie-sur-mesure-savoie",
+    name: "Tous les meubles sur mesure",
+    url: "/meubles-sur-mesure-savoie",
+  },
+  {
+    name: "Bureaux et magasins",
+    url: "/buanderie-sur-mesure-savoie",
   },
 ];
 </script>

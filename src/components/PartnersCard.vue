@@ -16,6 +16,7 @@ defineProps<{
   <NuxtLink
     class="partners-card"
     :to="partner.link"
+    target="_blank"
     v-for="partner in partners"
     :key="partner.name"
     :style="{ backgroundImage: `url(${partner.imagePath})` }"
